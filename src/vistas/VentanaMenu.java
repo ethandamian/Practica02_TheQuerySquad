@@ -54,7 +54,7 @@ public class VentanaMenu extends JPanel {
 		
 		lblOpcionUno = new JLabel("   Opcion 1");
 		lblOpcionUno.setForeground(new Color(225, 234, 231));
-		lblOpcionUno.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		lblOpcionUno.setFont(FuenteProyecto.createFont("src/fuentes/RobotoCondensed-Bold.ttf", 14));
 		lblOpcionUno.setBounds(22, 0, 260, 50);
 		btnOpcionUno.add(lblOpcionUno);
 		
