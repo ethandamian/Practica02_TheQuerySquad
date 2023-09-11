@@ -10,9 +10,9 @@ import java.util.ArrayList;
  */
 public class Proveedor extends Trabajador {
 	
-	String producto;
-	String frecuenciaServicio;
-	float costoServicio;
+	protected String producto;
+	protected String frecuenciaServicio;
+	protected float costoServicio;
 	
 
 	/**

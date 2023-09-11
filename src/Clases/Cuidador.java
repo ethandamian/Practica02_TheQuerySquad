@@ -9,10 +9,10 @@ import java.util.ArrayList;
  * Clase para representar a un trabajador del zoologico
  */
 public class Cuidador extends Trabajador {
-	String animalACargo;
-	float salario;
-	String diasTrabajo;
-	String horarioLaboral;
+	protected String animalACargo;
+	protected float salario;
+	protected String diasTrabajo;
+	protected String horarioLaboral;
 	
 
 	/**

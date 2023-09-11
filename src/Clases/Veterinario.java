@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public class Veterinario extends Trabajador {
 	
-	String especialidad;
-	float salario;
+	protected String especialidad;
+	protected float salario;
 	
 	/**
 	 * Constructor sin argumentos

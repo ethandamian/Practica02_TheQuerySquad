@@ -9,13 +9,13 @@ import java.util.ArrayList;
  */
 public class Bioma {
 	
-	int numVeterinarios;
-	int numJaulaas;
-	String servicio;
-	String tipo;
-	int numCuidadores;
-	int numAnimales;
-	ArrayList<String> serviciosAVisitantes;
+	protected int numVeterinarios;
+	protected int numJaulaas;
+	protected String servicio;
+	protected String tipo;
+	protected int numCuidadores;
+	protected int numAnimales;
+	protected ArrayList<String> serviciosAVisitantes;
 	
 	/**
 	 * Método constructor sin argumentos
@@ -157,6 +157,28 @@ public class Bioma {
 	 */
 	public void setServiciosAVisitantes(ArrayList<String> serviciosAVisitantes) {
 		this.serviciosAVisitantes = serviciosAVisitantes;
+	}
+	
+	/**
+	 * Metodo para añadir un servicio a visitantes (baños, tiendas, comida)
+	 * @param servicio
+	 */
+	public void addServicioAVisitantes(String servicio) {
+		serviciosAVisitantes.add(servicio);
+	}
+	
+	/**
+	 * Metodo para eliminar un servicio de la lista de servicios a visitantes
+	 * @param servicio
+	 * @return boolean: true si se pudo eliminar, false si el servicio no estaba en la lista
+	 */
+	public boolean eliminarServicioAVisitantes(String servicio) {
+		if (serviciosAVisitantes.contains(servicio)) {
+			serviciosAVisitantes.remove(servicio);
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 
