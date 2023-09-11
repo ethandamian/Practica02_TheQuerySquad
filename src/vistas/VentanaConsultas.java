@@ -3,9 +3,13 @@ package vistas;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 
 public class VentanaConsultas extends VentanaMenu {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Create the panel.
@@ -31,8 +35,8 @@ public class VentanaConsultas extends VentanaMenu {
 		
 		lblTituloMenu.setText("MENU CONSULTAS");
 		
-		descripcion = "<html><body>En este menu realizar las consultas de los veterinarios, biomas y cuidadores</body></html>";
-		descripcionDos = "<html><body>Las diferentes consultas que se pueden realizar estan en las opciones que se encunetran a la izquierda.</body></html>";
+		descripcion = "<html><body>En este menu se pueden realizar las consultas de los veterinarios, biomas y cuidadores</body></html>";
+		descripcionDos = "<html><body>Las diferentes consultas que se pueden realizar estan en las opciones que se encuentran a la izquierda.</body></html>";
 		
 		lblNewLabel.setText(descripcion);
 		lblNewLabel_1.setText(descripcionDos);

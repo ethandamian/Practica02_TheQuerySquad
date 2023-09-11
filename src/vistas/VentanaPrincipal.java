@@ -1,28 +1,30 @@
 package vistas;
 
-import java.awt.EventQueue;
-
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import java.awt.FlowLayout;
 import java.awt.BorderLayout;
-import javax.swing.JMenu;
-import javax.swing.JOptionPane;
-
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.font.TextAttribute;
 import java.util.Map;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+/**
+ * 
+ */
 public class VentanaPrincipal extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private final String urlFuenteString = "src/fuentes/RobotoCondensed-Bold.ttf";
 	private JPanel panelPrincipal;
@@ -30,6 +32,7 @@ public class VentanaPrincipal extends JFrame {
 	private static JPanel panelCentral;
 	private VentanaRegistro ventanaRegistro;
 	private VentanaConsultas ventanaConsultas;
+	private VentanaEliminar ventanaEliminar;
 
 
 	
@@ -112,6 +115,12 @@ public class VentanaPrincipal extends JFrame {
 		header.add(lblConsultar);
 		
 		JLabel lblEliminar = new JLabel("Eliminar");
+		lblEliminar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				changePrincipalPanel(ventanaEliminar);
+			}
+		});
 		lblEliminar.setForeground(new Color(225, 234, 231));
 		lblEliminar.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEliminar.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
@@ -190,6 +199,18 @@ public class VentanaPrincipal extends JFrame {
 	public void setVentanaConsultas(VentanaConsultas ventanaConsultas) {
 		this.ventanaConsultas = ventanaConsultas;
 	}
+
+
+	public VentanaEliminar getVentanaEliminar() {
+		return ventanaEliminar;
+	}
+
+
+	public void setVentanaEliminar(VentanaEliminar ventanaEliminar) {
+		this.ventanaEliminar = ventanaEliminar;
+	}
+	
+	
 	
 	
 

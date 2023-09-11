@@ -1,16 +1,19 @@
 package vistas;
 
-import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Font;
 
-import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class VentanaMenu extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected JPanel panelMenu;
 	protected JComponent panelMenuOpciones;
 	protected JComponent btnOpcionUno;
@@ -90,7 +93,7 @@ public class VentanaMenu extends JPanel {
 		lblTituloMenu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloMenu.setForeground(new Color(15, 36, 36));
 		lblTituloMenu.setFont(new Font("Roboto Condensed", Font.BOLD, 30));
-		lblTituloMenu.setBounds(116, 72, 269, 36);
+		lblTituloMenu.setBounds(65, 75, 365, 36);
 		panelDescripcion.add(lblTituloMenu);
 		
 
@@ -105,7 +108,7 @@ public class VentanaMenu extends JPanel {
 		lblNewLabel_1 = new JLabel(descripcionDos);
 		lblNewLabel_1.setForeground(new Color(24, 61, 61));
 		lblNewLabel_1.setFont(new Font("Roboto Condensed", Font.BOLD, 18));
-		lblNewLabel_1.setBounds(65, 209, 354, 51);
+		lblNewLabel_1.setBounds(65, 209, 354, 68);
 		panelDescripcion.add(lblNewLabel_1);
 
 	}
