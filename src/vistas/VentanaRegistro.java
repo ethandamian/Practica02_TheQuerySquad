@@ -4,6 +4,11 @@ import javax.swing.ImageIcon;
 
 public class VentanaRegistro extends VentanaMenu{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public VentanaRegistro(){
 		super();
 		

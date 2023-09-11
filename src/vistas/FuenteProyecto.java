@@ -11,9 +11,10 @@ import java.io.InputStream;
 public class FuenteProyecto {
 	
 	/**
-	 * Creates the font that it is used in all the project.
-	 * @param fontsize The font size  
-	 * @return The Roboto Condesed Bold font 
+	 * Crea la fuente que se va a usar en el projecto
+	 * @param urlFont La ruta donde se enceuntra la fuente
+	 * @param fontsize El tamanio de la fuente   
+	 * @return La fuente  
 	 */
 	public static Font createFont(String urlFont, float fontsize) {
 		Font robotoCondesedBoldFont = null;
