@@ -33,6 +33,7 @@ public class VentanaPrincipal extends JFrame {
 	private VentanaRegistro ventanaRegistro;
 	private VentanaConsultas ventanaConsultas;
 	private VentanaEliminar ventanaEliminar;
+	private JPanel panelHome;
 
 
 	
@@ -82,6 +83,12 @@ public class VentanaPrincipal extends JFrame {
 		header.setLayout(null);
 		
 		JLabel lblHome = new JLabel("Home");
+		lblHome.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				changePrincipalPanel(panelHome);
+			}
+		});
 		lblHome.setForeground(new Color(225, 234, 231));
 		lblHome.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
 		lblHome.setBounds(21, 11, 49, 29);
@@ -133,16 +140,22 @@ public class VentanaPrincipal extends JFrame {
 		panelPrincipal.add(panelCentral);
 		panelCentral.setLayout(null);
 		
+		panelHome = new JPanel();
+		panelHome.setBackground(new Color(24, 61, 61));
+		panelHome.setBounds(0, 0, 777, 407);
+		panelCentral.add(panelHome);
+		panelHome.setLayout(null);
+		
 		JLabel lblLogo = new JLabel("   ");
-		lblLogo.setBounds(169, 122, 421, 205);
-		panelCentral.add(lblLogo);
+		lblLogo.setBounds(179, 128, 421, 205);
+		panelHome.add(lblLogo);
 		lblLogo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/imagenes/logo.png")));
 		
 		JLabel lblNewLabel = new JLabel("BIENVENIDO! ");
 		lblNewLabel.setForeground(new Color(225, 234, 231));
-		lblNewLabel.setFont(FuenteProyecto.createFont(urlFuenteString, 40));
-		lblNewLabel.setBounds(273, 63, 233, 32);
-		panelCentral.add(lblNewLabel);
+		lblNewLabel.setFont(FuenteProyecto.createFont("src/fuentes/RobotoCondensed-Bold.ttf", 30));
+		lblNewLabel.setBounds(283, 69, 233, 32);
+		panelHome.add(lblNewLabel);
 		
 	}
 	
@@ -209,11 +222,4 @@ public class VentanaPrincipal extends JFrame {
 	public void setVentanaEliminar(VentanaEliminar ventanaEliminar) {
 		this.ventanaEliminar = ventanaEliminar;
 	}
-	
-	
-	
-	
-
-
-	
 }
