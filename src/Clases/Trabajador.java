@@ -5,21 +5,21 @@ import java.util.ArrayList;
  * Clase para representar a un trabajador del zoologico
  */
 public class Trabajador {
-	String finContrato;
-	String inicioContrato;
-	String genero;
-	String rfc;
-	String nombre;
-	String paterno;
-	String materno;
-	String calle;
-	int numInterior;
-	int numExterior;
-	String colonia;
-	String estado;
-	String nacimiento;
-	ArrayList<String> eMail;
-	ArrayList<Long> telefono;
+	protected String finContrato;
+	protected String inicioContrato;
+	protected String genero;
+	protected String rfc;
+	protected String nombre;
+	protected String paterno;
+	protected String materno;
+	protected String calle;
+	protected int numInterior;
+	protected int numExterior;
+	protected String colonia;
+	protected String estado;
+	protected String nacimiento;
+	protected ArrayList<String> eMail;
+	protected ArrayList<Long> telefono;
 	
 	/**
 	 * Constructor sin argumentos
@@ -310,10 +310,49 @@ public class Trabajador {
 		this.telefono = telefono;
 	}
 	
+	/**
+	 * Metodo para agregar un email a la lista de emails del trabajador
+	 * @param email
+	 */
+	public void addEMail(String email) {
+		eMail.add(email);
+	}
 	
+	/**
+	 * Metodo para eliminar un eMail de la lista de e-Mails del trabajador
+	 * @param email
+	 * @return boolean: true si se pudo eliminar correctamente, false si el elemento no estaba en la lista
+	 */
+	public boolean eliminarMail(String email) {
+		if(eMail.contains(email)) {
+			eMail.remove(email);
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
+	/**
+	 * Metodo para agregar un telefono a la lista de teléfonos del trabajador
+	 * @param telefonoN
+	 */
+	public void addTelefono(Long telefonoN) {
+		telefono.add(telefonoN);
+	}
 	
-	
+	/**
+	 * Metodo para eliminar un telefono de la lista de telefonos del trabajador
+	 * @param telefono
+	 * @return
+	 */
+	public boolean eliminartelefono (Long tel) {
+		if(telefono.contains(tel)) {
+			telefono.remove(tel);
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 	
 	
