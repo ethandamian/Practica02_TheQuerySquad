@@ -5,6 +5,8 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -13,6 +15,8 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JProgressBar;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaEliminarMenu extends JPanel {
 	protected JTextField textFieldOpcionUsuario;
@@ -58,6 +62,21 @@ public class VentanaEliminarMenu extends JPanel {
 		panelNorte.add(lblOpcionParaEliminar);
 		
 		btnEliminar = new JButton("Eliminar");
+		btnEliminar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				String t = textFieldOpcionUsuario.getText();
+				try{
+		            int n = Integer.parseInt(t);
+		          
+		        }
+		        catch (NumberFormatException ex){
+		        	JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
+		        	textFieldOpcionUsuario.setText("");
+		        }
+			}
+		});
 		btnEliminar.setForeground(new Color(41, 56, 47));
 		btnEliminar.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		btnEliminar.setBounds(619, 54, 89, 25);

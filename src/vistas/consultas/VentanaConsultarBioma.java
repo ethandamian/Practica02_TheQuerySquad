@@ -6,7 +6,11 @@ import vistas.FuenteProyecto;
 
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaConsultarBioma extends VentanaConsultasMenu{
 	
@@ -17,6 +21,20 @@ public class VentanaConsultarBioma extends VentanaConsultasMenu{
 	 * Create the panel.
 	 */
 	public VentanaConsultarBioma() {
+		btnBuscar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String t = textFieldInputUsuario.getText();
+				try{
+		            int n = Integer.parseInt(t);
+		          
+		        }
+		        catch (NumberFormatException ex){
+		        	JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
+		        	textFieldInputUsuario.setText("");
+		        }
+			}
+		});
 		lblBusqueda.setText("Buscar por ID");
 		lblTitulo.setBounds(38, 41, 258, 35);
 		lblTitulo.setText("CONSULTAS DE BIOMA");
