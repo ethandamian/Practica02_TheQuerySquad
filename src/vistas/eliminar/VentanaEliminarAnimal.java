@@ -2,9 +2,9 @@ package vistas.eliminar;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
 
-public class VentanaEliminarCuidador extends VentanaEliminarMenu{
+public class VentanaEliminarAnimal extends VentanaEliminarMenu{
 	
-	public VentanaEliminarCuidador() {
+	public VentanaEliminarAnimal() {
 		textFieldOpcionUsuario.setEditable(true);
 		textFieldOpcionUsuario.setEnabled(true);
 		lblOpcionParaEliminar.setForeground(new Color(227, 236, 233));
@@ -31,13 +31,13 @@ public class VentanaEliminarCuidador extends VentanaEliminarMenu{
 				{null, null, null},
 			},
 			new String[] {
-				"RFC", "Nombre Cuidador", "Animal a cargo"
+				"ID", "Especie", "Num_de_jaula"
 			}
 		));
 		table.getColumnModel().getColumn(1).setPreferredWidth(83);
-		lblOpcionParaEliminar.setText("Eliminar por RFC");
+		lblOpcionParaEliminar.setText("Eliminar por ID");
 		lblMenuEliminarTitulo.setBounds(27, 34, 224, 33);
-		lblMenuEliminarTitulo.setText("ELIMINAR CUIDADOR");
+		lblMenuEliminarTitulo.setText("ELIMINAR ANIMAL");
 		
 	}
 

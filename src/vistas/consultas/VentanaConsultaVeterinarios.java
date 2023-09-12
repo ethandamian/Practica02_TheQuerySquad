@@ -14,24 +14,31 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador{
 	public VentanaConsultaVeterinarios() {
 		super();
 		
-		JLabel lblEspecialidad = new JLabel("Especialidad");
-		lblEspecialidad.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
-		lblEspecialidad.setBounds(392, 201, 126, 26);
+		JLabel lblEspecialidad = new JLabel("Especialidad:");
+		lblEspecialidad.setHorizontalAlignment(SwingConstants.LEFT);
+		lblEspecialidad.setFont(null);
+		lblEspecialidad.setBounds(568, 73, 126, 26);
 		panelSur.add(lblEspecialidad);
 		
-		JLabel lblEspecialidadValor = new JLabel("   ");
-		lblEspecialidadValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
-		lblEspecialidadValor.setBounds(392, 234, 126, 26);
+		JLabel lblEspecialidadValor = new JLabel("    ");
+		lblEspecialidadValor.setFont(null);
+		lblEspecialidadValor.setBounds(568, 100, 126, 26);
 		panelSur.add(lblEspecialidadValor);
 		
 		JLabel lblSalario = new JLabel("Salario:");
-		lblSalario.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
-		lblSalario.setBounds(570, 11, 126, 26);
+		lblSalario.setHorizontalAlignment(SwingConstants.LEFT);
+		lblSalario.setFont(null);
+		lblSalario.setBounds(568, 137, 126, 26);
 		panelSur.add(lblSalario);
 		
-		JLabel lblSalarioValor = new JLabel("   ");
-		lblSalarioValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
-		lblSalarioValor.setBounds(570, 44, 126, 26);
+		JLabel lblSalarioValor = new JLabel("    ");
+		lblSalarioValor.setFont(null);
+		lblSalarioValor.setBounds(568, 164, 126, 26);
 		panelSur.add(lblSalarioValor);
+		
+		JLabel lblColoniaValor = new JLabel("    ");
+		lblColoniaValor.setFont(null);
+		lblColoniaValor.setBounds(568, 201, 126, 26);
+		panelSur.add(lblColoniaValor);
 	}
 }
