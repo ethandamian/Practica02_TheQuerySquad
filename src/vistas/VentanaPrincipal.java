@@ -31,10 +31,12 @@ public class VentanaPrincipal extends JFrame {
 	private JPanel panelPrincipal;
 	
 	private static JPanel panelCentral;
+	private JPanel panelHome;
+	
 	private VentanaRegistro ventanaRegistro;
 	private VentanaConsultas ventanaConsultas;
 	private VentanaEliminar ventanaEliminar;
-	private JPanel panelHome;
+	private VentanaEditarMenu ventanaEditarMenu;
 
 
 	
@@ -51,6 +53,7 @@ public class VentanaPrincipal extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setResizable(false);
 		
 		
 		this.addWindowListener(new java.awt.event.WindowAdapter() {
