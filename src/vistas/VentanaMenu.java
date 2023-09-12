@@ -2,6 +2,7 @@ package vistas;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.InputStream;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -28,7 +29,7 @@ public class VentanaMenu extends JPanel {
 	protected String descripcionDos;
 	protected JLabel lblNewLabel_1;
 	protected JLabel lblOpcionTres;
-
+	private String urlFuenteString = "src/fuentes/RobotoCondensed-Bold.ttf";
 	/**
 	 * Create the panel.
 	 */
@@ -54,7 +55,7 @@ public class VentanaMenu extends JPanel {
 		
 		lblOpcionUno = new JLabel("   Opcion 1");
 		lblOpcionUno.setForeground(new Color(225, 234, 231));
-		lblOpcionUno.setFont(FuenteProyecto.createFont("src/fuentes/RobotoCondensed-Bold.ttf", 14));
+		lblOpcionUno.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
 		lblOpcionUno.setBounds(22, 0, 260, 50);
 		btnOpcionUno.add(lblOpcionUno);
 		
@@ -66,7 +67,7 @@ public class VentanaMenu extends JPanel {
 		
 		lblOpcionDos = new JLabel("   Opcion 2");
 		lblOpcionDos.setForeground(new Color(225, 234, 231));
-		lblOpcionDos.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		lblOpcionDos.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
 		lblOpcionDos.setBounds(20, 0, 262, 50);
 		btnOpcion2.add(lblOpcionDos);
 		
@@ -79,7 +80,7 @@ public class VentanaMenu extends JPanel {
 		
 		lblOpcionTres = new JLabel("   Opcion 3");
 		lblOpcionTres.setForeground(new Color(225, 234, 231));
-		lblOpcionTres.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		lblOpcionTres.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
 		lblOpcionTres.setBounds(22, 0, 260, 50);
 		btnOpcion3.add(lblOpcionTres);
 		
@@ -92,7 +93,7 @@ public class VentanaMenu extends JPanel {
 		lblTituloMenu = new JLabel("TITULO MENU");
 		lblTituloMenu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloMenu.setForeground(new Color(15, 36, 36));
-		lblTituloMenu.setFont(new Font("Roboto Condensed", Font.BOLD, 30));
+		lblTituloMenu.setFont(FuenteProyecto.createFont(urlFuenteString, 30));
 		lblTituloMenu.setBounds(65, 75, 365, 36);
 		panelDescripcion.add(lblTituloMenu);
 		
@@ -100,14 +101,14 @@ public class VentanaMenu extends JPanel {
 		descripcion = "<html><body>DESCRIPCION 1</body></html>";
 		lblNewLabel = new JLabel(descripcion);
 		lblNewLabel.setForeground(new Color(24, 61, 61));
-		lblNewLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 18));
+		lblNewLabel.setFont(FuenteProyecto.createFont(urlFuenteString, 18));
 		lblNewLabel.setBounds(65, 142, 354, 51);
 		panelDescripcion.add(lblNewLabel);
 		
 		descripcionDos = "<html><body>DESCRIPCION2</body></html>";
 		lblNewLabel_1 = new JLabel(descripcionDos);
 		lblNewLabel_1.setForeground(new Color(24, 61, 61));
-		lblNewLabel_1.setFont(new Font("Roboto Condensed", Font.BOLD, 18));
+		lblNewLabel_1.setFont(FuenteProyecto.createFont(urlFuenteString, 18));
 		lblNewLabel_1.setBounds(65, 209, 354, 68);
 		panelDescripcion.add(lblNewLabel_1);
 
