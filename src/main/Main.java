@@ -1,7 +1,5 @@
 package main;
 
-import vistas.VentanaPrincipal;
-import vistas.VentanaMenu;
 
 public class Main {
 	
