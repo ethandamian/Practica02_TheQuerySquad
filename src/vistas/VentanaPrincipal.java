@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.font.TextAttribute;
+import java.nio.channels.NonReadableChannelException;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
@@ -26,7 +27,7 @@ public class VentanaPrincipal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private final String urlFuenteString = "src/fuentes/RobotoCondensed-Bold.ttf";
+	private String urlFuenteString = "src/fuentes/RobotoCondensed-Bold.ttf";
 	private JPanel panelPrincipal;
 	
 	private static JPanel panelCentral;
@@ -153,7 +154,7 @@ public class VentanaPrincipal extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("BIENVENIDO! ");
 		lblNewLabel.setForeground(new Color(225, 234, 231));
-		lblNewLabel.setFont(FuenteProyecto.createFont("src/fuentes/RobotoCondensed-Bold.ttf", 30));
+		lblNewLabel.setFont(FuenteProyecto.createFont(urlFuenteString, 30));
 		lblNewLabel.setBounds(283, 69, 233, 32);
 		panelHome.add(lblNewLabel);
 		

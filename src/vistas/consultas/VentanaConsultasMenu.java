@@ -38,11 +38,13 @@ public class VentanaConsultasMenu extends JPanel {
 		panelNorte.setLayout(null);
 		
 		lblTitulo = new JLabel("CONSULTAS DE [ ]");
+		lblTitulo.setForeground(new Color(18, 31, 27));
 		lblTitulo.setFont(new Font("Roboto Condensed", Font.BOLD, 25));
 		lblTitulo.setBounds(38, 41, 215, 35);
 		panelNorte.add(lblTitulo);
 		
 		lblBusqueda = new JLabel("Buscar por [ ]");
+		lblBusqueda.setForeground(new Color(18, 31, 27));
 		lblBusqueda.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
 		lblBusqueda.setBounds(484, 28, 108, 28);
 		panelNorte.add(lblBusqueda);
@@ -53,6 +55,7 @@ public class VentanaConsultasMenu extends JPanel {
 		textFieldInputUsuario.setColumns(10);
 		
 		btnBuscar = new JButton("Buscar");
+		btnBuscar.setForeground(new Color(18, 31, 27));
 		btnBuscar.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		btnBuscar.setBounds(626, 67, 89, 23);
 		panelNorte.add(btnBuscar);
