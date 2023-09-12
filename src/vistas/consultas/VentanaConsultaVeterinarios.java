@@ -4,8 +4,12 @@ import javax.swing.table.DefaultTableModel;
 import vistas.FuenteProyecto;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador{
 	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
@@ -13,6 +17,17 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador{
 	
 	public VentanaConsultaVeterinarios() {
 		super();
+		btnBuscar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String t = textFieldInputUsuario.getText();
+				if(t.length()==12 || t.length()==13) {
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "Ingresa un RFC valido");
+				}
+			}
+		});
 		
 		JLabel lblEspecialidad = new JLabel("Especialidad");
 		lblEspecialidad.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
