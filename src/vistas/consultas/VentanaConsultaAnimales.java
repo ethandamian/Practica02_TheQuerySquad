@@ -6,7 +6,11 @@ import vistas.FuenteProyecto;
 
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 	private JLabel lblSexoValor;
@@ -17,6 +21,20 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 	 * Create the panel.
 	 */
 	public VentanaConsultaAnimales() {
+		btnBuscar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String t = textFieldInputUsuario.getText();
+				try{
+		            int n = Integer.parseInt(t);
+		          
+		        }
+		        catch (NumberFormatException ex){
+		        	JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
+		        	textFieldInputUsuario.setText("");
+		        }
+			}
+		});
 		lblBusqueda.setForeground(new Color(232, 238, 236));
 		lblTitulo.setForeground(new Color(232, 238, 236));
 		panelSur.setBackground(new Color(92, 131, 116));
