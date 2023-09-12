@@ -8,6 +8,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import vistas.FuenteProyecto;
+
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
@@ -19,6 +22,8 @@ public class VentanaConsultasMenu extends JPanel {
 	protected JLabel lblBusqueda;
 	protected JButton btnBuscar;
 	protected JPanel panelSur;
+	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
+	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
 
 	/**
 	 * Create the panel.
@@ -39,13 +44,13 @@ public class VentanaConsultasMenu extends JPanel {
 		
 		lblTitulo = new JLabel("CONSULTAS DE [ ]");
 		lblTitulo.setForeground(new Color(18, 31, 27));
-		lblTitulo.setFont(new Font("Roboto Condensed", Font.BOLD, 25));
+		lblTitulo.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
 		lblTitulo.setBounds(38, 41, 215, 35);
 		panelNorte.add(lblTitulo);
 		
 		lblBusqueda = new JLabel("Buscar por [ ]");
 		lblBusqueda.setForeground(new Color(18, 31, 27));
-		lblBusqueda.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		lblBusqueda.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 14));
 		lblBusqueda.setBounds(484, 28, 108, 28);
 		panelNorte.add(lblBusqueda);
 		
@@ -56,7 +61,7 @@ public class VentanaConsultasMenu extends JPanel {
 		
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.setForeground(new Color(18, 31, 27));
-		btnBuscar.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		btnBuscar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 		btnBuscar.setBounds(626, 67, 89, 23);
 		panelNorte.add(btnBuscar);
 		
