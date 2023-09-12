@@ -4,12 +4,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 
 import vistas.FuenteProyecto;
 
 import javax.swing.JSeparator;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 	private JTextField textFieldTipoDeBioma;
@@ -26,7 +33,8 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 	 * Create the panel.
 	 */
 	public VentanaRegistrarBiomas() {
-		lblTituloDerecho.setBounds(38, 57, 397, 28);
+		panelDerecho.setBounds(314, 0, 463, 407);
+		lblTituloDerecho.setBounds(22, 38, 397, 28);
 		lblTituloDerecho.setText("INGRESA DATOS DEL BIOMA");
 		
 		JLabel lblTipoDeBioma = new JLabel("Tipo de Bioma:");
@@ -137,6 +145,37 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		JSeparator separator_5 = new JSeparator();
 		separator_5.setBounds(231, 350, 136, 2);
 		panelDerecho.add(separator_5);
+		
+		JButton button = new JButton("New button");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				String nVet = textFieldNumVeterinarios.getText();
+				String nJaulas = textFieldNumJaulas.getText();
+				String nAnimales = textFieldNumAnimales.getText();
+				String nCuidadores = textFieldNumCuidadores.getText();
+				String serv = textFieldServicios.getText();
+				String tipo = textFieldTipoDeBioma.getText();
+				
+				try{
+		            int vet = Integer.parseInt(nVet);
+		            int jaulas = Integer.parseInt(nJaulas);
+		            int animales = Integer.parseInt(nAnimales);
+		            int cuidadores = Integer.parseInt(nCuidadores);
+		          
+		        }
+		        catch (NumberFormatException ex){
+		        	JOptionPane.showMessageDialog(null, "No hay numeros en todos los campos donde se requieren numeros");
+		        }
+			}
+		});
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button.setBounds(154, 370, 117, 25);
+		panelDerecho.add(button);
 		
 		lblLogo.setIcon(new ImageIcon(VentanaRegistrarMenu.class.getResource("/imagenes/selva.png")));
 		
