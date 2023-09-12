@@ -16,6 +16,7 @@ public class Bioma {
 	protected int numCuidadores;
 	protected int numAnimales;
 	protected ArrayList<String> serviciosAVisitantes;
+	protected int id;
 	
 	/**
 	 * Método constructor sin argumentos
@@ -35,7 +36,7 @@ public class Bioma {
 	 * @param servicios
 	 */
 	public Bioma(int numVeterinarios, int numJaulaas, String servicio, String tipo, int numCuidadores,
-			int numAnimales, ArrayList<String> servicios) {
+			int numAnimales, ArrayList<String> servicios, int id) {
 		super();
 		this.numVeterinarios = numVeterinarios;
 		this.numJaulaas = numJaulaas;
@@ -44,8 +45,25 @@ public class Bioma {
 		this.numCuidadores = numCuidadores;
 		this.numAnimales = numAnimales;
 		this.serviciosAVisitantes = servicios;
+		this.id=id;
 	}
 	
+	/**
+	 * Metodo para obtener el id del bioma
+	 * @return int
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * Metodo para modificar el id del bioma
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	/**
 	 * Método para obtener el número de veterinarios que hay en el bionma
 	 * @return int 

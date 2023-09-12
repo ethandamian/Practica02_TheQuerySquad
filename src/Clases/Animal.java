@@ -12,6 +12,7 @@ public class Animal {
 	protected float pesoKg;
 	protected float alturaCm;
 	protected String sexo;
+	protected int id;
 	protected int numJaula;
 	protected String alimentacion;
 	protected String indicacionesMedicas;
@@ -28,7 +29,7 @@ public class Animal {
 	 * @param indicacionesMedicas
 	 */
 	public Animal(String nombre, String especie, float pesoKg, float alturaCm, String sexo, int numJaula,
-			String alimentacion, String indicacionesMedicas) {
+			String alimentacion, String indicacionesMedicas, int id) {
 		super();
 		this.nombre = nombre;
 		this.especie = especie;
@@ -38,8 +39,25 @@ public class Animal {
 		this.numJaula = numJaula;
 		this.alimentacion = alimentacion;
 		this.indicacionesMedicas = indicacionesMedicas;
+		this.id =id;
 	}
 	
+	/**
+	 * Metodo para obtener el id del animal
+	 * @return int
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * Metodo para modificar el id del animal
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	/**
 	 * Metodo para obtener el nombre del animal
 	 * @return String

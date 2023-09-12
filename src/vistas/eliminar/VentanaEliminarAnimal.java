@@ -1,11 +1,27 @@
 package vistas.eliminar;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaEliminarAnimal extends VentanaEliminarMenu {
 
 	public VentanaEliminarAnimal() {
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String t = textFieldOpcionUsuario.getText();
+				try{
+		            int n = Integer.parseInt(t);
+		          
+		        }
+		        catch (NumberFormatException ex){
+		        	JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
+		        	textFieldOpcionUsuario.setText("");
+		        }
+			}
+		});
 		textFieldOpcionUsuario.setEditable(true);
 		textFieldOpcionUsuario.setEnabled(true);
 		lblOpcionParaEliminar.setForeground(new Color(227, 236, 233));
