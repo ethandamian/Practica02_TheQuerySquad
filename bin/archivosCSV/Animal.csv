@@ -1,2 +1,7 @@
 id,nombre,especie,peso,altura,sexo,numJaula,alimentacion,indicacionesMedicas
-3,juan,caballo,300Kg,2.70,Macho,15,Hervivoro,estaEnUnBalcon
+1,Pedrito,ajolote,1Kg,19cm,Macho,13,Hervivoro,EsFeliz
+2,Pedrito,ajolote,1Kg,19cm,Macho,13,Hervivoro,EsFeliz
+3,Pedrito,ajolote,1Kg,19cm,Macho,13,Hervivoro,EsFeliz
+4,Valki,perro,4Kg,2m,Hembra,9,carnivoro,soporto
+5,Torito,Toro,1233Kg,2m,Hembra,111,carnivoro,oleee
+HDFNVDA02312MXN,Torito,Toro,1233Kg,2m,Hembra,111,carnivoro,oleee

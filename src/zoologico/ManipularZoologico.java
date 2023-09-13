@@ -81,32 +81,69 @@ public class ManipularZoologico {
 	}
 	
 	public boolean inserta(String entidad) {
+	    String line = "";
+	    try {
+	        BufferedReader br = new BufferedReader(new FileReader(path));
+	        BufferedWriter bw = new BufferedWriter(new FileWriter(path, true));
+
+	        // Variable para rastrear el valor máximo de ID
+	        int maxID = 0;
+	        int cont = 0;
+	        // Leer el archivo para encontrar el valor máximo de ID
+	        while ((line = br.readLine()) != null) {
+	        	if(cont == 0) {
+	        		cont++;
+	        		continue;
+	        	}
+	            String[] values = line.split(",");
+	            int currentID = Integer.parseInt(values[0]);
+	            if (currentID > maxID) {
+	                maxID = currentID;
+	            }
+	        }
+
+	        // Incrementar el valor máximo de ID para la nueva entidad
+	        int nuevoID = maxID + 1;
+
+	        // Escribir la nueva entidad en el archivo CSV
+	        bw.newLine();
+	        bw.write(nuevoID + "," + entidad);
+	        bw.close();
+	        br.close();
+	        return true;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return false;
+	}
+
+	public boolean inserta(String entidad, String id) {
 		String line = "";
 		try {
-			
-			BufferedReader br = new BufferedReader(new FileReader(path));
-			BufferedWriter bw = new BufferedWriter(new FileWriter(path, true));
-			int cont = 0;
-			while ((line = br.readLine()) != null) {
-				if(cont == 0)continue;
+			 BufferedReader br = new BufferedReader(new FileReader(path));
+			 BufferedWriter bw = new BufferedWriter(new FileWriter(path, true));
+			 
+			 while ((line = br.readLine()) != null) {
 				String[] values = line.split(",");
-				int valorAnterior = Integer.parseInt(values[0]);//
-				if((line = br.readLine()) == null) {
-					bw.write((valorAnterior++) + "," + entidad);
-					bw.close();
+				if(values[0].equals(id)) {
 					br.close();
-					return true;
+					return false;
 				}
 			 }
-			
-		} catch (Exception e) {
-			e.getStackTrace();
+			 
+			 bw.newLine();
+			 bw.write(id + "," + entidad);
+			 bw.close();
+			 br.close();
+			 return true;
+			 
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		return false;
 	}
-	
-	public boolean inserta() {
-		return false;
-	}
+
 }
 
