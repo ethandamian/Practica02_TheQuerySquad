@@ -27,22 +27,21 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 	private JTextField textFieldServicios;
 	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
 	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
-	
-	
+
 	/**
-	 * Create the panel.
+	 * Crea el panel de la Ventana de registrar biomas.
 	 */
 	public VentanaRegistrarBiomas() {
 		panelDerecho.setBounds(314, 0, 463, 407);
 		lblTituloDerecho.setBounds(22, 38, 397, 28);
 		lblTituloDerecho.setText("INGRESA DATOS DEL BIOMA");
-		
+
 		JLabel lblTipoDeBioma = new JLabel("Tipo de Bioma:");
 		lblTipoDeBioma.setForeground(new Color(227, 236, 233));
 		lblTipoDeBioma.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblTipoDeBioma.setBounds(38, 118, 97, 28);
 		panelDerecho.add(lblTipoDeBioma);
-		
+
 		textFieldTipoDeBioma = new JTextField();
 		textFieldTipoDeBioma.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldTipoDeBioma.setForeground(new Color(227, 236, 233));
@@ -50,18 +49,18 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldTipoDeBioma.setBounds(38, 157, 136, 20);
 		panelDerecho.add(textFieldTipoDeBioma);
 		textFieldTipoDeBioma.setColumns(10);
-		//textFieldTipoDeBioma.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		
+		// textFieldTipoDeBioma.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+
 		JSeparator separator = new JSeparator();
 		separator.setBounds(38, 180, 136, 2);
 		panelDerecho.add(separator);
-		
+
 		JLabel lblNumJaulas = new JLabel("Numero de Jaulas:");
 		lblNumJaulas.setForeground(new Color(227, 236, 233));
 		lblNumJaulas.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNumJaulas.setBounds(38, 199, 122, 28);
 		panelDerecho.add(lblNumJaulas);
-		
+
 		textFieldNumJaulas = new JTextField();
 		textFieldNumJaulas.setForeground(new Color(227, 236, 233));
 		textFieldNumJaulas.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
@@ -69,17 +68,17 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumJaulas.setBackground(new Color(67, 83, 52));
 		textFieldNumJaulas.setBounds(38, 238, 136, 20);
 		panelDerecho.add(textFieldNumJaulas);
-		
+
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(38, 262, 136, 2);
 		panelDerecho.add(separator_1);
-		
+
 		JLabel lblNumCuidadores = new JLabel("Numero de Cuidadores:");
 		lblNumCuidadores.setForeground(new Color(227, 236, 233));
 		lblNumCuidadores.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNumCuidadores.setBounds(38, 286, 147, 28);
 		panelDerecho.add(lblNumCuidadores);
-		
+
 		textFieldNumCuidadores = new JTextField();
 		textFieldNumCuidadores.setForeground(new Color(227, 236, 233));
 		textFieldNumCuidadores.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
@@ -87,17 +86,17 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumCuidadores.setBackground(new Color(67, 83, 52));
 		textFieldNumCuidadores.setBounds(38, 325, 136, 20);
 		panelDerecho.add(textFieldNumCuidadores);
-		
+
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(38, 350, 136, 2);
 		panelDerecho.add(separator_2);
-		
+
 		JLabel lblNumVeterinarios = new JLabel("Numero de Veterinarios:");
 		lblNumVeterinarios.setForeground(new Color(227, 236, 233));
 		lblNumVeterinarios.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNumVeterinarios.setBounds(231, 118, 149, 28);
 		panelDerecho.add(lblNumVeterinarios);
-		
+
 		textFieldNumVeterinarios = new JTextField();
 		textFieldNumVeterinarios.setForeground(new Color(227, 236, 233));
 		textFieldNumVeterinarios.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
@@ -105,17 +104,17 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumVeterinarios.setBackground(new Color(67, 83, 52));
 		textFieldNumVeterinarios.setBounds(231, 157, 136, 20);
 		panelDerecho.add(textFieldNumVeterinarios);
-		
+
 		JSeparator separator_3 = new JSeparator();
 		separator_3.setBounds(231, 180, 136, 2);
 		panelDerecho.add(separator_3);
-		
+
 		JLabel lblNumeroDeAnimales = new JLabel("Numero de Animales:");
 		lblNumeroDeAnimales.setForeground(new Color(227, 236, 233));
 		lblNumeroDeAnimales.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNumeroDeAnimales.setBounds(231, 199, 149, 28);
 		panelDerecho.add(lblNumeroDeAnimales);
-		
+
 		textFieldNumAnimales = new JTextField();
 		textFieldNumAnimales.setForeground(new Color(227, 236, 233));
 		textFieldNumAnimales.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
@@ -123,17 +122,17 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumAnimales.setBackground(new Color(67, 83, 52));
 		textFieldNumAnimales.setBounds(231, 238, 136, 20);
 		panelDerecho.add(textFieldNumAnimales);
-		
+
 		JSeparator separator_4 = new JSeparator();
 		separator_4.setBounds(231, 262, 136, 2);
 		panelDerecho.add(separator_4);
-		
+
 		JLabel lblServicios = new JLabel("Servicio a Visitantes:");
 		lblServicios.setForeground(new Color(227, 236, 233));
 		lblServicios.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblServicios.setBounds(231, 286, 136, 28);
 		panelDerecho.add(lblServicios);
-		
+
 		textFieldServicios = new JTextField();
 		textFieldServicios.setForeground(new Color(227, 236, 233));
 		textFieldServicios.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
@@ -141,33 +140,33 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldServicios.setBackground(new Color(67, 83, 52));
 		textFieldServicios.setBounds(231, 325, 136, 20);
 		panelDerecho.add(textFieldServicios);
-		
+
 		JSeparator separator_5 = new JSeparator();
 		separator_5.setBounds(231, 350, 136, 2);
 		panelDerecho.add(separator_5);
-		
+
 		JButton button = new JButton("New button");
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+
 				String nVet = textFieldNumVeterinarios.getText();
 				String nJaulas = textFieldNumJaulas.getText();
 				String nAnimales = textFieldNumAnimales.getText();
 				String nCuidadores = textFieldNumCuidadores.getText();
 				String serv = textFieldServicios.getText();
 				String tipo = textFieldTipoDeBioma.getText();
-				
-				try{
-		            int vet = Integer.parseInt(nVet);
-		            int jaulas = Integer.parseInt(nJaulas);
-		            int animales = Integer.parseInt(nAnimales);
-		            int cuidadores = Integer.parseInt(nCuidadores);
-		          
-		        }
-		        catch (NumberFormatException ex){
-		        	JOptionPane.showMessageDialog(null, "No hay numeros en todos los campos donde se requieren numeros");
-		        }
+
+				try {
+					int vet = Integer.parseInt(nVet);
+					int jaulas = Integer.parseInt(nJaulas);
+					int animales = Integer.parseInt(nAnimales);
+					int cuidadores = Integer.parseInt(nCuidadores);
+
+				} catch (NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null,
+							"No hay numeros en todos los campos donde se requieren numeros");
+				}
 			}
 		});
 		button.addActionListener(new ActionListener() {
@@ -176,10 +175,8 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		});
 		button.setBounds(154, 370, 117, 25);
 		panelDerecho.add(button);
-		
+
 		lblLogo.setIcon(new ImageIcon(VentanaRegistrarMenu.class.getResource("/imagenes/selva.png")));
-		
-		
 
 	}
 }

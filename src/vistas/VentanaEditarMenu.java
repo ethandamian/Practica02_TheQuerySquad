@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 public class VentanaEditarMenu extends JPanel {
 
 	/**
-	 * Create the panel.
+	 * Crea el panel de la vantana editar menu.
 	 */
 	public VentanaEditarMenu() {
 

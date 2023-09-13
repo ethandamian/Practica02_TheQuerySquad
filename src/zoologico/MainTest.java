@@ -2,6 +2,9 @@ package zoologico;
 
 import java.util.Iterator;
 
+/**
+ * ? Clase para fines de pruebas de la funcionalidad del sistema.
+ */
 public class MainTest {
 	public static void main(String[] args) {
 

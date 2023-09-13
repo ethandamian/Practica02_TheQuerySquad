@@ -26,45 +26,45 @@ public class VentanaConsultasMenu extends JPanel {
 	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
 
 	/**
-	 * Create the panel.
+	 * Crea el panel de la ventana consulta menu.
 	 */
 	public VentanaConsultasMenu() {
 		setLayout(null);
-		
+
 		panelPrincipalMenu = new JPanel();
 		panelPrincipalMenu.setBounds(0, 0, 777, 407);
 		add(panelPrincipalMenu);
 		panelPrincipalMenu.setLayout(null);
-		
+
 		panelNorte = new JPanel();
 		panelNorte.setBackground(new Color(54, 83, 97));
 		panelNorte.setBounds(0, 0, 777, 115);
 		panelPrincipalMenu.add(panelNorte);
 		panelNorte.setLayout(null);
-		
+
 		lblTitulo = new JLabel("CONSULTAS DE [ ]");
 		lblTitulo.setForeground(new Color(18, 31, 27));
 		lblTitulo.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
 		lblTitulo.setBounds(38, 41, 215, 35);
 		panelNorte.add(lblTitulo);
-		
+
 		lblBusqueda = new JLabel("Buscar por [ ]");
 		lblBusqueda.setForeground(new Color(18, 31, 27));
 		lblBusqueda.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 14));
 		lblBusqueda.setBounds(484, 28, 108, 28);
 		panelNorte.add(lblBusqueda);
-		
+
 		textFieldInputUsuario = new JTextField();
 		textFieldInputUsuario.setBounds(484, 64, 125, 28);
 		panelNorte.add(textFieldInputUsuario);
 		textFieldInputUsuario.setColumns(10);
-		
+
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.setForeground(new Color(18, 31, 27));
 		btnBuscar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 		btnBuscar.setBounds(626, 67, 89, 23);
 		panelNorte.add(btnBuscar);
-		
+
 		panelSur = new JPanel();
 		panelSur.setBackground(new Color(138, 184, 168));
 		panelSur.setBounds(0, 115, 777, 292);
