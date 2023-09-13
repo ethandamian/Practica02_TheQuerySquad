@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextArea;
 
 public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 	private JLabel lblSexoValor;
@@ -104,10 +105,12 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 		lblIndicacionesMedicas.setBounds(347, 32, 152, 26);
 		panelSur.add(lblIndicacionesMedicas);
 		
-		JLabel lblEspecieValor_1 = new JLabel("  ");
-		lblEspecieValor_1.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
-		lblEspecieValor_1.setBounds(347, 58, 315, 157);
-		panelSur.add(lblEspecieValor_1);
+		JTextArea textArea = new JTextArea();
+		textArea.setEnabled(false);
+		textArea.setEditable(false);
+		textArea.setBackground(new Color(92, 131, 116));
+		textArea.setBounds(347, 59, 251, 144);
+		panelSur.add(textArea);
 		panelNorte.setBackground(new Color(24, 61, 61));
 		lblBusqueda.setText("Buscar por ID");
 		lblTitulo.setBounds(38, 41, 294, 35);

@@ -1,20 +1,19 @@
 package vistas.consultas;
 
-import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTextField;
+
 import javax.swing.JButton;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import vistas.FuenteProyecto;
 
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-
 public class VentanaConsultasMenu extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected JTextField textFieldInputUsuario;
 	protected JPanel panelPrincipalMenu;
 	protected JPanel panelNorte;
@@ -23,7 +22,6 @@ public class VentanaConsultasMenu extends JPanel {
 	protected JButton btnBuscar;
 	protected JPanel panelSur;
 	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
 
 	/**
 	 * Create the panel.

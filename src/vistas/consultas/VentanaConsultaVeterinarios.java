@@ -1,15 +1,12 @@
 package vistas.consultas;
-import javax.swing.table.DefaultTableModel;
-
-import vistas.FuenteProyecto;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
 import javax.swing.SwingConstants;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
+import vistas.FuenteProyecto;
 
 public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador{
 	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
@@ -31,23 +28,23 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador{
 		
 		JLabel lblEspecialidad = new JLabel("Especialidad:");
 		lblEspecialidad.setHorizontalAlignment(SwingConstants.LEFT);
-		lblEspecialidad.setFont(null);
+		lblEspecialidad.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblEspecialidad.setBounds(568, 73, 126, 26);
 		panelSur.add(lblEspecialidad);
 		
 		JLabel lblEspecialidadValor = new JLabel("    ");
-		lblEspecialidadValor.setFont(null);
+		lblEspecialidadValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		lblEspecialidadValor.setBounds(568, 100, 126, 26);
 		panelSur.add(lblEspecialidadValor);
 		
 		JLabel lblSalario = new JLabel("Salario:");
 		lblSalario.setHorizontalAlignment(SwingConstants.LEFT);
-		lblSalario.setFont(null);
+		lblSalario.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblSalario.setBounds(568, 137, 126, 26);
 		panelSur.add(lblSalario);
 		
 		JLabel lblSalarioValor = new JLabel("    ");
-		lblSalarioValor.setFont(null);
+		lblSalarioValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		lblSalarioValor.setBounds(568, 164, 126, 26);
 		panelSur.add(lblSalarioValor);
 		
