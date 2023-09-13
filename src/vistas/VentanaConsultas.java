@@ -3,8 +3,12 @@ package vistas;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaConsultas extends VentanaMenu {
+	
+	private VentanaPrincipal ventanaPrincipal;
 
 	/**
 	 * 
@@ -16,20 +20,40 @@ public class VentanaConsultas extends VentanaMenu {
 	 */
 	public VentanaConsultas() {
 		super();
+		btnOpcionTres.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaConsultaBioma());
+				
+			}
+		});
+		btnOpcionDos.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaConsultaAnimales());
+			}
+		});
+		btnOpcionUno.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaConsultaVeterinarios());
+			}
+			
+		});
 		
 		panelMenuOpciones.setBackground(new Color(24,61,61));
 		panelDescripcion.setBackground(new Color(92,131,116));
 		
 		btnOpcionUno.setBackground(new Color(24,61,61));
-		btnOpcion2.setBackground(new Color(24,61,61));
-		btnOpcion3.setBackground(new Color(24,61,61));
+		btnOpcionDos.setBackground(new Color(24,61,61));
+		btnOpcionTres.setBackground(new Color(24,61,61));
 		
 		
 		
-		lblOpcionUno.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/buscar.png")));
+		lblOpcionUno.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/consulta-vet.png")));
 		lblOpcionUno.setText("  Consulta de Veterinarios");
-		lblOpcionDos.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/demandante-de-empleo.png")));
-		lblOpcionDos.setText("  Consulta de Cuidadores");
+		lblOpcionDos.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/consulta-animal.png")));
+		lblOpcionDos.setText("  Consulta de Animales");
 		lblOpcionTres.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/buscar-bioma.png")));
 		lblOpcionTres.setText("  Consulta de Biomas");
 		
@@ -42,5 +66,15 @@ public class VentanaConsultas extends VentanaMenu {
 		lblNewLabel_1.setText(descripcionDos);
 
 	}
+
+	public VentanaPrincipal getVentanaPrincipal() {
+		return ventanaPrincipal;
+	}
+
+	public void setVentanaPrincipal(VentanaPrincipal ventanaPrincipal) {
+		this.ventanaPrincipal = ventanaPrincipal;
+	}
+	
+	
 
 }

@@ -3,9 +3,12 @@ package vistas;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class VentanaEliminar extends VentanaMenu{
-
+	private VentanaPrincipal ventanaPrincipal;
+	
 	/**
 	 * 
 	 */
@@ -15,20 +18,41 @@ public class VentanaEliminar extends VentanaMenu{
 	 * Create the panel.
 	 */
 	public VentanaEliminar() {
+		btnOpcionUno.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaEliminarVeterinario());
+				
+			}
+		});
+		btnOpcionDos.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaEliminarAnimal());
+				
+			}
+		});
+		btnOpcionTres.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaEliminarBioma());
+				
+			}
+		});
 		
 		panelMenuOpciones.setBackground(new Color(60,98,85));
 		panelDescripcion.setBackground(new Color(97,135,110));
 		
 		btnOpcionUno.setBackground(new Color(60,98,85));
-		btnOpcion2.setBackground(new Color(60,98,85));
-		btnOpcion3.setBackground(new Color(60,98,85));
+		btnOpcionDos.setBackground(new Color(60,98,85));
+		btnOpcionTres.setBackground(new Color(60,98,85));
 		
 		
 		
-		lblOpcionUno.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/borrar-vet.png")));
+		lblOpcionUno.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/borrar-veterinario.png")));
 		lblOpcionUno.setText("  Eliminar Veterinario");
-		lblOpcionDos.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/borrar-cuidador.png")));
-		lblOpcionDos.setText("  Eliminar Cuidador");
+		lblOpcionDos.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/borrar-animal.png")));
+		lblOpcionDos.setText("  Eliminar Animal");
 		lblOpcionTres.setIcon(new ImageIcon(VentanaConsultas.class.getResource("/imagenes/borrar-bioma.png")));
 		lblOpcionTres.setText("  Eliminar Bioma");
 		
@@ -43,5 +67,15 @@ public class VentanaEliminar extends VentanaMenu{
 		
 
 	}
+
+	public VentanaPrincipal getVentanaPrincipal() {
+		return ventanaPrincipal;
+	}
+
+	public void setVentanaPrincipal(VentanaPrincipal ventanaPrincipal) {
+		this.ventanaPrincipal = ventanaPrincipal;
+	}
+	
+	
 
 }

@@ -1,13 +1,11 @@
 package vistas;
 
 import java.awt.BorderLayout;
+
 import java.awt.Color;
-import java.awt.Font;
+import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.font.TextAttribute;
-import java.nio.channels.NonReadableChannelException;
-import java.util.Map;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -16,6 +14,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import vistas.consultas.VentanaConsultaAnimales;
+import vistas.consultas.VentanaConsultaBioma;
+import vistas.consultas.VentanaConsultaVeterinarios;
+import vistas.eliminar.VentanaEliminarAnimal;
+import vistas.eliminar.VentanaEliminarBioma;
+import vistas.eliminar.VentanaEliminarsVeterinarios;
+import vistas.registrar.VentanaRegistrarAnimal;
+import vistas.registrar.VentanaRegistrarBiomas;
+import vistas.registrar.VentanaRegistrarTrabajador;
+import vistas.registrar.VentanaRegistrarVeterinario;
 
 /**
  * 
@@ -36,7 +45,20 @@ public class VentanaPrincipal extends JFrame {
 	private VentanaRegistro ventanaRegistro;
 	private VentanaConsultas ventanaConsultas;
 	private VentanaEliminar ventanaEliminar;
-	private VentanaEditarMenu ventanaEditarMenu;
+	
+	private VentanaConsultaAnimales ventanaConsultaAnimales;
+	private VentanaConsultaBioma ventanaConsultaBioma;
+	private VentanaConsultaVeterinarios ventanaConsultaVeterinarios;
+	
+	private VentanaEliminarBioma ventanaEliminarBioma;
+	private VentanaEliminarsVeterinarios ventanaEliminarsVeterinarios;
+	private VentanaEliminarAnimal ventanaEliminarAnimal;
+	
+	private VentanaRegistrarBiomas registrarBiomas;
+	private VentanaRegistrarAnimal ventanaRegitrarAnimal;
+	private VentanaRegistrarTrabajador ventanaRegistrarTrabajador;
+	
+	
 
 
 	
@@ -92,6 +114,11 @@ public class VentanaPrincipal extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				changePrincipalPanel(panelHome);
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblHome.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+			}
 		});
 		lblHome.setForeground(new Color(225, 234, 231));
 		lblHome.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
@@ -104,6 +131,11 @@ public class VentanaPrincipal extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				changePrincipalPanel(ventanaRegistro);
 				
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblRegistrar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
 			}
 		});
 		lblRegistrar.setForeground(new Color(225, 234, 231));
@@ -118,6 +150,11 @@ public class VentanaPrincipal extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				changePrincipalPanel(ventanaConsultas);
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblConsultar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+			}
 		});
 		lblConsultar.setForeground(new Color(225, 234, 231));
 		lblConsultar.setHorizontalAlignment(SwingConstants.CENTER);
@@ -130,6 +167,11 @@ public class VentanaPrincipal extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changePrincipalPanel(ventanaEliminar);
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblEliminar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
 			}
 		});
 		lblEliminar.setForeground(new Color(225, 234, 231));
@@ -163,24 +205,6 @@ public class VentanaPrincipal extends JFrame {
 		
 	}
 	
-	
-	/**
-	 * Subraya el texto de un JLabel cuando se le pasa por parametro "true"
-	 * 
-	 * @param labelAsButton El JLabel que va a ser subrayado
-	 * @param underlineOnOf true Si se quiere subrayar el texto, false si no 
-	 */
-	private void setUnderline(JLabel labelAsButton, Boolean underlineOnOf) {
-		Font fontUnderlined = labelAsButton.getFont();
-		Map attribute = fontUnderlined.getAttributes();
-		if (underlineOnOf) {
-			attribute.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-		} else {
-			attribute.put(TextAttribute.UNDERLINE, -1);
-		}
-
-		labelAsButton.setFont(fontUnderlined.deriveFont(attribute));
-	}
 	
 	/**
 	 * Cambia el panelCentral cuando un menu es seleccionado en alguna parte de la aplicacion
@@ -226,4 +250,104 @@ public class VentanaPrincipal extends JFrame {
 	public void setVentanaEliminar(VentanaEliminar ventanaEliminar) {
 		this.ventanaEliminar = ventanaEliminar;
 	}
+
+
+
+	public VentanaConsultaAnimales getVentanaConsultaAnimales() {
+		return ventanaConsultaAnimales;
+	}
+
+
+	public void setVentanaConsultaAnimales(VentanaConsultaAnimales ventanaConsultaAnimales) {
+		this.ventanaConsultaAnimales = ventanaConsultaAnimales;
+	}
+
+
+	public VentanaConsultaBioma getVentanaConsultaBioma() {
+		return ventanaConsultaBioma;
+	}
+
+
+	public void setVentanaConsultaBioma(VentanaConsultaBioma ventanaConsultaBioma) {
+		this.ventanaConsultaBioma = ventanaConsultaBioma;
+	}
+
+
+	public VentanaConsultaVeterinarios getVentanaConsultaVeterinarios() {
+		return ventanaConsultaVeterinarios;
+	}
+
+
+	public void setVentanaConsultaVeterinarios(VentanaConsultaVeterinarios ventanaConsultaVeterinarios) {
+		this.ventanaConsultaVeterinarios = ventanaConsultaVeterinarios;
+	}
+
+
+	public VentanaEliminarBioma getVentanaEliminarBioma() {
+		return ventanaEliminarBioma;
+	}
+
+
+	public void setVentanaEliminarBioma(VentanaEliminarBioma ventanaEliminarBioma) {
+		this.ventanaEliminarBioma = ventanaEliminarBioma;
+	}
+
+
+	public VentanaEliminarsVeterinarios getVentanaEliminarVeterinario() {
+		return ventanaEliminarsVeterinarios;
+	}
+
+
+	public void setVentanaEliminarVeterinario(VentanaEliminarsVeterinarios ventanaEliminarsVeterinarios) {
+		this.ventanaEliminarsVeterinarios = ventanaEliminarsVeterinarios;
+	}
+
+
+	public VentanaEliminarAnimal getVentanaEliminarAnimal() {
+		return ventanaEliminarAnimal;
+	}
+
+
+	public void setVentanaEliminarAnimal(VentanaEliminarAnimal ventanaEliminarAnimal) {
+		this.ventanaEliminarAnimal = ventanaEliminarAnimal;
+	}
+
+
+	public VentanaRegistrarAnimal getVentanaRegitrarAnimal() {
+		return ventanaRegitrarAnimal;
+	}
+
+
+	public void setVentanaRegitrarAnimal(VentanaRegistrarAnimal ventanaRegitrarAnimal) {
+		this.ventanaRegitrarAnimal = ventanaRegitrarAnimal;
+	}
+
+
+	
+
+	public VentanaRegistrarBiomas getRegistrarVentanaBioma() {
+		return registrarBiomas;
+	}
+
+
+	public void setVentanaRegistrarBioma(VentanaRegistrarBiomas registrarBiomas) {
+		this.registrarBiomas = registrarBiomas;
+	}
+
+
+	public VentanaRegistrarTrabajador getVentanaRegistrarTrabajador() {
+		return ventanaRegistrarTrabajador;
+	}
+
+
+	public void setVentanaRegistrarTrabajador(VentanaRegistrarTrabajador ventanaRegistrarTrabajador) {
+		this.ventanaRegistrarTrabajador = ventanaRegistrarTrabajador;
+	}
+	
+	
+	
+	
+	
+	
+	
 }

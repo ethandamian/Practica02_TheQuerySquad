@@ -158,23 +158,23 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu{
 		
 		lblColonia = new JLabel("Colonia:");
 		lblColonia.setHorizontalAlignment(SwingConstants.LEFT);
-		lblColonia.setFont(null);
+		lblColonia.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblColonia.setBounds(202, 201, 126, 26);
 		panelSur.add(lblColonia);
 		
 		lblColoniaValor = new JLabel("    ");
-		lblColoniaValor.setFont(null);
+		lblColoniaValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		lblColoniaValor.setBounds(202, 228, 126, 26);
 		panelSur.add(lblColoniaValor);
 		
 		lblEstado = new JLabel("Estado:");
 		lblEstado.setHorizontalAlignment(SwingConstants.LEFT);
-		lblEstado.setFont(null);
+		lblEstado.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblEstado.setBounds(382, 11, 126, 26);
 		panelSur.add(lblEstado);
 		
 		lblEstadoValor = new JLabel("    ");
-		lblEstadoValor.setFont(null);
+		lblEstadoValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		lblEstadoValor.setBounds(382, 38, 126, 26);
 		panelSur.add(lblEstadoValor);
 	}

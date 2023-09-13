@@ -1,8 +1,9 @@
 package vistas;
 
 import java.awt.Color;
-import java.awt.Font;
-import java.io.InputStream;
+import java.awt.Cursor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -19,9 +20,9 @@ public class VentanaMenu extends JPanel {
 	protected JComponent panelMenuOpciones;
 	protected JComponent btnOpcionUno;
 	protected JLabel lblOpcionUno;
-	protected JPanel btnOpcion2;
+	protected JPanel btnOpcionDos;
 	protected JLabel lblOpcionDos;
-	protected JPanel btnOpcion3;
+	protected JPanel btnOpcionTres;
 	protected JComponent panelDescripcion;
 	protected JLabel lblTituloMenu;
 	protected String descripcion;
@@ -48,6 +49,12 @@ public class VentanaMenu extends JPanel {
 		panelMenuOpciones.setLayout(null);
 		
 		btnOpcionUno = new JPanel();
+		btnOpcionUno.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnOpcionUno.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+		});
 		btnOpcionUno.setBackground(new Color(67, 83, 52));
 		btnOpcionUno.setBounds(0, 117, 292, 50);
 		panelMenuOpciones.add(btnOpcionUno);
@@ -59,30 +66,43 @@ public class VentanaMenu extends JPanel {
 		lblOpcionUno.setBounds(22, 0, 260, 50);
 		btnOpcionUno.add(lblOpcionUno);
 		
-		btnOpcion2 = new JPanel();
-		btnOpcion2.setLayout(null);
-		btnOpcion2.setBackground(new Color(67, 83, 52));
-		btnOpcion2.setBounds(0, 166, 292, 50);
-		panelMenuOpciones.add(btnOpcion2);
+		btnOpcionDos = new JPanel();
+		btnOpcionDos.setLayout(null);
+		btnOpcionDos.setBackground(new Color(67, 83, 52));
+		btnOpcionDos.setBounds(0, 166, 292, 50);
+		panelMenuOpciones.add(btnOpcionDos);
+		btnOpcionDos.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnOpcionDos.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+		});
 		
 		lblOpcionDos = new JLabel("   Opcion 2");
 		lblOpcionDos.setForeground(new Color(225, 234, 231));
 		lblOpcionDos.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
 		lblOpcionDos.setBounds(20, 0, 262, 50);
-		btnOpcion2.add(lblOpcionDos);
+		btnOpcionDos.add(lblOpcionDos);
 		
-		btnOpcion3 = new JPanel();
-		btnOpcion3.setForeground(new Color(147, 177, 166));
-		btnOpcion3.setLayout(null);
-		btnOpcion3.setBackground(new Color(67, 83, 52));
-		btnOpcion3.setBounds(0, 216, 292, 50);
-		panelMenuOpciones.add(btnOpcion3);
+		btnOpcionTres = new JPanel();
+		btnOpcionTres.setForeground(new Color(147, 177, 166));
+		btnOpcionTres.setLayout(null);
+		btnOpcionTres.setBackground(new Color(67, 83, 52));
+		btnOpcionTres.setBounds(0, 216, 292, 50);
+		panelMenuOpciones.add(btnOpcionTres);
+		
+		btnOpcionTres.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnOpcionTres.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+		});
 		
 		lblOpcionTres = new JLabel("   Opcion 3");
 		lblOpcionTres.setForeground(new Color(225, 234, 231));
 		lblOpcionTres.setFont(FuenteProyecto.createFont(urlFuenteString, 14));
 		lblOpcionTres.setBounds(22, 0, 260, 50);
-		btnOpcion3.add(lblOpcionTres);
+		btnOpcionTres.add(lblOpcionTres);
 		
 		panelDescripcion = new JPanel();
 		panelDescripcion.setBackground(new Color(158, 179, 132));
@@ -113,4 +133,5 @@ public class VentanaMenu extends JPanel {
 		panelDescripcion.add(lblNewLabel_1);
 
 	}
+	
 }
