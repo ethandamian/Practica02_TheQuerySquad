@@ -1,4 +1,2 @@
 id,nombre,especie,peso,altura,sexo,numJaula,alimentacion,indicacionesMedicas
-1,SoloVino,Perro,70kg,1.32,Macho,3,carnivoro,estaMalito
-2,kunfuPanda,Panda,100Kg,1.70,Hembra,10,Omnivoro,Fractura
 3,juan,caballo,300Kg,2.70,Macho,15,Hervivoro,estaEnUnBalcon
