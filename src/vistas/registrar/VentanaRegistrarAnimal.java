@@ -33,7 +33,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu{
 		lblTituloDerecho.setLocation(45, 11);
 		lblLogo.setIcon(new ImageIcon(VentanaRegistrarAnimal.class.getResource("/imagenes/zoo.png")));
 		
-		lblTituloDerecho.setText("INGRESA DATOS DEl ANIMAL");
+		lblTituloDerecho.setText("INGRESA DATOS DEL ANIMAL");
 		
 		JLabel lblNombre_1 = new JLabel("Nombre:");
 		lblNombre_1.setForeground(new Color(227, 236, 233));
