@@ -13,9 +13,6 @@ import java.util.List;
 public class ManipularZoologico {
 	public String path;
 
-	public ManipularZoologico(String path) {
-		this.path = path;
-	}
 
 	public String[] leer(String id) {
 		String line = "";
