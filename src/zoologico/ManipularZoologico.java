@@ -15,18 +15,21 @@ import java.util.List;
  * Contiene operaciones CRUD hacía un archivo csv.
  */
 public class ManipularZoologico {
-	public String path;
+	// public String path;
 
 	/**
 	 * Operación de consulta.
 	 * 
-	 * @param id id de la clase solicitada
-	 * @return Regresa una lista con los datos de la entidad solicitada.
+	 * @param id   id de la clase solicitada
+	 * @param path Ruta del archivo csv.
+	 * @return Regresa una lista con los datos de la entidad solicitada. Regresa
+	 *         null si no se encontró.
 	 */
-	public String[] leer(String id) {
+	public String[] leer(String id, String path) {
 		String line = "";
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));
+			System.out.println("n");
 
 			while ((line = br.readLine()) != null) {
 				String[] values = line.split(",");
@@ -47,10 +50,11 @@ public class ManipularZoologico {
 	/**
 	 * Operación de eliminación.
 	 * 
-	 * @param id id de la entidad a eliminar
-	 * @return Regresa verdadero si se eliminó la entidad.
+	 * @param id   id de la entidad a eliminar
+	 * @param path Ruta del archivo csv.
+	 * @return Regresa verdadero si se eliminó la entidad. Falso si no se eliminó.
 	 */
-	public boolean eliminar(String id) {
+	public boolean eliminar(String id, String path) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));
 			List<String> filas = new ArrayList<>();
@@ -96,9 +100,11 @@ public class ManipularZoologico {
 	 * Operación de inserción de entidad en archivo csv.
 	 * 
 	 * @param entidad Entidad que se desea insertar.
-	 * @return Regresa verdadero si fue posible la inserción
+	 * @param path    Ruta del archivo csv.
+	 * @return Regresa verdadero si fue posible la inserción. Falso si no se
+	 *         realizó.
 	 */
-	public boolean inserta(String entidad) {
+	public boolean inserta(String entidad, String path) {
 		String line = "";
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));
@@ -140,9 +146,11 @@ public class ManipularZoologico {
 	 * 
 	 * @param entidad Entidad que se desea insertar.
 	 * @param id      Id de la entidad.
-	 * @return Regresa verdadero si fue posible la inserción
+	 * @param path    Ruta del archivo csv.
+	 * @return Regresa verdadero si fue posible la inserción. Falso si no se
+	 *         realizó.
 	 */
-	public boolean inserta(String entidad, String id) {
+	public boolean inserta(String entidad, String id, String path) {
 		String line = "";
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));
@@ -175,9 +183,10 @@ public class ManipularZoologico {
 	 * 
 	 * @param entidad Entidad que se desea insertar.
 	 * @param id      Id de la entidad.
-	 * @return Regresa verdadero si fue posible la inserción
+	 * @param path    Ruta del archivo csv.
+	 * @return Regresa verdadero si fue posible la edición. Falso si no fue posible.
 	 */
-	public boolean editar(String entidad, String id) {
+	public boolean editar(String entidad, String id, String path) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));
 			List<String> filas = new ArrayList<>();// Almacena las lineas del archivo

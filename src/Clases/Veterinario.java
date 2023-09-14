@@ -9,10 +9,10 @@ import java.util.ArrayList;
  * Clase para representar a un veterinario del zoológico
  */
 public class Veterinario extends Trabajador {
-	
+
 	protected String especialidad;
 	protected float salario;
-	
+
 	/**
 	 * Constructor sin argumentos
 	 */
@@ -22,36 +22,41 @@ public class Veterinario extends Trabajador {
 
 	/**
 	 * Constructor con todos los atributos
-	 * @param finContrato
-	 * @param inicioContrato
-	 * @param genero
+	 * 
 	 * @param rfc
 	 * @param nombre
 	 * @param paterno
 	 * @param materno
+	 * @param genero
 	 * @param calle
-	 * @param numInterior
 	 * @param numExterior
+	 * @param numInterior
 	 * @param colonia
 	 * @param estado
+	 * @param inicioContrato
+	 * @param finContrato
 	 * @param nacimiento
-	 * @param eMail
-	 * @param telefono
+	 * @param telefonos
+	 * @param correos
 	 * @param especialidad
 	 * @param salario
 	 */
-	public Veterinario(String finContrato, String inicioContrato, String genero, String rfc, String nombre,
-			String paterno, String materno, String calle, int numInterior, int numExterior, String colonia,
-			String estado, String nacimiento, ArrayList<String> eMail, ArrayList<Long> telefono, String especialidad, float salario) {
-		super(finContrato, inicioContrato, genero, rfc, nombre, paterno, materno, calle, numInterior, numExterior,
-				colonia, estado, nacimiento, eMail, telefono);
+	public Veterinario(String rfc, String nombre, String paterno, String materno, String genero,
+			String calle, int numExterior, int numInterior, String colonia, String estado, String inicioContrato,
+			String finContrato, String nacimiento, ArrayList<Long> telefonos,
+			ArrayList<String> correos, String especialidad,
+			float salario) {
+		super(rfc, nombre, paterno, materno, genero,
+				calle, numExterior, numInterior, colonia, estado, inicioContrato, finContrato,
+				nacimiento, telefonos, correos);
 		this.especialidad = especialidad;
-		this.salario=salario;
-		
+		this.salario = salario;
+
 	}
 
 	/**
 	 * Metodo para obtener la especiallidad del veterinario
+	 * 
 	 * @return String
 	 */
 	public String getEspecialidad() {
@@ -60,6 +65,7 @@ public class Veterinario extends Trabajador {
 
 	/**
 	 * Metodo para asignar la especialidad del veterinario
+	 * 
 	 * @param especialidad
 	 */
 	public void setEspecialidad(String especialidad) {
@@ -68,6 +74,7 @@ public class Veterinario extends Trabajador {
 
 	/**
 	 * Metodo para obtener el salario del veterinario
+	 * 
 	 * @return float
 	 */
 	public float getSalario() {
@@ -76,10 +83,20 @@ public class Veterinario extends Trabajador {
 
 	/**
 	 * Metodo para modificar el salario del veterinario
+	 * 
 	 * @param salario
 	 */
 	public void setSalario(float salario) {
 		this.salario = salario;
+	}
+
+	/**
+	 * Método para representar el veterinario como un string para csv.
+	 * 
+	 * @return String
+	 */
+	public String toStringCsv() {
+		return super.toStringCsv() + "," + especialidad + "," + Float.toString(salario);
 	}
 
 }
