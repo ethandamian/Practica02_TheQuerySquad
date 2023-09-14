@@ -1,1 +1,2 @@
-id,tipo,numJaulas,numVeterinarios,numAnimales,serviciosVicitantes
+id,tipo,servicio,numJaulas,numVeterinarios,numAnimales,numCuidadores,serviciosAVisitantes
+1,Bosque,carpinteria,3,4,5,2,[vista:comida]

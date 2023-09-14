@@ -1,77 +1,79 @@
 package Clases;
+
 import java.util.ArrayList;
 
 /**
  * Clase para representar a un trabajador del zoologico
  */
 public class Trabajador {
-	protected String finContrato;
-	protected String inicioContrato;
-	protected String genero;
 	protected String rfc;
 	protected String nombre;
 	protected String paterno;
 	protected String materno;
+	protected String genero;
 	protected String calle;
-	protected int numInterior;
 	protected int numExterior;
+	protected int numInterior;
 	protected String colonia;
 	protected String estado;
+	protected String inicioContrato;
+	protected String finContrato;
 	protected String nacimiento;
-	protected ArrayList<String> eMail;
-	protected ArrayList<Long> telefono;
-	
+	protected ArrayList<Long> telefonos;
+	protected ArrayList<String> correos;
+
 	/**
 	 * Constructor sin argumentos
 	 */
 	public Trabajador() {
-		telefono = new ArrayList<Long>();
-		eMail = new ArrayList<String>();
+		telefonos = new ArrayList<Long>();
+		correos = new ArrayList<String>();
 	}
 
-	
 	/**
 	 * Constructor con todos los atributos
-	 * @param finContrato
-	 * @param inicioContrato
-	 * @param genero
+	 * 
 	 * @param rfc
 	 * @param nombre
 	 * @param paterno
 	 * @param materno
+	 * @param genero
 	 * @param calle
-	 * @param numInterior
 	 * @param numExterior
+	 * @param numInterior
 	 * @param colonia
 	 * @param estado
+	 * @param inicioContrato
+	 * @param finContrato
 	 * @param nacimiento
-	 * @param eMail
-	 * @param telefono
+	 * @param telefonos
+	 * @param correos
 	 */
-	public Trabajador(String finContrato, String inicioContrato, String genero, String rfc, String nombre,
-			String paterno, String materno, String calle, int numInterior, int numExterior, String colonia,
-			String estado, String nacimiento, ArrayList<String> eMail, ArrayList<Long> telefono) {
+	public Trabajador(String rfc, String nombre, String paterno, String materno, String genero,
+			String calle, int numExterior, int numInterior, String colonia, String estado, String inicioContrato,
+			String finContrato, String nacimiento, ArrayList<Long> telefonos,
+			ArrayList<String> correos) {
 		super();
-		this.finContrato = finContrato;
-		this.inicioContrato = inicioContrato;
-		this.genero = genero;
 		this.rfc = rfc;
 		this.nombre = nombre;
 		this.paterno = paterno;
 		this.materno = materno;
+		this.genero = genero;
 		this.calle = calle;
-		this.numInterior = numInterior;
 		this.numExterior = numExterior;
+		this.numInterior = numInterior;
 		this.colonia = colonia;
 		this.estado = estado;
+		this.inicioContrato = inicioContrato;
+		this.finContrato = finContrato;
 		this.nacimiento = nacimiento;
-		this.eMail = eMail;
-		this.telefono = telefono;
+		this.correos = correos;
+		this.telefonos = telefonos;
 	}
-
 
 	/**
 	 * Metodo para obtener la fecha de fin de contrato
+	 * 
 	 * @return String
 	 */
 	public String getFinContrato() {
@@ -80,6 +82,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para modificar la fecha de fin de contrato
+	 * 
 	 * @param finContrato
 	 */
 	public void setFinContrato(String finContrato) {
@@ -88,6 +91,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener la fecha de inicio de contrato
+	 * 
 	 * @return string
 	 */
 	public String getInicioContrato() {
@@ -96,6 +100,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para asignar la fecha de inicio de contrato
+	 * 
 	 * @param inicioContrato
 	 */
 	public void setInicioContrato(String inicioContrato) {
@@ -104,6 +109,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el genero del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getGenero() {
@@ -112,6 +118,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para asignar el genero del trabajador
+	 * 
 	 * @param genero
 	 */
 	public void setGenero(String genero) {
@@ -120,6 +127,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el RFC del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getRfc() {
@@ -128,6 +136,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para asignar el RFC del trabajador
+	 * 
 	 * @param rfc
 	 */
 	public void setRfc(String rfc) {
@@ -136,6 +145,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el nombre del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getNombre() {
@@ -144,6 +154,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para asignar nombre al trabajador
+	 * 
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
@@ -152,6 +163,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el apellido paterno del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getPaterno() {
@@ -160,6 +172,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para asignar el apellido paterno del trabajador
+	 * 
 	 * @param paterno
 	 */
 	public void setPaterno(String paterno) {
@@ -168,6 +181,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el apellido materno del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getMaterno() {
@@ -176,6 +190,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para asignar el apellido materno al trabajador
+	 * 
 	 * @param materno
 	 */
 	public void setMaterno(String materno) {
@@ -184,6 +199,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener la calla del domicilio del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getCalle() {
@@ -192,6 +208,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para modificar la calle del domicilio del trabajador
+	 * 
 	 * @param calle
 	 */
 	public void setCalle(String calle) {
@@ -200,6 +217,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el numero interior del domicilio del trabajador
+	 * 
 	 * @return int
 	 */
 	public int getNumInterior() {
@@ -208,6 +226,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para modificar el numero interior del domicilio del trabajador
+	 * 
 	 * @param numInterior
 	 */
 	public void setNumInterior(int numInterior) {
@@ -216,6 +235,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el numero exterior del domicilio del trabajador
+	 * 
 	 * @return int
 	 */
 	public int getNumExterior() {
@@ -224,6 +244,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para modificar el numero exterior del domicilio del trabajador
+	 * 
 	 * @param numExterior
 	 */
 	public void setNumExterior(int numExterior) {
@@ -232,6 +253,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener la colonia del domicilio del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getColonia() {
@@ -240,6 +262,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para modificar la colonia del domicilio del trabajador
+	 * 
 	 * @param colonia
 	 */
 	public void setColonia(String colonia) {
@@ -248,6 +271,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener el estado del domicilio del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getEstado() {
@@ -256,6 +280,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para modificar el estado del domicilio del trabajador
+	 * 
 	 * @param estado
 	 */
 	public void setEstado(String estado) {
@@ -264,6 +289,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener la fecha de nacimiento del trabajador
+	 * 
 	 * @return String
 	 */
 	public String getNacimiento() {
@@ -272,6 +298,7 @@ public class Trabajador {
 
 	/**
 	 * Metodo para asignar la fecha de nacimiento del trabajador
+	 * 
 	 * @param nacimiento
 	 */
 	public void setNacimiento(String nacimiento) {
@@ -280,80 +307,132 @@ public class Trabajador {
 
 	/**
 	 * Metodo para obtener la lista de correos electronicos del trabajador
+	 * 
 	 * @return ArrayList <String>
 	 */
-	public ArrayList<String> geteMail() {
-		return eMail;
+	public ArrayList<String> getCorreos() {
+		return correos;
 	}
 
 	/**
 	 * Metodo para asignar la lista de correos electronicos del trabajador
-	 * @param eMail
+	 * 
+	 * @param correos
 	 */
-	public void seteMail(ArrayList<String> eMail) {
-		this.eMail = eMail;
+	public void setcorreos(ArrayList<String> correos) {
+		this.correos = correos;
 	}
 
 	/**
 	 * Metodo para obtener la lista de teléfonos del trabajador.
+	 * 
 	 * @return ArrayList<Long>
 	 */
-	public ArrayList<Long> getTelefono() {
-		return telefono;
+	public ArrayList<Long> getTelefonos() {
+		return telefonos;
 	}
 
 	/**
-	 * Metodo para asignar la lista de nuumero de telefonos del trabajador
-	 * @param telefono
+	 * Metodo para asignar la lista de nuumero de telefonoss del trabajador
+	 * 
+	 * @param telefonos
 	 */
-	public void setTelefono(ArrayList<Long> telefono) {
-		this.telefono = telefono;
+	public void setTelefonos(ArrayList<Long> telefonos) {
+		this.telefonos = telefonos;
 	}
-	
+
 	/**
-	 * Metodo para agregar un email a la lista de emails del trabajador
-	 * @param email
+	 * Metodo para agregar un correos a la lista de correoss del trabajador
+	 * 
+	 * @param correos
 	 */
-	public void addEMail(String email) {
-		eMail.add(email);
+	public void addCorreos(String correo) {
+		correos.add(correo);
 	}
-	
+
 	/**
-	 * Metodo para eliminar un eMail de la lista de e-Mails del trabajador
-	 * @param email
-	 * @return boolean: true si se pudo eliminar correctamente, false si el elemento no estaba en la lista
+	 * Metodo para eliminar un correos de la lista de e-Mails del trabajador
+	 * 
+	 * @param correos
+	 * @return boolean: true si se pudo eliminar correctamente, false si el elemento
+	 *         no estaba en la lista
 	 */
-	public boolean eliminarMail(String email) {
-		if(eMail.contains(email)) {
-			eMail.remove(email);
+	public boolean eliminarCorreo(String correo) {
+		if (correos.contains(correo)) {
+			correos.remove(correo);
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
-	
+
 	/**
-	 * Metodo para agregar un telefono a la lista de teléfonos del trabajador
-	 * @param telefonoN
+	 * Metodo para agregar un telefonos a la lista de teléfonos del trabajador
+	 * 
+	 * @param telefonosN
 	 */
-	public void addTelefono(Long telefonoN) {
-		telefono.add(telefonoN);
+	public void addTelefonos(Long telefonosN) {
+		telefonos.add(telefonosN);
 	}
-	
+
 	/**
-	 * Metodo para eliminar un telefono de la lista de telefonos del trabajador
-	 * @param telefono
+	 * Metodo para eliminar un telefonos de la lista de telefonoss del trabajador
+	 * 
+	 * @param telefonos
 	 * @return
 	 */
-	public boolean eliminartelefono (Long tel) {
-		if(telefono.contains(tel)) {
-			telefono.remove(tel);
+	public boolean eliminartelefonos(Long tel) {
+		if (telefonos.contains(tel)) {
+			telefonos.remove(tel);
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Trabajador [rfc=" + rfc + ", nombre=" + nombre + ", paterno=" + paterno + ", materno=" + materno
+				+ ", genero=" + genero + ", calle=" + calle + ", numExterior=" + numExterior + ", numInterior="
+				+ numInterior + ", colonia=" + colonia + ", estado=" + estado + ", inicioContrato=" + inicioContrato
+				+ ", finContrato=" + finContrato + ", nacimiento=" + nacimiento + ", telefonos=" + telefonos
+				+ ", correos=" + correos + "]";
+	}
+
+	/**
+	 * Método para representar el trabajador como un string para csv.
+	 * 
+	 * @return String
+	 */
+	public String toStringCsv() {
+		ArrayList<String> telefonosString = new ArrayList<>();
+		for (Long telefono : telefonos) {
+			telefonosString.add(Long.toString(telefono));
+		}
+		return rfc + "," + nombre + "," + paterno + "," + materno
+				+ "," + genero + "," + calle + "," + numExterior + ","
+				+ numInterior + "," + colonia + "," + estado + "," + inicioContrato
+				+ "," + finContrato + "," + nacimiento + "," + arrayToString(telefonosString)
+				+ "," + arrayToString(correos);
+	}
+
+	/**
+	 * Método para transformar arreglo en representación de cadena.
+	 * 
+	 * @param array
+	 * @return
+	 */
+	public String arrayToString(ArrayList<String> array) {
+		// [word1:word2:word3]
+		String s = "[";
+		for (int i = 0; i < array.size(); i++) {
+			if (i != 0) {
+				s += ":";
+			}
+			String word = array.get(i);
+			s += word;
+		}
+		return s + "]";
+	}
+
 }

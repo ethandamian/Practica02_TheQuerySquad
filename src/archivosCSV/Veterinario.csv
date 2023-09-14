@@ -1,1 +1,2 @@
-RFC,nombre,paterno,materno,calle,interior,exterior,colonia,estado,telefonos,inicioContrato,finContrato,nacimiento,correos,genero,especialidad,salario
+RFC,nombre,paterno,materno,genero,calle,numExterior,numInterior,colonia,estado,inicioContrato,finContrato,nacimiento,telefonos,correos,especialidad,salario
+LOCA023495LKE,Alan,Lopez,Carrillo,Masculino,Universidad,4,3,Altillo,Sonora,10/02/2000,11/02/2000,09/02/2000,[238749:1235],[a@c.com:b@c.com],Chambeador,40
