@@ -9,11 +9,10 @@ import java.util.ArrayList;
  * Clase proveedor para representar a un proveedor de productos del zoológico
  */
 public class Proveedor extends Trabajador {
-	
+
 	protected String producto;
 	protected String frecuenciaServicio;
 	protected float costoServicio;
-	
 
 	/**
 	 * Metodo constructor sin argumentos
@@ -24,6 +23,7 @@ public class Proveedor extends Trabajador {
 
 	/**
 	 * Metodo constructor con todos los atributos
+	 * 
 	 * @param finContrato
 	 * @param inicioContrato
 	 * @param genero
@@ -42,9 +42,11 @@ public class Proveedor extends Trabajador {
 	 */
 	public Proveedor(String finContrato, String inicioContrato, String genero, String rfc, String nombre,
 			String paterno, String materno, String calle, int numInterior, int numExterior, String colonia,
-			String estado, String nacimiento, ArrayList<String> eMail, ArrayList<Long> telefono, String producto, String frecuenciaServicio, float costoServicio) {
-		super(finContrato, inicioContrato, genero, rfc, nombre, paterno, materno, calle, numInterior, numExterior,
-				colonia, estado, nacimiento, eMail, telefono);
+			String estado, String nacimiento, ArrayList<String> correos, ArrayList<Long> telefonos, String producto,
+			String frecuenciaServicio, float costoServicio) {
+		super(rfc, nombre, paterno, materno, genero,
+				calle, numExterior, numInterior, colonia, estado, inicioContrato, finContrato,
+				nacimiento, telefonos, correos);
 		this.producto = producto;
 		this.frecuenciaServicio = frecuenciaServicio;
 		this.costoServicio = costoServicio;
@@ -52,6 +54,7 @@ public class Proveedor extends Trabajador {
 
 	/**
 	 * Metodo para obtener el producto que provee
+	 * 
 	 * @return String
 	 */
 	public String getProducto() {
@@ -60,6 +63,7 @@ public class Proveedor extends Trabajador {
 
 	/**
 	 * Metodo para modificar el producto que provee
+	 * 
 	 * @param producto
 	 */
 	public void setProducto(String producto) {
@@ -68,6 +72,7 @@ public class Proveedor extends Trabajador {
 
 	/**
 	 * Metodo para obtener la frecuencia en que el proveedor ofrece su servicio
+	 * 
 	 * @return String
 	 */
 	public String getFrecuenciaServicio() {
@@ -76,6 +81,7 @@ public class Proveedor extends Trabajador {
 
 	/**
 	 * Método para modificar la frecuencia de servicio
+	 * 
 	 * @param frecuenciaServicio
 	 */
 	public void setFrecuenciaServicio(String frecuenciaServicio) {
@@ -84,6 +90,7 @@ public class Proveedor extends Trabajador {
 
 	/**
 	 * Metodo para obtener el costo por servicio
+	 * 
 	 * @return float
 	 */
 	public float getCostoServicio() {
@@ -92,6 +99,7 @@ public class Proveedor extends Trabajador {
 
 	/**
 	 * Metodo para modificar el costo por servicio
+	 * 
 	 * @param costoServicio
 	 */
 	public void setCostoServicio(float costoServicio) {
