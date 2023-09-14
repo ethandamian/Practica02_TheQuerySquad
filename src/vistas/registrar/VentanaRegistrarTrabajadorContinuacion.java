@@ -225,7 +225,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		
 		comboBoxGenero = new JComboBox<>();
 		comboBoxGenero.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
-		comboBoxGenero.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Masculino", "Femenino", "No Binario", ""}));
+		comboBoxGenero.setModel(new DefaultComboBoxModel(new String[] {"", "Masculino", "Femenino", "No Binario"}));
 		comboBoxGenero.setBounds(260, 317, 136, 22);
 		panelPrincipal.add(comboBoxGenero);
 		
@@ -236,7 +236,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		panelPrincipal.add(lblTipoDeTrabajador);
 		
 		comboBoxTipoTrabajador = new JComboBox<>();
-		comboBoxTipoTrabajador.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Veterinario", "Cuidador", "Proveedor"}));
+		comboBoxTipoTrabajador.setModel(new DefaultComboBoxModel(new String[] {"", "Veterinario", "Cuidador", "Proveedor"}));
 		comboBoxTipoTrabajador.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
 		comboBoxTipoTrabajador.setBounds(38, 374, 136, 22);
 		panelPrincipal.add(comboBoxTipoTrabajador);

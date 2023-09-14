@@ -25,7 +25,7 @@ public class VentanaRegistrarVeterinario extends JPanel {
 	private String urlFuentePlain = "src/fuentes/RobotoCondensed-Regular.ttf";
 	
 	private JTextField textFieldEspecialidad;
-	private JTextField textSalario;
+	private JTextField textFieldSalario;
 	private JPanel panelPrincipal;
 	
 	private VentanaRegistrarTrabajador ventanaRegistrarTrabajador;
@@ -71,13 +71,13 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		lblSalario.setBounds(253, 58, 122, 28);
 		panelPrincipal.add(lblSalario);
 		
-		textSalario = new JTextField();
-		textSalario.setForeground(new Color(227, 236, 233));
-		textSalario.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
-		textSalario.setColumns(10);
-		textSalario.setBackground(new Color(67, 83, 52));
-		textSalario.setBounds(253, 91, 136, 20);
-		panelPrincipal.add(textSalario);
+		textFieldSalario = new JTextField();
+		textFieldSalario.setForeground(new Color(227, 236, 233));
+		textFieldSalario.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldSalario.setColumns(10);
+		textFieldSalario.setBackground(new Color(67, 83, 52));
+		textFieldSalario.setBounds(253, 91, 136, 20);
+		panelPrincipal.add(textFieldSalario);
 		
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setBounds(253, 115, 136, 2);
@@ -105,7 +105,7 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		lblIngresaDatosDel.setBounds(38, 11, 384, 28);
 		panelPrincipal.add(lblIngresaDatosDel);
 		
-		listaTextFields =  Arrays.asList(textFieldEspecialidad,textSalario);
+		listaTextFields =  Arrays.asList(textFieldEspecialidad,textFieldSalario);
 
 	}
 

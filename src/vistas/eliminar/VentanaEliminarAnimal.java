@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 public class VentanaEliminarAnimal extends VentanaEliminarMenu {
 
 	public VentanaEliminarAnimal() {
+		btnEliminar.setForeground(new Color(41, 56, 47));
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String t = textFieldOpcionUsuario.getText();

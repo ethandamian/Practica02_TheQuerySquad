@@ -49,19 +49,26 @@ public class VentanaConsultasMenu extends JPanel {
 		lblBusqueda = new JLabel("Buscar por [ ]");
 		lblBusqueda.setForeground(new Color(18, 31, 27));
 		lblBusqueda.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 14));
-		lblBusqueda.setBounds(484, 28, 108, 28);
+		lblBusqueda.setBounds(384, 28, 108, 28);
 		panelNorte.add(lblBusqueda);
 		
 		textFieldInputUsuario = new JTextField();
-		textFieldInputUsuario.setBounds(484, 64, 125, 28);
+		textFieldInputUsuario.setBounds(384, 64, 125, 28);
 		panelNorte.add(textFieldInputUsuario);
 		textFieldInputUsuario.setColumns(10);
 		
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.setForeground(new Color(18, 31, 27));
 		btnBuscar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
-		btnBuscar.setBounds(626, 67, 89, 23);
+		btnBuscar.setBounds(526, 67, 89, 23);
 		panelNorte.add(btnBuscar);
+		
+		JButton btnEditar = new JButton("Editar");
+		btnEditar.setForeground(new Color(18, 31, 27));
+		btnEditar.setFont(null);
+		btnEditar.setBounds(657, 67, 89, 23);
+		panelNorte.add(btnEditar);
+		btnEditar.setVisible(false);
 		
 		panelSur = new JPanel();
 		panelSur.setBackground(new Color(138, 184, 168));
@@ -70,5 +77,4 @@ public class VentanaConsultasMenu extends JPanel {
 		panelSur.setLayout(null);
 
 	}
-
 }
