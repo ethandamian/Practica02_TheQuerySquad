@@ -10,10 +10,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase padre para la manipulación de las entidades en un zoologico.
+ * Contiene operaciones CRUD hacía un archivo csv.
+ */
 public class ManipularZoologico {
 	public String path;
 
-
+	/**
+	 * Operación de consulta.
+	 * 
+	 * @param id id de la clase solicitada
+	 * @return Regresa una lista con los datos de la entidad solicitada.
+	 */
 	public String[] leer(String id) {
 		String line = "";
 		try {
@@ -35,6 +44,12 @@ public class ManipularZoologico {
 		return null;
 	}
 
+	/**
+	 * Operación de eliminación.
+	 * 
+	 * @param id id de la entidad a eliminar
+	 * @return Regresa verdadero si se eliminó la entidad.
+	 */
 	public boolean eliminar(String id) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));
@@ -77,6 +92,12 @@ public class ManipularZoologico {
 		return false;
 	}
 
+	/**
+	 * Operación de inserción de entidad en archivo csv.
+	 * 
+	 * @param entidad Entidad que se desea insertar.
+	 * @return Regresa verdadero si fue posible la inserción
+	 */
 	public boolean inserta(String entidad) {
 		String line = "";
 		try {
@@ -114,6 +135,13 @@ public class ManipularZoologico {
 		return false;
 	}
 
+	/**
+	 * Operación de inserción de entidad con id en archivo csv.
+	 * 
+	 * @param entidad Entidad que se desea insertar.
+	 * @param id      Id de la entidad.
+	 * @return Regresa verdadero si fue posible la inserción
+	 */
 	public boolean inserta(String entidad, String id) {
 		String line = "";
 		try {
@@ -142,6 +170,13 @@ public class ManipularZoologico {
 		return false;
 	}
 
+	/**
+	 * Operación de edición de entidad en archivo csv.
+	 * 
+	 * @param entidad Entidad que se desea insertar.
+	 * @param id      Id de la entidad.
+	 * @return Regresa verdadero si fue posible la inserción
+	 */
 	public boolean editar(String entidad, String id) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));

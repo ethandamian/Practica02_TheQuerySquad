@@ -8,18 +8,20 @@ import java.awt.event.ActionEvent;
 
 public class VentanaEliminarAnimal extends VentanaEliminarMenu {
 
+	/**
+	 * Crea el panel de la ventana de eliminar animal.
+	 */
 	public VentanaEliminarAnimal() {
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String t = textFieldOpcionUsuario.getText();
-				try{
-		            int n = Integer.parseInt(t);
-		          
-		        }
-		        catch (NumberFormatException ex){
-		        	JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
-		        	textFieldOpcionUsuario.setText("");
-		        }
+				try {
+					int n = Integer.parseInt(t);
+
+				} catch (NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
+					textFieldOpcionUsuario.setText("");
+				}
 			}
 		});
 		textFieldOpcionUsuario.setEditable(true);
