@@ -25,7 +25,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 	private String urlFuentePlain = "src/fuentes/RobotoCondensed-Regular.ttf";
 	private JComboBox<String> comboBoxSexo;
 	private JComboBox<String> comboBoxAlimentacion;
-	private JTextArea textArea;
+	private JTextArea textAreaIndicacionesMedicas;
 
 	/**
 	 * Crea el panel de la Ventana de registrar animal.
@@ -162,18 +162,22 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		comboBoxSexo.setBounds(255, 88, 136, 22);
 		panelDerecho.add(comboBoxSexo);
 
+		comboBoxSexo.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		
 		comboBoxAlimentacion = new JComboBox<>();
 		comboBoxAlimentacion
 				.setModel(new DefaultComboBoxModel<String>(new String[] { "", "Carnivoro", "Herviboro", "Omnivoro" }));
 		comboBoxAlimentacion.setBounds(255, 234, 136, 22);
 		panelDerecho.add(comboBoxAlimentacion);
-
-		textArea = new JTextArea();
-		textArea.setLineWrap(true);
-		textArea.setBackground(new Color(67, 83, 52));
-		textArea.setForeground(new Color(227, 236, 233));
-		textArea.setBounds(255, 314, 136, 82);
-		panelDerecho.add(textArea);
+		comboBoxAlimentacion.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		
+		textAreaIndicacionesMedicas = new JTextArea();
+		textAreaIndicacionesMedicas.setLineWrap(true);
+		textAreaIndicacionesMedicas.setBackground(new Color(67, 83, 52));
+		textAreaIndicacionesMedicas.setForeground(new Color(227, 236, 233));
+		textAreaIndicacionesMedicas.setBounds(255, 314, 136, 82);
+		panelDerecho.add(textAreaIndicacionesMedicas);
+		textAreaIndicacionesMedicas.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
 
 	}
 }

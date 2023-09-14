@@ -194,12 +194,16 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		comboBoxServicios.setForeground(new Color(18, 31, 37));
 		comboBoxServicios.setBounds(225, 292, 136, 22);
 		panelDerecho.add(comboBoxServicios);
-
+		comboBoxServicios.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
+		
 		comboBoxTipoBioma = new JComboBox<String>();
 		comboBoxTipoBioma.setModel(new DefaultComboBoxModel<String>(new String[] { "", "Desierto", "Pastizales",
 				"Franja Costera", "Tundra", "Aviario", "Bosque Templado", "Bosque Tropical" }));
 		comboBoxTipoBioma.setBounds(31, 125, 137, 22);
 		panelDerecho.add(comboBoxTipoBioma);
+		comboBoxTipoBioma.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
+	
+		
 
 		lblLogo.setIcon(new ImageIcon(VentanaRegistrarMenu.class.getResource("/imagenes/selva.png")));
 

@@ -1,9 +1,15 @@
 package vistas.registrar;
 
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import java.awt.Color;
+
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.List;
+
 import javax.swing.SwingConstants;
 
 import vistas.FuenteProyecto;
@@ -16,8 +22,9 @@ public class VentanaRegistrarMenu extends JPanel {
 	protected JLabel lblLogo;
 	protected static JPanel panelDerecho;
 	protected JLabel lblTituloDerecho;
-	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	protected String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
+	protected String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	
 
 	/**
 	 * Crea el panel de la Ventana de registrar menu.
