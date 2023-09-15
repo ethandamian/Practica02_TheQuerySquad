@@ -3,12 +3,15 @@ package vistas.consultas;
 import javax.swing.JPanel;
 
 import vistas.FuenteProyecto;
+import vistas.editar.VentanaEditarAnimal;
 
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextArea;
@@ -18,10 +21,24 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
 	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
 
+	private VentanaEditarAnimal ventanaEditarAnimal;
+
 	/**
 	 * Crea el panel de la ventana consulta animales.
 	 */
 	public VentanaConsultaAnimales() {
+		textFieldInputUsuario.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+
+			}
+		});
+
 		btnBuscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -30,9 +47,21 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 					int n = Integer.parseInt(t);
 
 				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
+					JOptionPane.showMessageDialog(null, "Ingresa un ID valido", "error", JOptionPane.ERROR_MESSAGE);
 					textFieldInputUsuario.setText("");
 				}
+				// TODO validacion para id
+				if (true) {
+					btnEditar.setVisible(true);
+					btnEditar.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseClicked(MouseEvent e) {
+							ventanaEditarAnimal.setVisible(true);
+						}
+					});
+
+				}
+
 			}
 		});
 		lblBusqueda.setForeground(new Color(232, 238, 236));
@@ -115,6 +144,14 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 		lblTitulo.setBounds(38, 41, 294, 35);
 		lblTitulo.setText("CONSULTAS DE ANIMALES");
 
+	}
+
+	public VentanaEditarAnimal getVentanaEditarAnimal() {
+		return ventanaEditarAnimal;
+	}
+
+	public void setVentanaEditarAnimal(VentanaEditarAnimal ventanaEditarAnimal) {
+		this.ventanaEditarAnimal = ventanaEditarAnimal;
 	}
 
 }

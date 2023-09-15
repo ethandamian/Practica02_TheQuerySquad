@@ -1,9 +1,12 @@
 package vistas.consultas;
 
 import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -22,11 +25,13 @@ public class VentanaConsultasMenu extends JPanel {
 	protected JButton btnBuscar;
 	protected JPanel panelSur;
 	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
+	protected JButton btnEditar;
 
 	/**
 	 * Crea el panel de la ventana consulta menu.
 	 */
 	public VentanaConsultasMenu() {
+
 		setLayout(null);
 
 		panelPrincipalMenu = new JPanel();
@@ -63,14 +68,13 @@ public class VentanaConsultasMenu extends JPanel {
 		btnBuscar.setBounds(526, 67, 89, 23);
 		panelNorte.add(btnBuscar);
 
-		
-		JButton btnEditar = new JButton("Editar");
-		btnEditar.setForeground(new Color(18, 31, 27));
-		btnEditar.setFont(null);
-		btnEditar.setBounds(657, 67, 89, 23);
+		btnEditar = new JButton("Editar");
+		btnEditar.setForeground(new Color(0, 0, 255));
+		btnEditar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
+		btnEditar.setBounds(643, 67, 89, 23);
 		panelNorte.add(btnEditar);
 		btnEditar.setVisible(false);
-		
+
 		panelSur = new JPanel();
 		panelSur.setBackground(new Color(138, 184, 168));
 		panelSur.setBounds(0, 115, 777, 292);
@@ -78,4 +82,25 @@ public class VentanaConsultasMenu extends JPanel {
 		panelSur.setLayout(null);
 
 	}
+
+	public JTextField getTextFieldInputUsuario() {
+		return textFieldInputUsuario;
+	}
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public void setBtnBuscar(JButton btnBuscar) {
+		this.btnBuscar = btnBuscar;
+	}
+
+	public JButton getBtnEditar() {
+		return btnEditar;
+	}
+
+	public void setBtnEditar(JButton btnEditar) {
+		this.btnEditar = btnEditar;
+	}
+
 }

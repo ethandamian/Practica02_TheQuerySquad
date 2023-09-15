@@ -5,7 +5,12 @@ import javax.swing.table.DefaultTableModel;
 import vistas.FuenteProyecto;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 import javax.swing.SwingConstants;
 import java.awt.Color;
 
@@ -42,6 +47,18 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 	 * Crea el panel de la ventana consulta trabajador.
 	 */
 	public VentanaConsultaTrabajador() {
+		textFieldInputUsuario.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+
+				char keyChar = e.getKeyChar();
+				if (Character.isLowerCase(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa el RFC en mayusculas", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+
 		lblTitulo.setForeground(new Color(18, 31, 37));
 		lblBusqueda.setText("Buscar por RFC");
 		lblTitulo.setBounds(38, 41, 339, 35);
