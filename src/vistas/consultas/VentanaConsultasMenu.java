@@ -24,7 +24,8 @@ public class VentanaConsultasMenu extends JPanel {
 	protected JLabel lblBusqueda;
 	protected JButton btnBuscar;
 	protected JPanel panelSur;
-	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
+	protected String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
+	protected String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
 	protected JButton btnEditar;
 
 	/**

@@ -11,6 +11,9 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import vistas.FuenteProyecto;
+
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.JScrollPane;
@@ -28,6 +31,9 @@ public class VentanaEliminarMenu extends JPanel {
 	protected JLabel lblMenuEliminarTitulo;
 	protected JPanel panelSur;
 	protected JScrollPane scrollPane;
+	
+	protected String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
+	protected String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
 
 	/**
 	 * Crea el panel de la ventana de eliminar menu.
@@ -50,14 +56,14 @@ public class VentanaEliminarMenu extends JPanel {
 		textFieldOpcionUsuario.setEnabled(false);
 		textFieldOpcionUsuario.setEditable(false);
 		textFieldOpcionUsuario.setForeground(new Color(32, 43, 36));
-		textFieldOpcionUsuario.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		textFieldOpcionUsuario.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldOpcionUsuario.setBounds(415, 54, 175, 28);
 		panelNorte.add(textFieldOpcionUsuario);
 		textFieldOpcionUsuario.setColumns(10);
 
 		lblOpcionParaEliminar = new JLabel("Eliminar por [ ]");
 		lblOpcionParaEliminar.setForeground(new Color(41, 56, 47));
-		lblOpcionParaEliminar.setFont(new Font("Roboto Condensed", Font.BOLD, 16));
+		lblOpcionParaEliminar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 16));
 		lblOpcionParaEliminar.setBounds(415, 11, 175, 46);
 		panelNorte.add(lblOpcionParaEliminar);
 
@@ -77,12 +83,12 @@ public class VentanaEliminarMenu extends JPanel {
 			}
 		});
 		btnEliminar.setForeground(new Color(41, 56, 47));
-		btnEliminar.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		btnEliminar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 		btnEliminar.setBounds(619, 54, 89, 25);
 		panelNorte.add(btnEliminar);
 
 		lblMenuEliminarTitulo = new JLabel("ELIMINAR [  ]");
-		lblMenuEliminarTitulo.setFont(new Font("Roboto Condensed", Font.BOLD, 25));
+		lblMenuEliminarTitulo.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
 		lblMenuEliminarTitulo.setBounds(27, 34, 186, 33);
 		panelNorte.add(lblMenuEliminarTitulo);
 

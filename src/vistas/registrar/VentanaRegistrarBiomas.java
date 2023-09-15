@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.JTextField;
 
+import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
 
 import javax.swing.JSeparator;
@@ -32,8 +33,7 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 	private JTextField textFieldNumCuidadores;
 	private JTextField textFieldNumVeterinarios;
 	private JTextField textFieldNumAnimales;
-	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	
 	private JComboBox<String> comboBoxServicios;
 	private JComboBox<String> comboBoxTipoBioma;
 
@@ -41,6 +41,8 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 	 * Crea el panel de la Ventana de registrar biomas.
 	 */
 	public VentanaRegistrarBiomas() {
+		
+		super();
 		lblTitulo.setForeground(new Color(18, 31, 37));
 		lblTituloDerecho.setForeground(new Color(227, 236, 233));
 		panelDerecho.setBounds(314, 0, 463, 407);
@@ -66,6 +68,7 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumJaulas.setBackground(new Color(67, 83, 52));
 		textFieldNumJaulas.setBounds(32, 206, 136, 20);
 		panelDerecho.add(textFieldNumJaulas);
+		textFieldNumJaulas.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(32, 230, 136, 2);
@@ -84,6 +87,7 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumCuidadores.setBackground(new Color(67, 83, 52));
 		textFieldNumCuidadores.setBounds(32, 293, 136, 20);
 		panelDerecho.add(textFieldNumCuidadores);
+		textFieldNumCuidadores.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(32, 318, 136, 2);
@@ -102,6 +106,7 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumVeterinarios.setBackground(new Color(67, 83, 52));
 		textFieldNumVeterinarios.setBounds(225, 125, 136, 20);
 		panelDerecho.add(textFieldNumVeterinarios);
+		textFieldNumVeterinarios.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_3 = new JSeparator();
 		separator_3.setBounds(225, 148, 136, 2);
@@ -120,7 +125,8 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		textFieldNumAnimales.setBackground(new Color(67, 83, 52));
 		textFieldNumAnimales.setBounds(225, 206, 136, 20);
 		panelDerecho.add(textFieldNumAnimales);
-
+		textFieldNumAnimales.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		
 		JSeparator separator_4 = new JSeparator();
 		separator_4.setBounds(225, 230, 136, 2);
 		panelDerecho.add(separator_4);
@@ -136,36 +142,21 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		buttonRegistrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (comboBoxServicios.getSelectedItem().equals(comboBoxServicios.getItemAt(0))
-						|| comboBoxTipoBioma.getSelectedItem().equals(comboBoxTipoBioma.getItemAt(0))) {
-					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Tipo de Biona' y 'Servicios'",
+				if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
+					JOptionPane.showMessageDialog(null,
+							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				}
-
+				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
+					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Sexo' y 'Alimentacion'",
+							"Error", JOptionPane.ERROR_MESSAGE);
+				}
 				Boolean bandera = false;
 
 				String nVet = textFieldNumVeterinarios.getText();
 				String nJaulas = textFieldNumJaulas.getText();
 				String nAnimales = textFieldNumAnimales.getText();
 				String nCuidadores = textFieldNumCuidadores.getText();
-
-				List<String> listaValoreStrings = Arrays.asList(nVet, nJaulas, nAnimales, nCuidadores);
-
-				for (String string : listaValoreStrings) {
-					Pattern pattern = Pattern.compile("\\s");
-					Matcher matcher = pattern.matcher(string);
-					if (string.length() <= 0 || matcher.find() || string.matches("[\\p{P}\\p{S}]")) {
-						bandera = true;
-
-					}
-
-				}
-
-				if (bandera) {
-					JOptionPane.showMessageDialog(null,
-							"Ingresa un input valido (no espacios ni caracteres especiales)", "Error",
-							JOptionPane.ERROR_MESSAGE);
-				}
 
 				try {
 					int vet = Integer.parseInt(nVet);
@@ -206,6 +197,9 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		
 
 		lblLogo.setIcon(new ImageIcon(VentanaRegistrarMenu.class.getResource("/imagenes/selva.png")));
+		
+		listaTextFields = Arrays.asList(textFieldNumAnimales,textFieldNumCuidadores,textFieldNumJaulas,textFieldNumVeterinarios);
+		listaComboBoxs = Arrays.asList(comboBoxServicios,comboBoxTipoBioma);
 
 	}
 }

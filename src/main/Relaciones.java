@@ -8,9 +8,12 @@ import vistas.VentanaRegistro;
 import vistas.consultas.VentanaConsultaAnimales;
 import vistas.consultas.VentanaConsultaBioma;
 import vistas.consultas.VentanaConsultaVeterinarios;
+import vistas.editar.VentanaEditarAnimal;
+import vistas.editar.VentanaEditarBioma;
+import vistas.editar.VentanaEditarVeterinario;
 import vistas.eliminar.VentanaEliminarAnimal;
 import vistas.eliminar.VentanaEliminarBioma;
-import vistas.eliminar.VentanaEliminarsVeterinarios;
+import vistas.eliminar.VentanaEliminarVeterinarios;
 import vistas.registrar.VentanaRegistrarAnimal;
 import vistas.registrar.VentanaRegistrarBiomas;
 import vistas.registrar.VentanaRegistrarTrabajador;
@@ -30,7 +33,7 @@ public class Relaciones {
 	private VentanaConsultaVeterinarios ventanaConsultaVeterinarios;
 	
 	private VentanaEliminarBioma ventanaEliminarBioma;
-	private VentanaEliminarsVeterinarios ventanaEliminarsVeterinarios;
+	private VentanaEliminarVeterinarios ventanaEliminarsVeterinarios;
 	private VentanaEliminarAnimal ventanaEliminarAnimal;
 	
 	private VentanaRegistrarTrabajador ventanaRegistrarTrabajador;
@@ -38,6 +41,10 @@ public class Relaciones {
 	private VentanaRegistrarBiomas ventanaRegistrarBiomas;
 	private VentanaRegistrarAnimal ventanaRegitrarAnimal;
 	private VentanaRegistrarVeterinario ventanaRegistrarVeterinario;
+	
+	private VentanaEditarAnimal ventanaEditarAnimal;
+	private VentanaEditarBioma ventanaEditarBioma;
+	private VentanaEditarVeterinario ventanaEditarVeterinario;
 	
 	public void build() {
 		//instanciamos las clases del proyecto
@@ -52,7 +59,7 @@ public class Relaciones {
 		ventanaConsultaVeterinarios = new VentanaConsultaVeterinarios();
 		
 		ventanaEliminarBioma = new VentanaEliminarBioma();
-		ventanaEliminarsVeterinarios = new VentanaEliminarsVeterinarios();
+		ventanaEliminarsVeterinarios = new VentanaEliminarVeterinarios();
 		ventanaEliminarAnimal = new VentanaEliminarAnimal();
 		
 		ventanaRegistrarBiomas = new VentanaRegistrarBiomas();
@@ -60,6 +67,10 @@ public class Relaciones {
 		ventanaRegistrarTrabajador = new VentanaRegistrarTrabajador();
 		ventanaRegistrarTrabajadorContinuacion = new VentanaRegistrarTrabajadorContinuacion();
 		ventanaRegistrarVeterinario = new VentanaRegistrarVeterinario();
+		
+		ventanaEditarAnimal = new VentanaEditarAnimal();
+		ventanaEditarBioma = new VentanaEditarBioma();
+		ventanaEditarVeterinario = new VentanaEditarVeterinario();
 		
 		
 		
@@ -93,6 +104,14 @@ public class Relaciones {
 		
 		ventanaRegistrarTrabajadorContinuacion.setVentanaRegistrarTrabajador(ventanaRegistrarTrabajador);
 		ventanaRegistrarVeterinario.setVentanaRegistrarTrabajador(ventanaRegistrarTrabajador);
+		
+		ventanaConsultaAnimales.setVentanaEditarAnimal(ventanaEditarAnimal);
+		ventanaConsultaBioma.setVentanaEditarBioma(ventanaEditarBioma);
+		ventanaConsultaVeterinarios.setVentanaEditarVeterinario(ventanaEditarVeterinario);
+		
+		ventanaEditarAnimal.setVentanaConsultaAnimales(ventanaConsultaAnimales);
+		ventanaEditarBioma.setVentanaConsultaBioma(ventanaConsultaBioma);
+		ventanaEditarVeterinario.setVentanaConsultaVeterinarios(ventanaConsultaVeterinarios);
 		
 		//mostramos la ventana principal
 		ventanaPrincipal.setVisible(true);

@@ -5,12 +5,12 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class VentanaEliminarsVeterinarios extends VentanaEliminarMenu {
+public class VentanaEliminarVeterinarios extends VentanaEliminarMenu {
 
 	/**
 	 * Crea el panel de la ventana de eliminar veterinario.
 	 */
-	public VentanaEliminarsVeterinarios() {
+	public VentanaEliminarVeterinarios() {
 		btnEliminar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

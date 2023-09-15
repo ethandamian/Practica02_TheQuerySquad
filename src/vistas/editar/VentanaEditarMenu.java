@@ -27,8 +27,8 @@ public class VentanaEditarMenu extends JFrame {
 	protected JPanel panelPrincipalContenido;
 	protected JLabel lblTituloMenu;
 	protected JButton btnGuardar;
-	protected String urlFuenteBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	protected String urlFuentePlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	protected String urlFuenteBold = "fuentes/RobotoCondensed-Bold.ttf";
+	protected String urlFuentePlain = "fuentes/RobotoCondensed-Regular.ttf";
 
 	protected List<JTextField> listaFields;
 	protected List<JComboBox<String>> listaComboBoxs;
@@ -37,6 +37,8 @@ public class VentanaEditarMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaEditarMenu() {
+		
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 935, 480);
 		contentPane = new JPanel();
@@ -59,13 +61,13 @@ public class VentanaEditarMenu extends JFrame {
 
 		lblTituloMenu = new JLabel("MENU EDITAR [ ]");
 		lblTituloMenu.setForeground(new Color(227, 236, 233));
-		lblTituloMenu.setFont(FuenteProyecto.createFont("src/fuentes/RobotoCondensed-Bold.ttf", 35));
-		lblTituloMenu.setBounds(46, 26, 273, 58);
+		lblTituloMenu.setFont(FuenteProyecto.createFont(urlFuenteBold, 35));
+		lblTituloMenu.setBounds(46, 26, 375, 58);
 		panelPrincipalContenido.add(lblTituloMenu);
 
 		btnGuardar = new JButton("GUARDAR");
 		btnGuardar.setForeground(new Color(41, 56, 47));
-		btnGuardar.setFont(FuenteProyecto.createFont("src/fuentes/RobotoCondensed-Bold.ttf", 13));
+		btnGuardar.setFont(FuenteProyecto.createFont(urlFuenteBold, 13));
 		btnGuardar.setBounds(716, 387, 110, 23);
 		panelPrincipalContenido.add(btnGuardar);
 	}

@@ -14,8 +14,7 @@ import vistas.FuenteProyecto;
 import vistas.editar.VentanaEditarVeterinario;
 
 public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
-	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	
 
 	private VentanaEditarVeterinario ventanaEditarVeterinario;
 

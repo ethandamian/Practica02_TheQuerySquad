@@ -21,8 +21,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
-	private String urlFuenteBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuentePlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	private String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
+	private String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
 
 	private JTextField textFieldTelefonoUno;
 	private JTextField textFieldTelefonoDos;
@@ -56,19 +56,19 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		JLabel lblIngresaDatosDel = new JLabel("INGRESA DATOS DEL TRABAJADOR");
 		lblIngresaDatosDel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIngresaDatosDel.setForeground(new Color(227, 236, 233));
-		lblIngresaDatosDel.setFont(FuenteProyecto.createFont(urlFuenteBold, 25));
+		lblIngresaDatosDel.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
 		lblIngresaDatosDel.setBounds(38, 11, 384, 28);
 		panelPrincipal.add(lblIngresaDatosDel);
 
 		JLabel lblTelefonoUno = new JLabel("Telefono 1:");
 		lblTelefonoUno.setForeground(new Color(227, 236, 233));
-		lblTelefonoUno.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblTelefonoUno.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblTelefonoUno.setBounds(38, 52, 122, 28);
 		panelPrincipal.add(lblTelefonoUno);
 
 		textFieldTelefonoUno = new JTextField();
 		textFieldTelefonoUno.setForeground(new Color(227, 236, 233));
-		textFieldTelefonoUno.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldTelefonoUno.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldTelefonoUno.setColumns(10);
 		textFieldTelefonoUno.setBackground(new Color(67, 83, 52));
 		textFieldTelefonoUno.setBounds(38, 91, 136, 20);
@@ -81,13 +81,13 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		JLabel lblTelefonoDos = new JLabel("Telefono Dos:");
 		lblTelefonoDos.setForeground(new Color(227, 236, 233));
-		lblTelefonoDos.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblTelefonoDos.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblTelefonoDos.setBounds(38, 128, 122, 28);
 		panelPrincipal.add(lblTelefonoDos);
 
 		textFieldTelefonoDos = new JTextField();
 		textFieldTelefonoDos.setForeground(new Color(227, 236, 233));
-		textFieldTelefonoDos.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldTelefonoDos.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldTelefonoDos.setColumns(10);
 		textFieldTelefonoDos.setBackground(new Color(67, 83, 52));
 		textFieldTelefonoDos.setBounds(38, 161, 136, 20);
@@ -100,13 +100,13 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		JLabel lblFechaDeInicio = new JLabel("Fecha de Inicio de Contratacion:");
 		lblFechaDeInicio.setForeground(new Color(227, 236, 233));
-		lblFechaDeInicio.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblFechaDeInicio.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblFechaDeInicio.setBounds(38, 198, 238, 34);
 		panelPrincipal.add(lblFechaDeInicio);
 
 		textFieldFechaInicioContrato = new JTextField();
 		textFieldFechaInicioContrato.setForeground(new Color(227, 236, 233));
-		textFieldFechaInicioContrato.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldFechaInicioContrato.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldFechaInicioContrato.setColumns(10);
 		textFieldFechaInicioContrato.setBackground(new Color(67, 83, 52));
 		textFieldFechaInicioContrato.setBounds(38, 237, 136, 20);
@@ -119,13 +119,13 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		JLabel lblFechaFinContrato = new JLabel("Fecha de Finalizacion de Contrato:");
 		lblFechaFinContrato.setForeground(new Color(227, 236, 233));
-		lblFechaFinContrato.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblFechaFinContrato.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblFechaFinContrato.setBounds(38, 279, 238, 28);
 		panelPrincipal.add(lblFechaFinContrato);
 
 		textFieldFinContrato = new JTextField();
 		textFieldFinContrato.setForeground(new Color(227, 236, 233));
-		textFieldFinContrato.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldFinContrato.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldFinContrato.setColumns(10);
 		textFieldFinContrato.setBackground(new Color(67, 83, 52));
 		textFieldFinContrato.setBounds(38, 318, 136, 20);
@@ -138,13 +138,13 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		JLabel lbl = new JLabel("Fecha de Nacimiento:");
 		lbl.setForeground(new Color(227, 236, 233));
-		lbl.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lbl.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lbl.setBounds(286, 50, 167, 28);
 		panelPrincipal.add(lbl);
 
 		textFieldFechaNacimiento = new JTextField();
 		textFieldFechaNacimiento.setForeground(new Color(227, 236, 233));
-		textFieldFechaNacimiento.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldFechaNacimiento.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldFechaNacimiento.setColumns(10);
 		textFieldFechaNacimiento.setBackground(new Color(67, 83, 52));
 		textFieldFechaNacimiento.setBounds(286, 89, 136, 20);
@@ -157,13 +157,13 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		JLabel lblEmailUno = new JLabel("Email 1:");
 		lblEmailUno.setForeground(new Color(227, 236, 233));
-		lblEmailUno.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblEmailUno.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblEmailUno.setBounds(286, 120, 122, 28);
 		panelPrincipal.add(lblEmailUno);
 
 		textFieldEmailUno = new JTextField();
 		textFieldEmailUno.setForeground(new Color(227, 236, 233));
-		textFieldEmailUno.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldEmailUno.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldEmailUno.setColumns(10);
 		textFieldEmailUno.setBackground(new Color(67, 83, 52));
 		textFieldEmailUno.setBounds(286, 159, 136, 20);
@@ -176,7 +176,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		JLabel lblGenero = new JLabel("Genero:");
 		lblGenero.setForeground(new Color(227, 236, 233));
-		lblGenero.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblGenero.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblGenero.setBounds(286, 277, 122, 28);
 		panelPrincipal.add(lblGenero);
 
@@ -239,17 +239,17 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		});
 		btnSiguiente.setBounds(292, 362, 104, 23);
 		panelPrincipal.add(btnSiguiente);
-		btnSiguiente.setFont(FuenteProyecto.createFont(urlFuenteBold, 13));
+		btnSiguiente.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 
 		JLabel lblEmailDos = new JLabel("Email 2:");
 		lblEmailDos.setForeground(new Color(227, 236, 233));
-		lblEmailDos.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblEmailDos.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblEmailDos.setBounds(286, 196, 122, 28);
 		panelPrincipal.add(lblEmailDos);
 
 		textFieldEmailDos = new JTextField();
 		textFieldEmailDos.setForeground(new Color(227, 236, 233));
-		textFieldEmailDos.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldEmailDos.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldEmailDos.setColumns(10);
 		textFieldEmailDos.setBackground(new Color(67, 83, 52));
 		textFieldEmailDos.setBounds(286, 235, 136, 20);
@@ -261,7 +261,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		panelPrincipal.add(separator_1_2_4_1);
 
 		comboBoxGenero = new JComboBox<>();
-		comboBoxGenero.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		comboBoxGenero.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		comboBoxGenero.setModel(new DefaultComboBoxModel(new String[] { "", "Masculino", "Femenino", "No Binario" }));
 
 		comboBoxGenero.setBounds(286, 315, 136, 22);
@@ -269,7 +269,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		JLabel lblTipoDeTrabajador = new JLabel("Tipo de Trabajador:");
 		lblTipoDeTrabajador.setForeground(new Color(227, 236, 233));
-		lblTipoDeTrabajador.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblTipoDeTrabajador.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblTipoDeTrabajador.setBounds(38, 349, 181, 28);
 		panelPrincipal.add(lblTipoDeTrabajador);
 
@@ -278,7 +278,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		comboBoxTipoTrabajador
 				.setModel(new DefaultComboBoxModel(new String[] { "", "Veterinario", "Cuidador", "Proveedor" }));
 
-		comboBoxTipoTrabajador.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		comboBoxTipoTrabajador.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		comboBoxTipoTrabajador.setBounds(38, 374, 136, 22);
 		panelPrincipal.add(comboBoxTipoTrabajador);
 

@@ -36,8 +36,7 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 	protected JLabel lblIncioContrato;
 	protected JLabel lblGeneroValor;
 	protected JLabel lblGenero;
-	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	
 	private JLabel lblColonia;
 	private JLabel lblColoniaValor;
 	private JLabel lblEstado;

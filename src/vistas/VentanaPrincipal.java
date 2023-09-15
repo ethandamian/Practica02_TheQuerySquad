@@ -20,7 +20,7 @@ import vistas.consultas.VentanaConsultaBioma;
 import vistas.consultas.VentanaConsultaVeterinarios;
 import vistas.eliminar.VentanaEliminarAnimal;
 import vistas.eliminar.VentanaEliminarBioma;
-import vistas.eliminar.VentanaEliminarsVeterinarios;
+import vistas.eliminar.VentanaEliminarVeterinarios;
 import vistas.registrar.VentanaRegistrarAnimal;
 import vistas.registrar.VentanaRegistrarBiomas;
 import vistas.registrar.VentanaRegistrarTrabajador;
@@ -36,7 +36,7 @@ public class VentanaPrincipal extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private String urlFuenteString = "src/fuentes/RobotoCondensed-Bold.ttf";
+	private String urlFuenteString = "fuentes/RobotoCondensed-Bold.ttf";
 	private JPanel panelPrincipal;
 
 	private static JPanel panelCentral;
@@ -51,7 +51,7 @@ public class VentanaPrincipal extends JFrame {
 	private VentanaConsultaVeterinarios ventanaConsultaVeterinarios;
 
 	private VentanaEliminarBioma ventanaEliminarBioma;
-	private VentanaEliminarsVeterinarios ventanaEliminarsVeterinarios;
+	private VentanaEliminarVeterinarios ventanaEliminarsVeterinarios;
 	private VentanaEliminarAnimal ventanaEliminarAnimal;
 
 	private VentanaRegistrarBiomas registrarBiomas;
@@ -276,11 +276,11 @@ public class VentanaPrincipal extends JFrame {
 		this.ventanaEliminarBioma = ventanaEliminarBioma;
 	}
 
-	public VentanaEliminarsVeterinarios getVentanaEliminarVeterinario() {
+	public VentanaEliminarVeterinarios getVentanaEliminarVeterinario() {
 		return ventanaEliminarsVeterinarios;
 	}
 
-	public void setVentanaEliminarVeterinario(VentanaEliminarsVeterinarios ventanaEliminarsVeterinarios) {
+	public void setVentanaEliminarVeterinario(VentanaEliminarVeterinarios ventanaEliminarsVeterinarios) {
 		this.ventanaEliminarsVeterinarios = ventanaEliminarsVeterinarios;
 	}
 
