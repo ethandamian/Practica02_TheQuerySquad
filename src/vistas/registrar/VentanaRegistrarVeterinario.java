@@ -22,9 +22,9 @@ import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.List;
 
-public class VentanaRegistrarVeterinario extends JPanel {
-	private String urlFuenteBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuentePlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+public class VentanaRegistrarVeterinario extends VentanaRegistrarMenu {
+	private String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
+	private String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
 
 	private JTextField textFieldEspecialidad;
 	private JTextField textFieldSalario;
@@ -48,13 +48,13 @@ public class VentanaRegistrarVeterinario extends JPanel {
 
 		JLabel lblEspecialidad = new JLabel("Especialidad:");
 		lblEspecialidad.setForeground(new Color(227, 236, 233));
-		lblEspecialidad.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblEspecialidad.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblEspecialidad.setBounds(38, 52, 122, 28);
 		panelPrincipal.add(lblEspecialidad);
 
 		textFieldEspecialidad = new JTextField();
 		textFieldEspecialidad.setForeground(new Color(227, 236, 233));
-		textFieldEspecialidad.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldEspecialidad.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldEspecialidad.setColumns(10);
 		textFieldEspecialidad.setBackground(new Color(67, 83, 52));
 		textFieldEspecialidad.setBounds(38, 91, 136, 20);
@@ -67,13 +67,13 @@ public class VentanaRegistrarVeterinario extends JPanel {
 
 		JLabel lblSalario = new JLabel("Salario:");
 		lblSalario.setForeground(new Color(227, 236, 233));
-		lblSalario.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblSalario.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblSalario.setBounds(253, 58, 122, 28);
 		panelPrincipal.add(lblSalario);
 
 		textFieldSalario = new JTextField();
 		textFieldSalario.setForeground(new Color(227, 236, 233));
-		textFieldSalario.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldSalario.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldSalario.setColumns(10);
 		textFieldSalario.setBackground(new Color(67, 83, 52));
 		textFieldSalario.setBounds(253, 91, 136, 20);
@@ -103,12 +103,12 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		});
 		btnRegistrar.setBounds(305, 335, 84, 23);
 		panelPrincipal.add(btnRegistrar);
-		btnRegistrar.setFont(FuenteProyecto.createFont(urlFuenteBold, 13));
+		btnRegistrar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 
 		JLabel lblIngresaDatosDel = new JLabel("INGRESA DATOS DEL VETERINARIO");
 		lblIngresaDatosDel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIngresaDatosDel.setForeground(new Color(227, 236, 233));
-		lblIngresaDatosDel.setFont(FuenteProyecto.createFont(urlFuenteBold, 25));
+		lblIngresaDatosDel.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
 		lblIngresaDatosDel.setBounds(38, 11, 384, 28);
 		panelPrincipal.add(lblIngresaDatosDel);
 

@@ -30,7 +30,7 @@ public class VentanaMenu extends JPanel {
 	protected String descripcionDos;
 	protected JLabel lblNewLabel_1;
 	protected JLabel lblOpcionTres;
-	private String urlFuenteString = "src/fuentes/RobotoCondensed-Bold.ttf";
+	private String urlFuenteString = "fuentes/RobotoCondensed-Bold.ttf";
 
 	/**
 	 * Crea el panel de la ventana de menu.

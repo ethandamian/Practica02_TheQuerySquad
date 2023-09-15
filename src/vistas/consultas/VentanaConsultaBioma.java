@@ -2,7 +2,9 @@ package vistas.consultas;
 
 import javax.swing.JPanel;
 
+import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
+import vistas.editar.VentanaEditarBioma;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -13,9 +15,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class VentanaConsultaBioma extends VentanaConsultasMenu {
+	
+	private VentanaEditarBioma ventanaEditarBioma;
 
-	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	
+	
 
 	/**
 	 * Crea el panel de la ventana consulta bioma.
@@ -25,13 +29,23 @@ public class VentanaConsultaBioma extends VentanaConsultasMenu {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String t = textFieldInputUsuario.getText();
-				try {
-					int n = Integer.parseInt(t);
-
-				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
-					textFieldInputUsuario.setText("");
+				if (ManejadorDeErrores.validarJTextField(t)) {
+					JOptionPane.showMessageDialog(null,
+							"No puede ingresar carcteres especiales, espacios o  dejar vacio el campo", "Error",
+							JOptionPane.ERROR_MESSAGE);
 				}
+				// TODO validacion para id
+				if (true) {
+					btnEditar.setVisible(true);
+					btnEditar.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseClicked(MouseEvent e) {
+							ventanaEditarBioma.setVisible(true);
+						}
+					});
+
+				}
+
 			}
 		});
 		lblBusqueda.setText("Buscar por ID");
@@ -101,5 +115,21 @@ public class VentanaConsultaBioma extends VentanaConsultasMenu {
 		panelNorte.setBackground(new Color(60, 98, 85));
 
 	}
+
+
+
+
+	public VentanaEditarBioma getVentanaEditarBioma() {
+		return ventanaEditarBioma;
+	}
+
+
+
+
+	public void setVentanaEditarBioma(VentanaEditarBioma ventanaEditarBioma) {
+		this.ventanaEditarBioma = ventanaEditarBioma;
+	}
+	
+	
 
 }

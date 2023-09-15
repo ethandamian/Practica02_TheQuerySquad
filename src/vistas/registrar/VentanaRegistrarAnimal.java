@@ -28,8 +28,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 	private JTextField textFieldAltura;
 	private JTextField textFieldNumeroJaula;
 
-	private String urlFuenteBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuentePlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+	
 	private JComboBox<String> comboBoxSexo;
 	private JComboBox<String> comboBoxAlimentacion;
 	private JTextArea textAreaIndicacionesMedicas;
@@ -45,13 +44,13 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblNombre_1 = new JLabel("Nombre:");
 		lblNombre_1.setForeground(new Color(227, 236, 233));
-		lblNombre_1.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblNombre_1.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNombre_1.setBounds(72, 50, 122, 28);
 		panelDerecho.add(lblNombre_1);
 
 		textFieldNombre = new JTextField();
 		textFieldNombre.setForeground(new Color(227, 236, 233));
-		textFieldNombre.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textFieldNombre.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldNombre.setColumns(10);
 		textFieldNombre.setBackground(new Color(67, 83, 52));
 		textFieldNombre.setBounds(72, 89, 136, 20);
@@ -64,7 +63,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblEspecie = new JLabel("Especie:");
 		lblEspecie.setForeground(new Color(227, 236, 233));
-		lblEspecie.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblEspecie.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblEspecie.setBounds(72, 126, 122, 28);
 		panelDerecho.add(lblEspecie);
 
@@ -83,7 +82,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblPeso = new JLabel("Peso:");
 		lblPeso.setForeground(new Color(227, 236, 233));
-		lblPeso.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblPeso.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblPeso.setBounds(72, 196, 122, 28);
 		panelDerecho.add(lblPeso);
 
@@ -102,7 +101,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblAltura = new JLabel("Altura:");
 		lblAltura.setForeground(new Color(227, 236, 233));
-		lblAltura.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblAltura.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblAltura.setBounds(72, 277, 122, 28);
 		panelDerecho.add(lblAltura);
 
@@ -121,7 +120,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblSexo = new JLabel("Sexo:");
 		lblSexo.setForeground(new Color(227, 236, 233));
-		lblSexo.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblSexo.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblSexo.setBounds(255, 50, 122, 28);
 		panelDerecho.add(lblSexo);
 
@@ -131,7 +130,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblNumeroDeJaula = new JLabel("Numero de Jaula:");
 		lblNumeroDeJaula.setForeground(new Color(227, 236, 233));
-		lblNumeroDeJaula.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblNumeroDeJaula.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNumeroDeJaula.setBounds(255, 126, 122, 28);
 		panelDerecho.add(lblNumeroDeJaula);
 
@@ -150,7 +149,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblAlimentacion = new JLabel("Alimentacion:");
 		lblAlimentacion.setForeground(new Color(227, 236, 233));
-		lblAlimentacion.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblAlimentacion.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblAlimentacion.setBounds(255, 196, 122, 28);
 		panelDerecho.add(lblAlimentacion);
 
@@ -160,7 +159,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 		JLabel lblIndicacionesMedicas = new JLabel("Indicaciones Medicas:");
 		lblIndicacionesMedicas.setForeground(new Color(227, 236, 233));
-		lblIndicacionesMedicas.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
+		lblIndicacionesMedicas.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblIndicacionesMedicas.setBounds(255, 277, 174, 28);
 		panelDerecho.add(lblIndicacionesMedicas);
 
@@ -195,7 +194,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 
 			}
 		});
-		btnRegistrar.setFont(FuenteProyecto.createFont(urlFuenteBold, 13));
+		btnRegistrar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 		btnRegistrar.setBounds(72, 353, 104, 23);
 		panelDerecho.add(btnRegistrar);
 
@@ -204,14 +203,14 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		comboBoxSexo.setBounds(255, 88, 136, 22);
 		panelDerecho.add(comboBoxSexo);
 
-		comboBoxSexo.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		comboBoxSexo.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 
 		comboBoxAlimentacion = new JComboBox<>();
 		comboBoxAlimentacion
 				.setModel(new DefaultComboBoxModel<String>(new String[] { "", "Carnivoro", "Herviboro", "Omnivoro" }));
 		comboBoxAlimentacion.setBounds(255, 234, 136, 22);
 		panelDerecho.add(comboBoxAlimentacion);
-		comboBoxAlimentacion.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		comboBoxAlimentacion.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 
 		textAreaIndicacionesMedicas = new JTextArea();
 		textAreaIndicacionesMedicas.setLineWrap(true);
@@ -219,7 +218,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		textAreaIndicacionesMedicas.setForeground(new Color(227, 236, 233));
 		textAreaIndicacionesMedicas.setBounds(255, 314, 136, 82);
 		panelDerecho.add(textAreaIndicacionesMedicas);
-		textAreaIndicacionesMedicas.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
+		textAreaIndicacionesMedicas.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 
 		listaTextFields = Arrays.asList(textFieldAltura, textFieldEspecie, textFieldNombre, textFieldNumeroJaula,
 				textFieldPeso);

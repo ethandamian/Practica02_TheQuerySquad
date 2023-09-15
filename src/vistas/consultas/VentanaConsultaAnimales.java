@@ -16,10 +16,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextArea;
 
+import errores.ManejadorDeErrores;
+
 public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 	private JLabel lblSexoValor;
-	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
-	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
 
 	private VentanaEditarAnimal ventanaEditarAnimal;
 
@@ -43,12 +43,10 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String t = textFieldInputUsuario.getText();
-				try {
-					int n = Integer.parseInt(t);
-
-				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(null, "Ingresa un ID valido", "error", JOptionPane.ERROR_MESSAGE);
-					textFieldInputUsuario.setText("");
+				if (ManejadorDeErrores.validarJTextField(t)) {
+					JOptionPane.showMessageDialog(null,
+							"No puede ingresar carcteres especiales, espacios o  dejar vacio el campo", "Error",
+							JOptionPane.ERROR_MESSAGE);
 				}
 				// TODO validacion para id
 				if (true) {
