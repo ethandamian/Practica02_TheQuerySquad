@@ -24,7 +24,9 @@ public class VentanaRegistrarMenu extends JPanel {
 	protected JLabel lblTituloDerecho;
 	protected String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
 	protected String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
-	
+
+	protected List<JTextField> listaTextFields;
+	protected List<JComboBox<String>> listaComboBoxs;
 
 	/**
 	 * Crea el panel de la Ventana de registrar menu.

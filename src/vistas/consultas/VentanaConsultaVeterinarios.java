@@ -1,5 +1,7 @@
 package vistas.consultas;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -7,27 +9,49 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
+import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
+import vistas.editar.VentanaEditarVeterinario;
 
 public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 	private String urlFuenteStringBold = "src/fuentes/RobotoCondensed-Bold.ttf";
 	private String urlFuenteStringPlain = "src/fuentes/RobotoCondensed-Regular.ttf";
+
+	private VentanaEditarVeterinario ventanaEditarVeterinario;
 
 	/**
 	 * Crea el panel de la ventana consulta veterinarios.
 	 */
 	public VentanaConsultaVeterinarios() {
 		super();
+
 		btnBuscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String t = textFieldInputUsuario.getText();
+				if (ManejadorDeErrores.validarJTextField(t)) {
+					JOptionPane.showMessageDialog(null,
+							"No puede ingresar carcteres especiales, espacios o  dejar vacio el campo", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
 				if (t.length() == 12 || t.length() == 13) {
-
+					// TODO logica para consultar
 				} else {
-					JOptionPane.showMessageDialog(null, "Ingresa un RFC valido");
+					JOptionPane.showMessageDialog(null, "Un RFC debe contener 12 o 13 caracteres", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+				// TODO validacion para id
+				if (true) {
+					btnEditar.setVisible(true);
+					btnEditar.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mouseClicked(MouseEvent e) {
+							ventanaEditarVeterinario.setVisible(true);
+						}
+					});
 				}
 			}
+
 		});
 
 		JLabel lblEspecialidad = new JLabel("Especialidad:");
@@ -57,4 +81,13 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 		lblColoniaValor.setBounds(568, 201, 126, 26);
 		panelSur.add(lblColoniaValor);
 	}
+
+	public VentanaEditarVeterinario getVentanaEditarVeterinario() {
+		return ventanaEditarVeterinario;
+	}
+
+	public void setVentanaEditarVeterinario(VentanaEditarVeterinario ventanaEditarVeterinario) {
+		this.ventanaEditarVeterinario = ventanaEditarVeterinario;
+	}
+
 }

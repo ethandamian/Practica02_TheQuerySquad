@@ -3,6 +3,7 @@ package vistas.registrar;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import java.awt.Font;
@@ -11,6 +12,7 @@ import java.awt.TextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
+import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
 
 import javax.swing.JComboBox;
@@ -57,6 +59,7 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		textFieldEspecialidad.setBackground(new Color(67, 83, 52));
 		textFieldEspecialidad.setBounds(38, 91, 136, 20);
 		panelPrincipal.add(textFieldEspecialidad);
+		textFieldEspecialidad.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(38, 115, 136, 2);
@@ -68,7 +71,6 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		lblSalario.setBounds(253, 58, 122, 28);
 		panelPrincipal.add(lblSalario);
 
-		
 		textFieldSalario = new JTextField();
 		textFieldSalario.setForeground(new Color(227, 236, 233));
 		textFieldSalario.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
@@ -76,7 +78,8 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		textFieldSalario.setBackground(new Color(67, 83, 52));
 		textFieldSalario.setBounds(253, 91, 136, 20);
 		panelPrincipal.add(textFieldSalario);
-		
+		textFieldSalario.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setBounds(253, 115, 136, 2);
 		panelPrincipal.add(separator_1_1);
@@ -85,10 +88,16 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		btnRegistrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
+					JOptionPane.showMessageDialog(null,
+							"Los valores en los campos no pueden tener caracteres especiales o espacios", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				} else {
+					ventanaRegistrarTrabajador.limpiaCampos();
 
-				ventanaRegistrarTrabajador.limpiaCampos();
-
-				VentanaRegistrarTrabajador.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenido());
+					VentanaRegistrarTrabajador
+							.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenido());
+				}
 
 			}
 		});
@@ -102,12 +111,8 @@ public class VentanaRegistrarVeterinario extends JPanel {
 		lblIngresaDatosDel.setFont(FuenteProyecto.createFont(urlFuenteBold, 25));
 		lblIngresaDatosDel.setBounds(38, 11, 384, 28);
 		panelPrincipal.add(lblIngresaDatosDel);
-		
-		listaTextFields =  Arrays.asList(textFieldEspecialidad,textFieldSalario);
 
-	}
-
-
+		listaTextFields = Arrays.asList(textFieldEspecialidad, textFieldSalario);
 
 	}
 

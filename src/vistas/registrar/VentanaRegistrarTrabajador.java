@@ -3,6 +3,7 @@ package vistas.registrar;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -21,6 +22,11 @@ import java.util.Arrays;
 import java.util.List;
 import javax.swing.SwingConstants;
 
+import errores.ManejadorDeErrores;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 	private String urlFuenteBold = "src/fuentes/RobotoCondensed-Bold.ttf";
 	private String urlFuentePlain = "src/fuentes/RobotoCondensed-Regular.ttf";
@@ -36,8 +42,6 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 	private JTextField textFieldNumInterior;
 	private JTextField textFieldNumExterior;
 	private JTextField textFieldColonia;
-
-	private List<JTextField> listaTextFields;
 
 	private static JPanel panelDerechoContenido;
 
@@ -65,12 +69,23 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		panelDerechoContenido.add(lblRfc);
 
 		textFieldRFC = new JTextField();
+		textFieldRFC.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLowerCase(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa el RFC en mayusculas", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		textFieldRFC.setForeground(new Color(227, 236, 233));
 		textFieldRFC.setFont(FuenteProyecto.createFont(urlFuenteBold, 13));
 		textFieldRFC.setColumns(10);
 		textFieldRFC.setBackground(new Color(67, 83, 52));
 		textFieldRFC.setBounds(45, 87, 136, 20);
 		panelDerechoContenido.add(textFieldRFC);
+		textFieldRFC.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(45, 111, 136, 2);
@@ -89,6 +104,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldNombre.setBackground(new Color(67, 83, 52));
 		textFieldNombre.setBounds(45, 157, 136, 20);
 		panelDerechoContenido.add(textFieldNombre);
+		textFieldNombre.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setBounds(45, 181, 136, 2);
@@ -107,6 +123,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldApellidoPaterno.setBackground(new Color(67, 83, 52));
 		textFieldApellidoPaterno.setBounds(45, 233, 136, 20);
 		panelDerechoContenido.add(textFieldApellidoPaterno);
+		textFieldApellidoPaterno.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2 = new JSeparator();
 		separator_1_2.setBounds(45, 257, 136, 2);
@@ -125,6 +142,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldApellidoMaterno.setBackground(new Color(67, 83, 52));
 		textFieldApellidoMaterno.setBounds(45, 314, 136, 20);
 		panelDerechoContenido.add(textFieldApellidoMaterno);
+		textFieldApellidoMaterno.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_1 = new JSeparator();
 		separator_1_2_1.setBounds(45, 338, 136, 2);
@@ -143,6 +161,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldCalle.setBackground(new Color(67, 83, 52));
 		textFieldCalle.setBounds(228, 87, 136, 20);
 		panelDerechoContenido.add(textFieldCalle);
+		textFieldCalle.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_2 = new JSeparator();
 		separator_1_2_2.setBounds(228, 111, 136, 2);
@@ -161,6 +180,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldNumInterior.setBackground(new Color(67, 83, 52));
 		textFieldNumInterior.setBounds(228, 163, 136, 20);
 		panelDerechoContenido.add(textFieldNumInterior);
+		textFieldNumInterior.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_3 = new JSeparator();
 		separator_1_2_3.setBounds(228, 187, 136, 2);
@@ -179,6 +199,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldNumExterior.setBackground(new Color(67, 83, 52));
 		textFieldNumExterior.setBounds(228, 233, 136, 20);
 		panelDerechoContenido.add(textFieldNumExterior);
+		textFieldNumExterior.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_4 = new JSeparator();
 		separator_1_2_4.setBounds(228, 257, 136, 2);
@@ -197,6 +218,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldColonia.setBackground(new Color(67, 83, 52));
 		textFieldColonia.setBounds(228, 314, 136, 20);
 		panelDerechoContenido.add(textFieldColonia);
+		textFieldColonia.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_5 = new JSeparator();
 		separator_1_2_5.setBounds(228, 338, 136, 2);
@@ -206,9 +228,30 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		btnSiguiente.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				changePrincipalPanel(ventanaRegistrarTrabajadorContinuacion.getPanelPrincipal());
+
+				boolean bandera = true;
+				if (textFieldRFC.getText().length() == 12 || textFieldRFC.getText().length() == 13) {
+					// TODO logica para registrar
+				} else {
+					bandera = false;
+					JOptionPane.showMessageDialog(null, "Un RFC debe contener 12 o 13 caracteres", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+
+				if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
+					bandera = false;
+					JOptionPane.showMessageDialog(null,
+							"Los valores en los campos no pueden tener caracteres especiales o espacios", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+
+				if (bandera) {
+					changePrincipalPanel(ventanaRegistrarTrabajadorContinuacion.getPanelPrincipal());
+				}
+
 			}
 		});
+
 		btnSiguiente.setFont(FuenteProyecto.createFont(urlFuenteBold, 13));
 		btnSiguiente.setBounds(260, 360, 104, 23);
 		panelDerechoContenido.add(btnSiguiente);

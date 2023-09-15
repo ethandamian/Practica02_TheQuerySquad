@@ -23,6 +23,7 @@ public class VentanaConsultas extends VentanaMenu {
 		btnOpcionTres.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ventanaPrincipal.getVentanaConsultaBioma().getTextFieldInputUsuario().setText("");
 				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaConsultaBioma());
 
 			}
@@ -30,12 +31,14 @@ public class VentanaConsultas extends VentanaMenu {
 		btnOpcionDos.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ventanaPrincipal.getVentanaConsultaAnimales().getTextFieldInputUsuario().setText("");
 				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaConsultaAnimales());
 			}
 		});
 		btnOpcionUno.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ventanaPrincipal.getVentanaConsultaVeterinarios().getTextFieldInputUsuario().setText("");
 				VentanaPrincipal.changePrincipalPanel(ventanaPrincipal.getVentanaConsultaVeterinarios());
 			}
 
