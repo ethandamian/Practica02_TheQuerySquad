@@ -21,7 +21,6 @@ public class VentanaRegistrarMenu extends JPanel {
 	protected JLabel lblTitulo;
 	protected JLabel lblLogo;
 	protected static JPanel panelDerecho;
-	protected JLabel lblTituloDerecho;
 	protected String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
 	protected String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
 
@@ -63,17 +62,7 @@ public class VentanaRegistrarMenu extends JPanel {
 		panelPrincipalRegistrar.add(panelDerecho);
 		panelDerecho.setLayout(null);
 
-		lblTituloDerecho = new JLabel("INGRESA DATOS DE [ ]");
-		lblTituloDerecho.setForeground(new Color(227, 236, 233));
-		lblTituloDerecho.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTituloDerecho.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
-		lblTituloDerecho.setBounds(39, 58, 384, 28);
-		panelDerecho.add(lblTituloDerecho);
-
 	}
 
-	public static JPanel getPanelDerecho() {
-		return panelDerecho;
-	}
-
+	
 }

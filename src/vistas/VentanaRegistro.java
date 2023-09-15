@@ -5,6 +5,8 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 
+import vistas.registrar.VentanaRegistrarTrabajador;
+
 public class VentanaRegistro extends VentanaMenu {
 
 	private static final long serialVersionUID = 1L;

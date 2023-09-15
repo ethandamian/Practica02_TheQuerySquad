@@ -122,10 +122,10 @@ public class VentanaPrincipal extends JFrame {
 		lblRegistrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaRegistrarTrabajador.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenido());
-				ventanaRegistrarTrabajador.limpiaCampos();
-
+				VentanaRegistrarTrabajador.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenedor());
 				changePrincipalPanel(ventanaRegistro);
+
+				
 
 			}
 

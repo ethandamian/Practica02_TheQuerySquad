@@ -9,6 +9,7 @@ import javax.swing.JSeparator;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
@@ -17,8 +18,12 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 	private String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
@@ -44,7 +49,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 	 * Crea el panel de la Ventana de registrar trabajador continuacion.
 	 */
 	public VentanaRegistrarTrabajadorContinuacion() {
-
+		UIManager.put("TextField.caretForeground", Color.WHITE);
 		setLayout(null);
 
 		panelPrincipal = new JPanel();
@@ -105,6 +110,25 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		panelPrincipal.add(lblFechaDeInicio);
 
 		textFieldFechaInicioContrato = new JTextField();
+		
+		  textFieldFechaInicioContrato.addFocusListener(new FocusAdapter() {
+		  
+		  @Override public void focusGained(FocusEvent e) { 
+			  String input = ManejadorDeErrores.validarFecha(); 
+			  if(!input.equals("")) {
+				  textFieldFechaInicioContrato.setText(input);
+				  lblIngresaDatosDel.requestFocus();
+			  }
+			  else {
+				  JOptionPane.showMessageDialog(null, 
+						  "La fecha debe estar en formato dd mm aaaa, con un mes valido y una año mayor a 1938",
+						  "Error",JOptionPane.ERROR_MESSAGE);
+			  }
+		  
+		  
+		  
+		  } });
+		 
 		textFieldFechaInicioContrato.setForeground(new Color(227, 236, 233));
 		textFieldFechaInicioContrato.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldFechaInicioContrato.setColumns(10);
@@ -124,6 +148,23 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		panelPrincipal.add(lblFechaFinContrato);
 
 		textFieldFinContrato = new JTextField();
+		
+		  textFieldFinContrato.addFocusListener(new FocusAdapter() {
+		  
+		  @Override public void focusGained(FocusEvent e) { 
+			  String input = ManejadorDeErrores.validarFecha(); 
+			  if(!input.equals("")) {
+				  textFieldFinContrato.setText(input);
+				  lblIngresaDatosDel.requestFocus();
+			  }
+			  else {
+				  JOptionPane.showMessageDialog(null, 
+						  "La fecha debe estar en formato dd mm aaaa, con un mes valido y una año mayor a 1938",
+						  "Error",JOptionPane.ERROR_MESSAGE);
+			  }
+			  
+		  } });
+		 
 		textFieldFinContrato.setForeground(new Color(227, 236, 233));
 		textFieldFinContrato.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldFinContrato.setColumns(10);
@@ -143,6 +184,24 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		panelPrincipal.add(lbl);
 
 		textFieldFechaNacimiento = new JTextField();
+		
+		  textFieldFechaNacimiento.addFocusListener(new FocusAdapter() {
+		  
+		  @Override public void focusGained(FocusEvent e) { 
+			  String input = ManejadorDeErrores.validarFecha(); 
+			  if(!input.equals("")) {
+				  textFieldFechaNacimiento.setText(input);
+				  lblIngresaDatosDel.requestFocus();
+			  }
+			  else {
+				  JOptionPane.showMessageDialog(null, 
+						  "La fecha debe estar en formato dd mm aaaa, con un mes valido y una año mayor a 1938",
+						  "Error",JOptionPane.ERROR_MESSAGE);
+				  
+			  }
+			  
+		  } });
+		 
 		textFieldFechaNacimiento.setForeground(new Color(227, 236, 233));
 		textFieldFechaNacimiento.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		textFieldFechaNacimiento.setColumns(10);
@@ -188,6 +247,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 				btnSiguiente.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
+						Boolean bandera = true;
 						String telUnoString = textFieldTelefonoUno.getText();
 						String telDoString = textFieldTelefonoDos.getText();
 
@@ -196,22 +256,28 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 							int pesoA = Integer.parseInt(telDoString);
 
 						} catch (NumberFormatException ex) {
-							JOptionPane.showMessageDialog(null,
+							bandera = false;
+							JOptionPane.showMessageDialog(null,	
 									"No puede ingresar palabras en todos los campos donde se requieren numeros",
 									"error", JOptionPane.ERROR_MESSAGE);
 						}
 
-						if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
+						if (ManejadorDeErrores.validarListaJtextFields(listaTextFields) || ManejadorDeErrores.validarJTextFieldConEspacios(getTextFieldEmailUno().getText())
+								|| ManejadorDeErrores.validarJTextFieldConEspacios(getTextFieldEmailDos().getText())) {
+							bandera = false;
 							JOptionPane.showMessageDialog(null,
 									"Los valores en los campos no pueden tener caracteres especiales o espacios",
 									"Error", JOptionPane.ERROR_MESSAGE);
 						}
 						if (ManejadorDeErrores.validarListaComboBox(listaComBoxs)) {
+							bandera = false;
 							JOptionPane.showMessageDialog(null,
 									"Se debe elegir una opcion en 'Genero' y 'Tipo de Trabajador'", "Error",
 									JOptionPane.ERROR_MESSAGE);
 
-						} else {
+						} if(bandera) {
+							
+							
 							String opcionTrabajador = comboBoxTipoTrabajador.getSelectedItem().toString();
 
 							switch (opcionTrabajador) {
@@ -262,7 +328,7 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 
 		comboBoxGenero = new JComboBox<>();
 		comboBoxGenero.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
-		comboBoxGenero.setModel(new DefaultComboBoxModel(new String[] { "", "Masculino", "Femenino", "No Binario" }));
+		comboBoxGenero.setModel(new DefaultComboBoxModel<String>(new String[] { "", "Masculino", "Femenino", "No Binario" }));
 
 		comboBoxGenero.setBounds(286, 315, 136, 22);
 		panelPrincipal.add(comboBoxGenero);
@@ -276,23 +342,21 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 		comboBoxTipoTrabajador = new JComboBox<>();
 
 		comboBoxTipoTrabajador
-				.setModel(new DefaultComboBoxModel(new String[] { "", "Veterinario", "Cuidador", "Proveedor" }));
+				.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Veterinario"}));
 
 		comboBoxTipoTrabajador.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		comboBoxTipoTrabajador.setBounds(38, 374, 136, 22);
 		panelPrincipal.add(comboBoxTipoTrabajador);
 
 		listaTextFields = Arrays.asList(textFieldTelefonoUno,
-				textFieldTelefonoDos,
-				textFieldFechaInicioContrato,
-				textFieldFinContrato,
-				textFieldFechaNacimiento,
-				textFieldEmailUno,
-				textFieldEmailDos);
+				textFieldTelefonoDos);
 
 		listaComBoxs = Arrays.asList(comboBoxGenero, comboBoxTipoTrabajador);
 
 	}
+	
+	
+	
 
 	public JPanel getPanelPrincipal() {
 		return panelPrincipal;
@@ -313,5 +377,71 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 	public List<JComboBox<String>> getListaComBoxs() {
 		return listaComBoxs;
 	}
+
+
+
+
+	public JTextField getTextFieldTelefonoUno() {
+		return textFieldTelefonoUno;
+	}
+
+
+
+
+	public JTextField getTextFieldTelefonoDos() {
+		return textFieldTelefonoDos;
+	}
+
+
+
+
+	public JTextField getTextFieldFechaInicioContrato() {
+		return textFieldFechaInicioContrato;
+	}
+
+
+
+
+	public JTextField getTextFieldFinContrato() {
+		return textFieldFinContrato;
+	}
+
+
+
+
+	public JTextField getTextFieldFechaNacimiento() {
+		return textFieldFechaNacimiento;
+	}
+
+
+
+
+	public JTextField getTextFieldEmailUno() {
+		return textFieldEmailUno;
+	}
+
+
+
+
+	public JTextField getTextFieldEmailDos() {
+		return textFieldEmailDos;
+	}
+
+
+
+
+	public JComboBox<String> getComboBoxGenero() {
+		return comboBoxGenero;
+	}
+
+
+
+
+	public JComboBox<String> getComboBoxTipoTrabajador() {
+		return comboBoxTipoTrabajador;
+	}
+	
+	
+	
 
 }
