@@ -72,4 +72,7 @@ public class VentanaEliminarBioma extends VentanaEliminarMenu {
 		public void actionPerformed(ActionEvent e) {
 		}
 	}
+	public void limpiarCampos() {
+		limpiaCampos(textFieldOpcionUsuario);
+	}
 }

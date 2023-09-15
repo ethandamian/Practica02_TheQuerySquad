@@ -512,6 +512,12 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 				textFieldEmailDos, textFieldEspecialidad, textFieldSalario);
 
 	}
+	
+	public void limpiaCampos() {
+		limpiarCampos(listaFields);
+		limpiarComboBoxes(listaComboBoxs);
+	}
+	
 
 	public JTextField getTextFieldRFC() {
 		return textFieldRFC;

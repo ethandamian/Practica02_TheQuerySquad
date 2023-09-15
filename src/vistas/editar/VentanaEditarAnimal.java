@@ -251,6 +251,11 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		panelPrincipalContenido.add(separator_1_1_1);
 
 	}
+	
+	public void limpiaCampos() {
+		limpiarCampos(listaFields);
+		limpiarComboBoxes(listaComboBoxs);
+	}
 
 	public VentanaConsultaAnimales getVentanaConsultaAnimales() {
 		return ventanaConsultaAnimales;

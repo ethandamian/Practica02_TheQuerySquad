@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 import vistas.consultas.VentanaConsultaAnimales;
 import vistas.consultas.VentanaConsultaBioma;
 import vistas.consultas.VentanaConsultaVeterinarios;
+import vistas.editar.VentanaEditarAnimal;
 import vistas.eliminar.VentanaEliminarAnimal;
 import vistas.eliminar.VentanaEliminarBioma;
 import vistas.eliminar.VentanaEliminarVeterinarios;
@@ -104,7 +105,9 @@ public class VentanaPrincipal extends JFrame {
 		lblHome.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
 				changePrincipalPanel(panelHome);
+				limpiarVentanas();
 			}
 
 			@Override
@@ -124,6 +127,7 @@ public class VentanaPrincipal extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				VentanaRegistrarTrabajador.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenedor());
 				changePrincipalPanel(ventanaRegistro);
+				limpiarVentanas();
 
 				
 
@@ -146,6 +150,7 @@ public class VentanaPrincipal extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changePrincipalPanel(ventanaConsultas);
+				limpiarVentanas();
 			}
 
 			@Override
@@ -165,6 +170,7 @@ public class VentanaPrincipal extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changePrincipalPanel(ventanaEliminar);
+				limpiarVentanas();
 			}
 
 			@Override
@@ -218,6 +224,27 @@ public class VentanaPrincipal extends JFrame {
 		panelCentral.add(panel, BorderLayout.CENTER);
 		panelCentral.revalidate();
 		panelCentral.repaint();
+	}
+	
+	
+	public void limpiarVentanas() {
+	
+		
+		ventanaConsultaAnimales.limpiarCampos();
+		ventanaConsultaBioma.limpiarCampos();
+		ventanaConsultaVeterinarios.limpiarCampos();
+		
+		ventanaConsultaAnimales.getVentanaEditarAnimal().limpiaCampos();
+		ventanaConsultaBioma.getVentanaEditarBioma().limpiaCampos();
+		ventanaConsultaVeterinarios.getVentanaEditarVeterinario().limpiaCampos();
+		
+		ventanaRegitrarAnimal.limpiaCampos();
+		ventanaRegistrarTrabajador.limpiaCampos();
+		registrarBiomas.limpiaCampos();
+		
+		ventanaEliminarAnimal.limpiarCampos();
+		ventanaEliminarBioma.limpiarCampos();
+		ventanaEliminarsVeterinarios.limpiarCampos();
 	}
 
 	public VentanaMenu getVentanaRegistro() {

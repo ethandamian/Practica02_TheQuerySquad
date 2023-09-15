@@ -323,18 +323,6 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		limpiarCampos(ventanaRegistrarVeterinario.getListaTextFields());
 		limpiarComboBoxes(ventanaRegistrarTrabajadorContinuacion.getListaComBoxs());
 	}
-
-	private void limpiarCampos(List<JTextField> listaCampos) {
-		for (JTextField textField : listaCampos) {
-			textField.setText("");
-		}
-	}
-
-	private void limpiarComboBoxes(List<JComboBox<String>> comboBoxes) {
-		for (JComboBox<String> comboBox : comboBoxes) {
-			comboBox.setSelectedIndex(0);
-		}
-	}
 	
 	public static JPanel getPanelDerecho() {
 		return panelDerecho;

@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.TextField;
+
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -128,5 +130,9 @@ public class VentanaEliminarMenu extends JPanel {
 				}));
 		scrollPane.setViewportView(table);
 
+	}
+	
+	protected void limpiaCampos(JTextField textField) {
+		textField.setText("");
 	}
 }

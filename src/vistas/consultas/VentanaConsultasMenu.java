@@ -3,8 +3,10 @@ package vistas.consultas;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -104,4 +106,7 @@ public class VentanaConsultasMenu extends JPanel {
 		this.btnEditar = btnEditar;
 	}
 
+	protected void limpiaCampos(JTextField textField) {
+		textField.setText("");
+	}
 }
