@@ -52,5 +52,8 @@ public class VentanaEliminarVeterinarios extends VentanaEliminarMenu {
 		table.getColumnModel().getColumn(2).setPreferredWidth(90);
 
 	}
+	public void limpiarCampos() {
+		limpiaCampos(textFieldOpcionUsuario);
+	}
 
 }

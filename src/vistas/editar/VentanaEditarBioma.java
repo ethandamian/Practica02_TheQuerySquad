@@ -188,7 +188,10 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		
 
 	}
-
+	public void limpiaCampos() {
+		limpiarCampos(listaFields);
+		limpiarComboBoxes(listaComboBoxs);
+	}
 
 
 	public VentanaConsultaBioma getVentanaConsultaBioma() {

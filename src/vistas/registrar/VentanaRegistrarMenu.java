@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.SwingConstants;
@@ -24,8 +25,8 @@ public class VentanaRegistrarMenu extends JPanel {
 	protected String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
 	protected String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
 
-	protected List<JTextField> listaTextFields;
-	protected List<JComboBox<String>> listaComboBoxs;
+	protected List<JTextField> listaTextFields = new ArrayList<JTextField>();
+	protected List<JComboBox<String>> listaComboBoxs = new ArrayList<JComboBox<String>>();
 
 	/**
 	 * Crea el panel de la Ventana de registrar menu.
@@ -62,6 +63,20 @@ public class VentanaRegistrarMenu extends JPanel {
 		panelPrincipalRegistrar.add(panelDerecho);
 		panelDerecho.setLayout(null);
 
+	}
+	
+	
+
+	protected void limpiarCampos(List<JTextField> listaCampos) {
+		for (JTextField textField : listaCampos) {
+			textField.setText("");
+		}
+	}
+
+	protected void limpiarComboBoxes(List<JComboBox<String>> comboBoxes) {
+		for (JComboBox<String> comboBox : comboBoxes) {
+			comboBox.setSelectedIndex(0);
+		}
 	}
 
 	

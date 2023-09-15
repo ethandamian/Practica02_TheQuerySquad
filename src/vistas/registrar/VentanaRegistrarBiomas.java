@@ -208,4 +208,10 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		listaComboBoxs = Arrays.asList(comboBoxServicios,comboBoxTipoBioma);
 
 	}
+	
+	public void limpiaCampos() {
+		limpiarCampos(listaTextFields);
+		
+		limpiarComboBoxes(listaComboBoxs);
+	}
 }

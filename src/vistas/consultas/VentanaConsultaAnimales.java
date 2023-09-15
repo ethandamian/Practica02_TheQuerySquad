@@ -143,6 +143,11 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 		lblTitulo.setText("CONSULTAS DE ANIMALES");
 
 	}
+	
+	public void limpiarCampos() {
+		limpiaCampos(textFieldInputUsuario);
+	}
+	
 
 	public VentanaEditarAnimal getVentanaEditarAnimal() {
 		return ventanaEditarAnimal;

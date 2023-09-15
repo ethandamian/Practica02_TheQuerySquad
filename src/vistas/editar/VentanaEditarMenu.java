@@ -15,6 +15,8 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Window;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -30,8 +32,8 @@ public class VentanaEditarMenu extends JFrame {
 	protected String urlFuenteBold = "fuentes/RobotoCondensed-Bold.ttf";
 	protected String urlFuentePlain = "fuentes/RobotoCondensed-Regular.ttf";
 
-	protected List<JTextField> listaFields;
-	protected List<JComboBox<String>> listaComboBoxs;
+	protected List<JTextField> listaFields = new ArrayList<JTextField>();
+	protected List<JComboBox<String>> listaComboBoxs = new ArrayList<JComboBox<String>>();
 
 	/**
 	 * Create the frame.
@@ -80,5 +82,17 @@ public class VentanaEditarMenu extends JFrame {
 		panelPrincipal.add(panel, BorderLayout.CENTER);
 		panelPrincipal.revalidate();
 		panelPrincipal.repaint();
+	}
+	
+	protected void limpiarCampos(List<JTextField> listaCampos) {
+		for (JTextField textField : listaCampos) {
+			textField.setText("");
+		}
+	}
+
+	protected void limpiarComboBoxes(List<JComboBox<String>> comboBoxes) {
+		for (JComboBox<String> comboBox : comboBoxes) {
+			comboBox.setSelectedIndex(0);
+		}
 	}
 }

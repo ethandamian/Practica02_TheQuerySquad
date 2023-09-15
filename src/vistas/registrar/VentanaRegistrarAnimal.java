@@ -233,4 +233,11 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		listaComboBoxs = Arrays.asList(comboBoxAlimentacion, comboBoxSexo);
 
 	}
+	
+	public void limpiaCampos() {
+		limpiarCampos(listaTextFields);
+		
+		limpiarComboBoxes(listaComboBoxs);
+	}
+	
 }

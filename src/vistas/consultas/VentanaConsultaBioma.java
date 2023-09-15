@@ -115,7 +115,10 @@ public class VentanaConsultaBioma extends VentanaConsultasMenu {
 		panelNorte.setBackground(new Color(60, 98, 85));
 
 	}
-
+	
+	public void limpiarCampos() {
+		limpiaCampos(textFieldInputUsuario);
+	}
 
 
 

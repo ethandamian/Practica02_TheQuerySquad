@@ -59,5 +59,9 @@ public class VentanaEliminarAnimal extends VentanaEliminarMenu {
 		lblMenuEliminarTitulo.setText("ELIMINAR ANIMAL");
 
 	}
+	
+	public void limpiarCampos() {
+		limpiaCampos(textFieldOpcionUsuario);
+	}
 
 }

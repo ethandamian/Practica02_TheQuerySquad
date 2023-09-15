@@ -88,5 +88,9 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 	public void setVentanaEditarVeterinario(VentanaEditarVeterinario ventanaEditarVeterinario) {
 		this.ventanaEditarVeterinario = ventanaEditarVeterinario;
 	}
+	
+	public void limpiarCampos() {
+		limpiaCampos(textFieldInputUsuario);
+	}
 
 }
