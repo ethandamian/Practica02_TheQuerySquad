@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
@@ -43,6 +44,11 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 	public VentanaRegistrarBiomas() {
 		
 		super();
+		
+		JLabel lblTituloDerecho = new JLabel("INGRESA DATOS DE [ ]");
+		lblTituloDerecho.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTituloDerecho.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
+		panelDerecho.add(lblTituloDerecho);
 		lblTitulo.setForeground(new Color(18, 31, 37));
 		lblTituloDerecho.setForeground(new Color(227, 236, 233));
 		panelDerecho.setBounds(314, 0, 463, 407);

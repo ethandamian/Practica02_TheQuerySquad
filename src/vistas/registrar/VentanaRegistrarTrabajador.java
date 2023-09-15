@@ -15,12 +15,14 @@ import javax.swing.JSeparator;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 import errores.ManejadorDeErrores;
 
@@ -33,6 +35,8 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 	private VentanaRegistrarTrabajadorContinuacion ventanaRegistrarTrabajadorContinuacion;
 	private VentanaRegistrarVeterinario ventanaRegistrarVeterinario;
 
+	private static JPanel panelDerechoContenido;
+
 	private JTextField textFieldRFC;
 	private JTextField textFieldNombre;
 	private JTextField textFieldApellidoPaterno;
@@ -41,31 +45,36 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 	private JTextField textFieldNumInterior;
 	private JTextField textFieldNumExterior;
 	private JTextField textFieldColonia;
-
-	private static JPanel panelDerechoContenido;
+	private static JPanel panelDerechoContenedor;
 
 	/**
 	 * Crea el panel de la Ventana de registrar trabajador.
 	 */
 	public VentanaRegistrarTrabajador() {
+		
+		UIManager.put("TextField.caretForeground", Color.WHITE);
 
 		panelDerecho.setBackground(new Color(67, 83, 52));
-		lblTituloDerecho.setLocation(39, 11);
 		lblLogo.setIcon(new ImageIcon(VentanaRegistrarTrabajador.class.getResource("/imagenes/registrar-vet.png")));
 
-		lblTituloDerecho.setText("   ");
 
 		panelDerechoContenido = new JPanel();
 		panelDerechoContenido.setBackground(new Color(67, 83, 52));
 		panelDerechoContenido.setBounds(0, 0, 463, 407);
 		panelDerecho.add(panelDerechoContenido);
 		panelDerechoContenido.setLayout(null);
-
+		
+		panelDerechoContenedor = new JPanel();
+		panelDerechoContenedor.setBackground(new Color(67, 83, 52));
+		panelDerechoContenedor.setBounds(0, 0, 463, 407);
+		panelDerechoContenido.add(panelDerechoContenedor);
+		panelDerechoContenedor.setLayout(null);
+		
 		JLabel lblRfc = new JLabel("RFC:");
 		lblRfc.setForeground(new Color(227, 236, 233));
 		lblRfc.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblRfc.setBounds(45, 48, 122, 28);
-		panelDerechoContenido.add(lblRfc);
+		panelDerechoContenedor.add(lblRfc);
 
 		textFieldRFC = new JTextField();
 		textFieldRFC.addKeyListener(new KeyAdapter() {
@@ -83,18 +92,18 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldRFC.setColumns(10);
 		textFieldRFC.setBackground(new Color(67, 83, 52));
 		textFieldRFC.setBounds(45, 87, 136, 20);
-		panelDerechoContenido.add(textFieldRFC);
+		panelDerechoContenedor.add(textFieldRFC);
 		textFieldRFC.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(45, 111, 136, 2);
-		panelDerechoContenido.add(separator_1);
+		panelDerechoContenedor.add(separator_1);
 
 		JLabel lblNombre = new JLabel("Nombre(s):");
 		lblNombre.setForeground(new Color(227, 236, 233));
 		lblNombre.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNombre.setBounds(45, 124, 122, 28);
-		panelDerechoContenido.add(lblNombre);
+		panelDerechoContenedor.add(lblNombre);
 
 		textFieldNombre = new JTextField();
 		textFieldNombre.setForeground(new Color(227, 236, 233));
@@ -102,18 +111,18 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldNombre.setColumns(10);
 		textFieldNombre.setBackground(new Color(67, 83, 52));
 		textFieldNombre.setBounds(45, 157, 136, 20);
-		panelDerechoContenido.add(textFieldNombre);
+		panelDerechoContenedor.add(textFieldNombre);
 		textFieldNombre.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setBounds(45, 181, 136, 2);
-		panelDerechoContenido.add(separator_1_1);
+		panelDerechoContenedor.add(separator_1_1);
 
 		JLabel lblApellidoPaterno = new JLabel("Apellido Paterno:");
 		lblApellidoPaterno.setForeground(new Color(227, 236, 233));
 		lblApellidoPaterno.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblApellidoPaterno.setBounds(45, 194, 122, 28);
-		panelDerechoContenido.add(lblApellidoPaterno);
+		panelDerechoContenedor.add(lblApellidoPaterno);
 
 		textFieldApellidoPaterno = new JTextField();
 		textFieldApellidoPaterno.setForeground(new Color(227, 236, 233));
@@ -121,18 +130,18 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldApellidoPaterno.setColumns(10);
 		textFieldApellidoPaterno.setBackground(new Color(67, 83, 52));
 		textFieldApellidoPaterno.setBounds(45, 233, 136, 20);
-		panelDerechoContenido.add(textFieldApellidoPaterno);
+		panelDerechoContenedor.add(textFieldApellidoPaterno);
 		textFieldApellidoPaterno.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2 = new JSeparator();
 		separator_1_2.setBounds(45, 257, 136, 2);
-		panelDerechoContenido.add(separator_1_2);
+		panelDerechoContenedor.add(separator_1_2);
 
 		JLabel lblApellidoMaterno = new JLabel("Apellido Materno:");
 		lblApellidoMaterno.setForeground(new Color(227, 236, 233));
 		lblApellidoMaterno.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblApellidoMaterno.setBounds(45, 275, 122, 28);
-		panelDerechoContenido.add(lblApellidoMaterno);
+		panelDerechoContenedor.add(lblApellidoMaterno);
 
 		textFieldApellidoMaterno = new JTextField();
 		textFieldApellidoMaterno.setForeground(new Color(227, 236, 233));
@@ -140,37 +149,36 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldApellidoMaterno.setColumns(10);
 		textFieldApellidoMaterno.setBackground(new Color(67, 83, 52));
 		textFieldApellidoMaterno.setBounds(45, 314, 136, 20);
-		panelDerechoContenido.add(textFieldApellidoMaterno);
+		panelDerechoContenedor.add(textFieldApellidoMaterno);
 		textFieldApellidoMaterno.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_1 = new JSeparator();
 		separator_1_2_1.setBounds(45, 338, 136, 2);
-		panelDerechoContenido.add(separator_1_2_1);
+		panelDerechoContenedor.add(separator_1_2_1);
 
 		JLabel lblCalle = new JLabel("Calle:");
 		lblCalle.setForeground(new Color(227, 236, 233));
 		lblCalle.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblCalle.setBounds(228, 48, 122, 28);
-		panelDerechoContenido.add(lblCalle);
+		panelDerechoContenedor.add(lblCalle);
 
 		textFieldCalle = new JTextField();
 		textFieldCalle.setForeground(new Color(227, 236, 233));
 		textFieldCalle.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
-		textFieldCalle.setColumns(10);
 		textFieldCalle.setBackground(new Color(67, 83, 52));
 		textFieldCalle.setBounds(228, 87, 136, 20);
-		panelDerechoContenido.add(textFieldCalle);
+		panelDerechoContenedor.add(textFieldCalle);
 		textFieldCalle.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_2 = new JSeparator();
 		separator_1_2_2.setBounds(228, 111, 136, 2);
-		panelDerechoContenido.add(separator_1_2_2);
+		panelDerechoContenedor.add(separator_1_2_2);
 
 		JLabel lblNumInterior = new JLabel("Numero Interior:");
 		lblNumInterior.setForeground(new Color(227, 236, 233));
 		lblNumInterior.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNumInterior.setBounds(228, 124, 122, 28);
-		panelDerechoContenido.add(lblNumInterior);
+		panelDerechoContenedor.add(lblNumInterior);
 
 		textFieldNumInterior = new JTextField();
 		textFieldNumInterior.setForeground(new Color(227, 236, 233));
@@ -178,18 +186,18 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldNumInterior.setColumns(10);
 		textFieldNumInterior.setBackground(new Color(67, 83, 52));
 		textFieldNumInterior.setBounds(228, 163, 136, 20);
-		panelDerechoContenido.add(textFieldNumInterior);
+		panelDerechoContenedor.add(textFieldNumInterior);
 		textFieldNumInterior.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_3 = new JSeparator();
 		separator_1_2_3.setBounds(228, 187, 136, 2);
-		panelDerechoContenido.add(separator_1_2_3);
+		panelDerechoContenedor.add(separator_1_2_3);
 
 		JLabel lblNumExterior = new JLabel("Numero Exterior:");
 		lblNumExterior.setForeground(new Color(227, 236, 233));
 		lblNumExterior.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblNumExterior.setBounds(228, 194, 122, 28);
-		panelDerechoContenido.add(lblNumExterior);
+		panelDerechoContenedor.add(lblNumExterior);
 
 		textFieldNumExterior = new JTextField();
 		textFieldNumExterior.setForeground(new Color(227, 236, 233));
@@ -197,18 +205,18 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldNumExterior.setColumns(10);
 		textFieldNumExterior.setBackground(new Color(67, 83, 52));
 		textFieldNumExterior.setBounds(228, 233, 136, 20);
-		panelDerechoContenido.add(textFieldNumExterior);
+		panelDerechoContenedor.add(textFieldNumExterior);
 		textFieldNumExterior.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_4 = new JSeparator();
 		separator_1_2_4.setBounds(228, 257, 136, 2);
-		panelDerechoContenido.add(separator_1_2_4);
+		panelDerechoContenedor.add(separator_1_2_4);
 
 		JLabel lblColonia = new JLabel("Colonia:");
 		lblColonia.setForeground(new Color(227, 236, 233));
 		lblColonia.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblColonia.setBounds(228, 275, 122, 28);
-		panelDerechoContenido.add(lblColonia);
+		panelDerechoContenedor.add(lblColonia);
 
 		textFieldColonia = new JTextField();
 		textFieldColonia.setForeground(new Color(227, 236, 233));
@@ -216,12 +224,12 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		textFieldColonia.setColumns(10);
 		textFieldColonia.setBackground(new Color(67, 83, 52));
 		textFieldColonia.setBounds(228, 314, 136, 20);
-		panelDerechoContenido.add(textFieldColonia);
+		panelDerechoContenedor.add(textFieldColonia);
 		textFieldColonia.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
 		JSeparator separator_1_2_5 = new JSeparator();
 		separator_1_2_5.setBounds(228, 338, 136, 2);
-		panelDerechoContenido.add(separator_1_2_5);
+		panelDerechoContenedor.add(separator_1_2_5);
 
 		JButton btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.addMouseListener(new MouseAdapter() {
@@ -245,6 +253,7 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 				}
 
 				if (bandera) {
+					System.out.println("Limones1");
 					changePrincipalPanel(ventanaRegistrarTrabajadorContinuacion.getPanelPrincipal());
 				}
 
@@ -253,14 +262,14 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 
 		btnSiguiente.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 		btnSiguiente.setBounds(260, 360, 104, 23);
-		panelDerechoContenido.add(btnSiguiente);
+		panelDerechoContenedor.add(btnSiguiente);
 
 		JLabel lblIngresaDatosDel = new JLabel("INGRESA DATOS DEL TRABAJADOR");
 		lblIngresaDatosDel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIngresaDatosDel.setForeground(new Color(227, 236, 233));
 		lblIngresaDatosDel.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
 		lblIngresaDatosDel.setBounds(45, 11, 384, 28);
-		panelDerechoContenido.add(lblIngresaDatosDel);
+		panelDerechoContenedor.add(lblIngresaDatosDel);
 
 		listaTextFields = Arrays.asList(textFieldRFC,
 				textFieldNombre,
@@ -302,10 +311,10 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		panel.setSize(463, 407);
 		panel.setLocation(0, 0);
 
-		panelDerecho.removeAll();
-		panelDerecho.add(panel, BorderLayout.CENTER);
-		panelDerecho.revalidate();
-		panelDerecho.repaint();
+		panelDerechoContenido.removeAll();
+		panelDerechoContenido.add(panel, BorderLayout.CENTER);
+		panelDerechoContenido.revalidate();
+		panelDerechoContenido.repaint();
 	}
 
 	public void limpiaCampos() {
@@ -326,5 +335,54 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 			comboBox.setSelectedIndex(0);
 		}
 	}
+	
+	public static JPanel getPanelDerecho() {
+		return panelDerecho;
+	}
+
+	public JPanel getPanelDerechoContenedor() {
+		return panelDerechoContenedor;
+	}
+
+	public static void setPanelDerechoContenedor(JPanel panelDerechoContenedor) {
+		VentanaRegistrarTrabajador.panelDerechoContenedor = panelDerechoContenedor;
+	}
+
+	public JTextField getTextFieldRFC() {
+		return textFieldRFC;
+	}
+
+	public JTextField getTextFieldNombre() {
+		return textFieldNombre;
+	}
+
+	public JTextField getTextFieldApellidoPaterno() {
+		return textFieldApellidoPaterno;
+	}
+
+	public JTextField getTextFieldApellidoMaterno() {
+		return textFieldApellidoMaterno;
+	}
+
+	public JTextField getTextFieldCalle() {
+		return textFieldCalle;
+	}
+
+	public JTextField getTextFieldNumInterior() {
+		return textFieldNumInterior;
+	}
+
+	public JTextField getTextFieldNumExterior() {
+		return textFieldNumExterior;
+	}
+
+	public JTextField getTextFieldColonia() {
+		return textFieldColonia;
+	}
+	
+	
+	
+	
+
 
 }

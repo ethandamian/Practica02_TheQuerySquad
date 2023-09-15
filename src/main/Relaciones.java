@@ -105,10 +105,12 @@ public class Relaciones {
 		ventanaRegistrarTrabajadorContinuacion.setVentanaRegistrarTrabajador(ventanaRegistrarTrabajador);
 		ventanaRegistrarVeterinario.setVentanaRegistrarTrabajador(ventanaRegistrarTrabajador);
 		
+		//relaciones vistas consultas - ventanas editar 
 		ventanaConsultaAnimales.setVentanaEditarAnimal(ventanaEditarAnimal);
 		ventanaConsultaBioma.setVentanaEditarBioma(ventanaEditarBioma);
 		ventanaConsultaVeterinarios.setVentanaEditarVeterinario(ventanaEditarVeterinario);
 		
+		//relaciones vistas editar - vistas consulta
 		ventanaEditarAnimal.setVentanaConsultaAnimales(ventanaConsultaAnimales);
 		ventanaEditarBioma.setVentanaConsultaBioma(ventanaConsultaBioma);
 		ventanaEditarVeterinario.setVentanaConsultaVeterinarios(ventanaConsultaVeterinarios);

@@ -184,6 +184,7 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		comboBoxTipoBioma.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
 		
 		listaFields = Arrays.asList(textFieldNumAnimales,textFieldNumCuidadores,textFieldNumJaulas,textFieldNumVeterinarios);
+		listaComboBoxs = Arrays.asList(comboBoxServicios,comboBoxTipoBioma);
 		
 
 	}

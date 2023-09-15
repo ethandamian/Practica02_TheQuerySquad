@@ -24,6 +24,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class VentanaEditarVeterinario extends VentanaEditarMenu {
 	private JTextField textFieldRFC;
@@ -54,14 +56,32 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 		btnGuardar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (ManejadorDeErrores.validarListaJtextFields(listaFields)) {
+				
+				boolean bandera = true;
+				try {
+					int salario = Integer.parseInt(getTextFieldSalario().getText());
+					
+
+				} catch (NumberFormatException ex) {
+					bandera = false;
+					JOptionPane.showMessageDialog(null,	
+							"No puede ingresar palabras en todos los campos donde se requieren numeros",
+							"error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				if (ManejadorDeErrores.validarListaJtextFields(listaFields) || ManejadorDeErrores.validarJTextFieldConEspacios(getTextFieldEmailUno().getText())
+						|| ManejadorDeErrores.validarJTextFieldConEspacios(getTextFieldEmailDos().getText())) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null,
-							"Los valores en los campos no pueden tener caracteres especiales o espacios", "Error",
-							JOptionPane.ERROR_MESSAGE);
+							"Los valores en los campos no pueden tener caracteres especiales o espacios",
+							"Error", JOptionPane.ERROR_MESSAGE);
 				}
 				if (comboBoxGenero.getSelectedItem().equals(comboBoxGenero.getItemAt(0))) {
+					bandera = true;
 					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Genero'",
 							"Error", JOptionPane.ERROR_MESSAGE);
+				}if(bandera) {
+					//TODO logica para editar
 				}
 			}
 		});
@@ -288,6 +308,22 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 		panelPrincipalContenido.add(lblFechaDeInicio);
 
 		textFieldFechaInicioContrato = new JTextField();
+		textFieldFechaInicioContrato.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				
+				String input = ManejadorDeErrores.validarFecha(); 
+				  if(!input.equals("")) {
+					  textFieldFechaInicioContrato.setText(input);
+					  lblTituloMenu.requestFocus();
+				  }
+				  else {
+					  JOptionPane.showMessageDialog(null, 
+							  "La fecha debe estar en formato dd mm aaaa, con un mes valido y una año mayor a 1938",
+							  "Error",JOptionPane.ERROR_MESSAGE);
+				  }
+			}
+		});
 		textFieldFechaInicioContrato.setForeground(new Color(227, 236, 233));
 		textFieldFechaInicioContrato.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
 		textFieldFechaInicioContrato.setColumns(10);
@@ -307,6 +343,21 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 		panelPrincipalContenido.add(lblFechaFinContrato);
 
 		textFieldFechaFinContrato = new JTextField();
+		textFieldFechaFinContrato.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				String input = ManejadorDeErrores.validarFecha(); 
+				  if(!input.equals("")) {
+					  textFieldFechaFinContrato.setText(input);
+					  lblTituloMenu.requestFocus();
+				  }
+				  else {
+					  JOptionPane.showMessageDialog(null, 
+							  "La fecha debe estar en formato dd mm aaaa, con un mes valido y una año mayor a 1938",
+							  "Error",JOptionPane.ERROR_MESSAGE);
+				  }
+			}
+		});
 		textFieldFechaFinContrato.setForeground(new Color(227, 236, 233));
 		textFieldFechaFinContrato.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
 		textFieldFechaFinContrato.setColumns(10);
@@ -326,6 +377,24 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 		panelPrincipalContenido.add(lbl);
 
 		textFieldFechaNacimiento = new JTextField();
+		textFieldFechaNacimiento.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				String input = ManejadorDeErrores.validarFecha(); 
+				  if(!input.equals("")) {
+					  textFieldFechaNacimiento.setText(input);
+					  lblTituloMenu.requestFocus();
+				  }
+				  
+				  
+				  
+				  else {
+					  JOptionPane.showMessageDialog(null, 
+							  "La fecha debe estar en formato dd mm aaaa, con un mes valido y una año mayor a 1938",
+							  "Error",JOptionPane.ERROR_MESSAGE);
+				  }
+			}
+		});
 		textFieldFechaNacimiento.setForeground(new Color(227, 236, 233));
 		textFieldFechaNacimiento.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
 		textFieldFechaNacimiento.setColumns(10);

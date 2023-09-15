@@ -11,6 +11,7 @@ import java.awt.TextField;
 
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
@@ -22,7 +23,7 @@ import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.List;
 
-public class VentanaRegistrarVeterinario extends VentanaRegistrarMenu {
+public class VentanaRegistrarVeterinario extends JPanel {
 	private String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
 	private String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
 
@@ -38,11 +39,13 @@ public class VentanaRegistrarVeterinario extends VentanaRegistrarMenu {
 	 * Crea el panel de la Ventana de registrar veterinario.
 	 */
 	public VentanaRegistrarVeterinario() {
+		
+		UIManager.put("TextField.caretForeground", Color.WHITE);
 		setLayout(null);
 
 		panelPrincipal = new JPanel();
 		panelPrincipal.setBackground(new Color(67, 83, 52));
-		panelPrincipal.setBounds(0, 0, 463, 407);
+		panelPrincipal.setBounds(0, 0, 464, 407);
 		add(panelPrincipal);
 		panelPrincipal.setLayout(null);
 
@@ -88,15 +91,52 @@ public class VentanaRegistrarVeterinario extends VentanaRegistrarMenu {
 		btnRegistrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				boolean bandera = true;
+				try {
+					int salario = Integer.parseInt(getTextFieldSalario().getText());
+					
+
+				} catch (NumberFormatException ex) {
+					bandera = false;
+					JOptionPane.showMessageDialog(null,	
+							"No puede ingresar palabras en todos los campos donde se requieren numeros",
+							"error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				
 				if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null,
 							"Los valores en los campos no pueden tener caracteres especiales o espacios", "Error",
 							JOptionPane.ERROR_MESSAGE);
-				} else {
+				} if(bandera){
 					ventanaRegistrarTrabajador.limpiaCampos();
+					
+					String rfc = ventanaRegistrarTrabajador.getTextFieldRFC().getText();
+					String nombreString = ventanaRegistrarTrabajador.getTextFieldNombre().getText();
+					String apeelidoMaterno = ventanaRegistrarTrabajador.getTextFieldApellidoMaterno().getText();
+					String apellidoPaterno = ventanaRegistrarTrabajador.getTextFieldApellidoPaterno().getText();
+					String calle = ventanaRegistrarTrabajador.getTextFieldCalle().getText();
+					String numInterior = ventanaRegistrarTrabajador.getTextFieldNumInterior().getText();
+					String numExterior = ventanaRegistrarTrabajador.getTextFieldNumExterior().getText();
+					String colonia = ventanaRegistrarTrabajador.getTextFieldColonia().getText();
+					String telUno = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldTelefonoUno().getText();
+					String telDos = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldTelefonoDos().getText(); 
+					String fechaInicioContrato = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldFechaInicioContrato().getText();
+					String fechaFinContrato = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldFinContrato().getText();
+					String fechaNacimiento = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldFechaNacimiento().getText();
+					String emailUno = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldEmailUno().getText();
+					String emailDos = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldEmailDos().getText();
+					String genero = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getComboBoxGenero().getSelectedItem().toString();
+					String especialidad = getTextFieldEspecialidad().getText();
+					String salario = getTextFieldSalario().getText();
+					
+					System.out.println(emailUno);
+					System.out.println(emailDos);
 
 					VentanaRegistrarTrabajador
-							.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenido());
+							.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenedor());
 				}
 
 			}
@@ -127,5 +167,15 @@ public class VentanaRegistrarVeterinario extends VentanaRegistrarMenu {
 	public List<JTextField> getListaTextFields() {
 		return listaTextFields;
 	}
+
+	public JTextField getTextFieldEspecialidad() {
+		return textFieldEspecialidad;
+	}
+
+	public JTextField getTextFieldSalario() {
+		return textFieldSalario;
+	}
+	
+	
 
 }

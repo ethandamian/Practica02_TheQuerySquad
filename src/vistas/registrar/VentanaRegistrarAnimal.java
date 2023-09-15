@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.util.Arrays;
 
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
@@ -37,6 +38,13 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 	 * Crea el panel de la Ventana de registrar animal.
 	 */
 	public VentanaRegistrarAnimal() {
+		JLabel lblTituloDerecho = new JLabel("INGRESA DATOS DE [ ]");
+		lblTituloDerecho.setForeground(new Color(227, 236, 233));
+		lblTituloDerecho.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTituloDerecho.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 25));
+		lblTituloDerecho.setBounds(39, 58, 384, 28);
+		panelDerecho.add(lblTituloDerecho);
+		
 		lblTituloDerecho.setLocation(45, 11);
 		lblLogo.setIcon(new ImageIcon(VentanaRegistrarAnimal.class.getResource("/imagenes/zoo.png")));
 
