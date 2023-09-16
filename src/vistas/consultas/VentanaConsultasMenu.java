@@ -106,7 +106,7 @@ public class VentanaConsultasMenu extends JPanel {
 		this.btnEditar = btnEditar;
 	}
 
-	protected void limpiaCampos(JTextField textField) {
+	protected static void limpiaCampos(JTextField textField) {
 		textField.setText("");
 	}
 }

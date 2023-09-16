@@ -43,7 +43,7 @@ public class Veterinario extends Trabajador {
 	 */
 	public Veterinario(String rfc, String nombre, String paterno, String materno, String genero,
 			String calle, int numExterior, int numInterior, String colonia, String estado, String inicioContrato,
-			String finContrato, String nacimiento, ArrayList<Long> telefonos,
+			String finContrato, String nacimiento, ArrayList<String> telefonos,
 			ArrayList<String> correos, String especialidad,
 			float salario) {
 		super(rfc, nombre, paterno, materno, genero,

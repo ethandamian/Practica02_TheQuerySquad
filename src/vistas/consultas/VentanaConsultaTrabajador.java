@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.SwingConstants;
 import java.awt.Color;
@@ -34,13 +36,20 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 	protected JLabel lblEmail;
 	protected JLabel lblInicioContratoValor;
 	protected JLabel lblIncioContrato;
-	protected JLabel lblGeneroValor;
-	protected JLabel lblGenero;
 	
-	private JLabel lblColonia;
-	private JLabel lblColoniaValor;
-	private JLabel lblEstado;
-	private JLabel lblEstadoValor;
+	protected JLabel lblColonia;
+	protected JLabel lblColoniaValor;
+	protected JLabel lblEstado;
+	protected JLabel lblEstadoValor;
+	protected JLabel lblRFCValor;
+	protected JLabel lblFechaFinContrato;
+	protected JLabel lblFinContratoValor;
+	protected JLabel lblGenero;
+	protected JLabel lblGeneroValor;
+	protected JLabel lblTelefonos;
+	protected JLabel lblTelefonosValor;
+	
+	private  List<JLabel> listaJLabels;
 
 	/**
 	 * Crea el panel de la ventana consulta trabajador.
@@ -68,7 +77,7 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 		lblRFC.setBounds(34, 11, 126, 26);
 		panelSur.add(lblRFC);
 
-		JLabel lblRFCValor = new JLabel("  ");
+		lblRFCValor = new JLabel("  ");
 		lblRFCValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		lblRFCValor.setBounds(34, 37, 126, 26);
 		panelSur.add(lblRFCValor);
@@ -165,17 +174,6 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 		lblIncioContrato.setBounds(382, 200, 126, 26);
 		panelSur.add(lblIncioContrato);
 
-		lblGeneroValor = new JLabel("   ");
-		lblGeneroValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
-		lblGeneroValor.setBounds(568, 38, 126, 26);
-		panelSur.add(lblGeneroValor);
-
-		lblGenero = new JLabel("Genero:");
-		lblGenero.setHorizontalAlignment(SwingConstants.LEFT);
-		lblGenero.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
-		lblGenero.setBounds(568, 11, 126, 26);
-		panelSur.add(lblGenero);
-
 		lblColonia = new JLabel("Colonia:");
 		lblColonia.setHorizontalAlignment(SwingConstants.LEFT);
 		lblColonia.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
@@ -197,6 +195,57 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 		lblEstadoValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 		lblEstadoValor.setBounds(382, 38, 126, 26);
 		panelSur.add(lblEstadoValor);
+		
+		lblFechaFinContrato = new JLabel("Fecha Fin de Contrato:");
+		lblFechaFinContrato.setHorizontalAlignment(SwingConstants.LEFT);
+		lblFechaFinContrato.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
+		lblFechaFinContrato.setBounds(565, 11, 169, 26);
+		panelSur.add(lblFechaFinContrato);
+		
+		lblFinContratoValor = new JLabel("   ");
+		lblFinContratoValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
+		lblFinContratoValor.setBounds(565, 38, 126, 26);
+		panelSur.add(lblFinContratoValor);
+		
+		lblGenero = new JLabel("Genero:");
+		lblGenero.setHorizontalAlignment(SwingConstants.LEFT);
+		lblGenero.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
+		lblGenero.setBounds(565, 74, 126, 26);
+		panelSur.add(lblGenero);
+		
+		lblGeneroValor = new JLabel("   ");
+		lblGeneroValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
+		lblGeneroValor.setBounds(565, 101, 126, 26);
+		panelSur.add(lblGeneroValor);
+		
+		lblTelefonos = new JLabel("Telefonos:");
+		lblTelefonos.setHorizontalAlignment(SwingConstants.LEFT);
+		lblTelefonos.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
+		lblTelefonos.setBounds(202, 265, 126, 26);
+		panelSur.add(lblTelefonos);
+		
+		lblTelefonosValor = new JLabel("  ");
+		lblTelefonosValor.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
+		lblTelefonosValor.setBounds(289, 264, 126, 26);
+		panelSur.add(lblTelefonosValor);
+		
+		listaJLabels = 
+				Arrays.asList(lblApellidoMaValor,lblApellidoPaValor,lblCalleValor,lblColoniaValor,
+						lblEmailValor,lblEstadoValor,lblFechaNacimientoValor,
+						lblFinContratoValor,lblGeneroValor,lblInicioContratoValor,lblNombreValor,lblNumeroExteriorValor,lblNumInteriorValor,lblRFCValor,lblTelefonosValor);
 	}
+	
+	protected void limpiarCampos() {
+		limpiaCampos(textFieldInputUsuario);
+		limpiarCampos(listaJLabels);
+	}
+	
+	private void limpiarCampos(List<JLabel> listaCampos) {
+		for (JLabel jLabel : listaCampos) {
+			jLabel.setText("");
+		}
+	}
+	
+	
 
 }

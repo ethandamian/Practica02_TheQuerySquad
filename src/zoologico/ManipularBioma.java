@@ -7,7 +7,7 @@ import Clases.Bioma;
 
 public class ManipularBioma extends ManipularZoologico {
 
-	String path = "src/archivosCSV/Bioma.csv";
+	String path = "archivosCSV/Bioma.csv";
 
 	/**
 	 * Método para hacer consulta de un bioma de archivo csv.

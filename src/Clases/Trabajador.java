@@ -19,14 +19,14 @@ public class Trabajador {
 	protected String inicioContrato;
 	protected String finContrato;
 	protected String nacimiento;
-	protected ArrayList<Long> telefonos;
+	protected ArrayList<String> telefonos;
 	protected ArrayList<String> correos;
 
 	/**
 	 * Constructor sin argumentos
 	 */
 	public Trabajador() {
-		telefonos = new ArrayList<Long>();
+		telefonos = new ArrayList<String>();
 		correos = new ArrayList<String>();
 	}
 
@@ -51,7 +51,7 @@ public class Trabajador {
 	 */
 	public Trabajador(String rfc, String nombre, String paterno, String materno, String genero,
 			String calle, int numExterior, int numInterior, String colonia, String estado, String inicioContrato,
-			String finContrato, String nacimiento, ArrayList<Long> telefonos,
+			String finContrato, String nacimiento, ArrayList<String> telefonos,
 			ArrayList<String> correos) {
 		super();
 		this.rfc = rfc;
@@ -328,7 +328,7 @@ public class Trabajador {
 	 * 
 	 * @return ArrayList<Long>
 	 */
-	public ArrayList<Long> getTelefonos() {
+	public ArrayList<String> getTelefonos() {
 		return telefonos;
 	}
 
@@ -337,7 +337,7 @@ public class Trabajador {
 	 * 
 	 * @param telefonos
 	 */
-	public void setTelefonos(ArrayList<Long> telefonos) {
+	public void setTelefonos(ArrayList<String> telefonos) {
 		this.telefonos = telefonos;
 	}
 
@@ -371,7 +371,7 @@ public class Trabajador {
 	 * 
 	 * @param telefonosN
 	 */
-	public void addTelefonos(Long telefonosN) {
+	public void addTelefonos(String telefonosN) {
 		telefonos.add(telefonosN);
 	}
 
@@ -406,8 +406,8 @@ public class Trabajador {
 	 */
 	public String toStringCsv() {
 		ArrayList<String> telefonosString = new ArrayList<>();
-		for (Long telefono : telefonos) {
-			telefonosString.add(Long.toString(telefono));
+		for (String telefono : telefonos) {
+			telefonosString.add(telefono);
 		}
 		return rfc + "," + nombre + "," + paterno + "," + materno
 				+ "," + genero + "," + calle + "," + numExterior + ","

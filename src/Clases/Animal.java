@@ -66,6 +66,18 @@ public class Animal {
 		this.alimentacion = alimentacion;
 		this.indicacionesMedicas = indicacionesMedicas;
 	}
+	
+	/**
+	 * Constructor con tes paramateros: nombre, especie y numero de jaula
+	 * @param nombre EL nombre del animal
+	 * @param especie La especie del animal
+	 * @param numJaula EL numero de jaula del animal
+	 */
+	public Animal(String nombre,String especie, int numJaula) {
+		this.nombre = nombre;
+		this.especie = especie;
+		this.numJaula = numJaula;
+	}
 
 	/**
 	 * Metodo para obtener el id del animal

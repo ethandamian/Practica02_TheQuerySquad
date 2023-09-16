@@ -2,12 +2,16 @@ package zoologico;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import Clases.Animal;
 
 public class ManipularAnimal extends ManipularZoologico {
 
-    String path = "src/archivosCSV/Animal.csv";
+    String path = "archivosCSV/Animal.csv";
 
     /**
      * Método para hacer consulta de un animal de archivo csv.
@@ -33,6 +37,32 @@ public class ManipularAnimal extends ManipularZoologico {
         Animal animal = new Animal(nombre, especie, pesoKg, alturaCm, sexo, numJaula, alimentacion, indicacionesMedicas,
                 Integer.valueOf(id));
         return animal;
+    }
+    
+    /**
+     * Metodo que devuelve todos los animales en el arvhico .csv en una lista
+     * @return todos los animales en el arvhico .csv en una lista
+     */
+    public List<Animal> devolverListaAnimalesEnArchivo(){
+    	List<String []> listaAnimales= devolverListaEntidadesEnTabla(path);
+    	List<Animal> listaAnimalesParseados = new ArrayList<Animal>();
+    	Animal animal;
+    	for (String[] strings : listaAnimales) {
+			String nombre = strings[1];
+			String especie = strings[2];
+			int numJaula = 0;
+			try {
+			    numJaula = Integer.valueOf(strings[6]);
+			} catch (NumberFormatException e) {
+			    // Maneja el caso en el que no puedas convertir la cadena en un número.
+			    // Puedes asignar un valor por defecto o tomar otra acción adecuada.
+			    numJaula = 0; // Por ejemplo, asignar un valor por defecto.
+			}
+			animal = new Animal(nombre,especie,numJaula);
+			listaAnimalesParseados.add(animal);
+		}
+    	return listaAnimalesParseados;
+    	
     }
 
     /**
@@ -62,7 +92,7 @@ public class ManipularAnimal extends ManipularZoologico {
                 String[] values = line.split(",");
                 int currentCage = Integer.parseInt(values[6]);
                 if (currentCage == animal.getNumJaula()) {
-                    System.out.println("Ya hay un animal en esa jaula");
+                    JOptionPane.showMessageDialog(null, "Ya hay un animal en esa jaula","Error", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }
             }
@@ -71,7 +101,7 @@ public class ManipularAnimal extends ManipularZoologico {
             return this.inserta(animal.toStringNoId(), path);
 
         } catch (Exception e) {
-            System.err.println(e);
+            e.printStackTrace();
         }
         return false;
     }

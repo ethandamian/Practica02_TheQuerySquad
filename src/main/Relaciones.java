@@ -7,6 +7,7 @@ import vistas.VentanaPrincipal;
 import vistas.VentanaRegistro;
 import vistas.consultas.VentanaConsultaAnimales;
 import vistas.consultas.VentanaConsultaBioma;
+import vistas.consultas.VentanaConsultaTrabajador;
 import vistas.consultas.VentanaConsultaVeterinarios;
 import vistas.editar.VentanaEditarAnimal;
 import vistas.editar.VentanaEditarBioma;
@@ -31,6 +32,7 @@ public class Relaciones {
 	private VentanaConsultaAnimales ventanaConsultaAnimales;
 	private VentanaConsultaBioma ventanaConsultaBioma;
 	private VentanaConsultaVeterinarios ventanaConsultaVeterinarios;
+	private VentanaConsultaTrabajador ventanaConsultaTrabajador;
 	
 	private VentanaEliminarBioma ventanaEliminarBioma;
 	private VentanaEliminarVeterinarios ventanaEliminarsVeterinarios;
@@ -57,6 +59,7 @@ public class Relaciones {
 		ventanaConsultaAnimales = new VentanaConsultaAnimales();
 		ventanaConsultaBioma = new VentanaConsultaBioma();
 		ventanaConsultaVeterinarios = new VentanaConsultaVeterinarios();
+		ventanaConsultaTrabajador = new VentanaConsultaTrabajador();
 		
 		ventanaEliminarBioma = new VentanaEliminarBioma();
 		ventanaEliminarsVeterinarios = new VentanaEliminarVeterinarios();
@@ -83,6 +86,7 @@ public class Relaciones {
 		ventanaPrincipal.setVentanaConsultaAnimales(ventanaConsultaAnimales);
 		ventanaPrincipal.setVentanaConsultaBioma(ventanaConsultaBioma);
 		ventanaPrincipal.setVentanaConsultaVeterinarios(ventanaConsultaVeterinarios);
+		ventanaPrincipal.setVentanaConsultaTrabajador(ventanaConsultaTrabajador);
 		
 		ventanaPrincipal.setVentanaEliminarBioma(ventanaEliminarBioma);
 		ventanaPrincipal.setVentanaEliminarVeterinario(ventanaEliminarsVeterinarios);
@@ -91,6 +95,7 @@ public class Relaciones {
 		ventanaPrincipal.setVentanaRegistrarBioma(ventanaRegistrarBiomas);
 		ventanaPrincipal.setVentanaRegistrarTrabajador(ventanaRegistrarTrabajador);
 		ventanaPrincipal.setVentanaRegitrarAnimal(ventanaRegitrarAnimal);
+		
 		
 		
 		//relaciones ventana principal-vistas

@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import vistas.consultas.VentanaConsultaAnimales;
 import vistas.consultas.VentanaConsultaBioma;
+import vistas.consultas.VentanaConsultaTrabajador;
 import vistas.consultas.VentanaConsultaVeterinarios;
 import vistas.editar.VentanaEditarAnimal;
 import vistas.eliminar.VentanaEliminarAnimal;
@@ -50,6 +51,7 @@ public class VentanaPrincipal extends JFrame {
 	private VentanaConsultaAnimales ventanaConsultaAnimales;
 	private VentanaConsultaBioma ventanaConsultaBioma;
 	private VentanaConsultaVeterinarios ventanaConsultaVeterinarios;
+	private VentanaConsultaTrabajador ventanaConsultaTrabajador;
 
 	private VentanaEliminarBioma ventanaEliminarBioma;
 	private VentanaEliminarVeterinarios ventanaEliminarsVeterinarios;
@@ -232,11 +234,13 @@ public class VentanaPrincipal extends JFrame {
 		
 		ventanaConsultaAnimales.limpiarCampos();
 		ventanaConsultaBioma.limpiarCampos();
-		ventanaConsultaVeterinarios.limpiarCampos();
+		ventanaConsultaVeterinarios.limpiarTodosLosCampos();
+		
 		
 		ventanaConsultaAnimales.getVentanaEditarAnimal().limpiaCampos();
 		ventanaConsultaBioma.getVentanaEditarBioma().limpiaCampos();
 		ventanaConsultaVeterinarios.getVentanaEditarVeterinario().limpiaCampos();
+		
 		
 		ventanaRegitrarAnimal.limpiaCampos();
 		ventanaRegistrarTrabajador.limpiaCampos();
@@ -342,5 +346,15 @@ public class VentanaPrincipal extends JFrame {
 	public void setVentanaRegistrarTrabajador(VentanaRegistrarTrabajador ventanaRegistrarTrabajador) {
 		this.ventanaRegistrarTrabajador = ventanaRegistrarTrabajador;
 	}
+
+	public VentanaConsultaTrabajador getVentanaConsultaTrabajador() {
+		return ventanaConsultaTrabajador;
+	}
+
+	public void setVentanaConsultaTrabajador(VentanaConsultaTrabajador ventanaConsultaTrabajador) {
+		this.ventanaConsultaTrabajador = ventanaConsultaTrabajador;
+	}
+	
+	
 
 }
