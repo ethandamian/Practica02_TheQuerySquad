@@ -6,12 +6,13 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Clase de la ventana para eliminar
+ */
 public class VentanaEliminar extends VentanaMenu {
 	private VentanaPrincipal ventanaPrincipal;
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -64,10 +65,18 @@ public class VentanaEliminar extends VentanaMenu {
 
 	}
 
+	/**
+	 * Metodo para obtener la ventana principal
+	 * @return
+	 */
 	public VentanaPrincipal getVentanaPrincipal() {
 		return ventanaPrincipal;
 	}
 
+	/**
+	 * Metodo para asignar la ventana principal
+	 * @param ventanaPrincipal
+	 */
 	public void setVentanaPrincipal(VentanaPrincipal ventanaPrincipal) {
 		this.ventanaPrincipal = ventanaPrincipal;
 	}

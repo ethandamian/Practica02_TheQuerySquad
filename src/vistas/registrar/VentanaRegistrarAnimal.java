@@ -26,6 +26,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * Clase de la ventana para registrar animal
+ */
 public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 	private JTextField textFieldNombre;
 	private JTextField textFieldEspecie;
@@ -287,6 +290,9 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		
 	}
 	
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 */
 	public void limpiaCampos() {
 		textFieldIndicacionesMedicas.setText("");
 		limpiarCampos(listaTextFields);

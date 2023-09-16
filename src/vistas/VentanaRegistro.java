@@ -7,6 +7,9 @@ import javax.swing.ImageIcon;
 
 import vistas.registrar.VentanaRegistrarTrabajador;
 
+/**
+ * Clase de la ventana de registro
+ */
 public class VentanaRegistro extends VentanaMenu {
 
 	private static final long serialVersionUID = 1L;
@@ -60,10 +63,18 @@ public class VentanaRegistro extends VentanaMenu {
 
 	}
 
+	/**
+	 * Obtener la ventana principal
+	 * @return ventanaPrincipal
+	 */
 	public VentanaPrincipal getVentanaPrincipal() {
 		return ventanaPrincipal;
 	}
 
+	/**
+	 * Asignar la ventana principal
+	 * @param ventanaPrincipal
+	 */
 	public void setVentanaPrincipal(VentanaPrincipal ventanaPrincipal) {
 		this.ventanaPrincipal = ventanaPrincipal;
 	}

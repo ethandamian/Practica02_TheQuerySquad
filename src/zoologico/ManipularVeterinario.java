@@ -5,6 +5,9 @@ import java.util.Arrays;
 
 import Clases.Veterinario;
 
+/**
+ * Clase para manipular la informacion de un veterinario
+ */
 public class ManipularVeterinario extends ManipularZoologico {
 
     String path = "archivosCSV/Veterinario.csv";

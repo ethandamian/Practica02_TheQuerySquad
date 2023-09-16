@@ -15,6 +15,9 @@ import javax.swing.SwingConstants;
 
 import vistas.FuenteProyecto;
 
+/**
+ * Clase de la ventana de registrar menu
+ */
 public class VentanaRegistrarMenu extends JPanel {
 
 	protected JPanel panelPrincipalRegistrar;
@@ -66,13 +69,20 @@ public class VentanaRegistrarMenu extends JPanel {
 	}
 	
 	
-
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 * @param listaCampos
+	 */
 	protected void limpiarCampos(List<JTextField> listaCampos) {
 		for (JTextField textField : listaCampos) {
 			textField.setText("");
 		}
 	}
 
+	/**
+	 * Metodo para limpiar los comboBoxes de lista
+	 * @param comboBoxes
+	 */
 	protected void limpiarComboBoxes(List<JComboBox<String>> comboBoxes) {
 		for (JComboBox<String> comboBox : comboBoxes) {
 			comboBox.setSelectedIndex(0);

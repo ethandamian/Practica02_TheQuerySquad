@@ -14,10 +14,11 @@ import javax.swing.JTextField;
 
 import vistas.FuenteProyecto;
 
+/**
+ * Clase de la ventana del menu de consultas
+ */
 public class VentanaConsultasMenu extends JPanel {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	protected JTextField textFieldInputUsuario;
 	protected JPanel panelPrincipalMenu;
@@ -86,26 +87,50 @@ public class VentanaConsultasMenu extends JPanel {
 
 	}
 
+	/**
+	 * Metodo para obtener el campo delinput del usuario
+	 * @return
+	 */
 	public JTextField getTextFieldInputUsuario() {
 		return textFieldInputUsuario;
 	}
 
+	/**
+	 * Metodo para obtener el boton de buscar
+	 * @return JButton
+	 */
 	public JButton getBtnBuscar() {
 		return btnBuscar;
 	}
 
+	/**
+	 * Metodo paraasignar el boton para buscar
+	 * @param btnBuscar
+	 */
 	public void setBtnBuscar(JButton btnBuscar) {
 		this.btnBuscar = btnBuscar;
 	}
 
+	/**
+	 * Metodo para obtener el boton de editar
+	 * @return JButton
+	 */
 	public JButton getBtnEditar() {
 		return btnEditar;
 	}
 
+	/**
+	 * Metodo para asignar el boton de editar
+	 * @param btnEditar
+	 */
 	public void setBtnEditar(JButton btnEditar) {
 		this.btnEditar = btnEditar;
 	}
 
+	/**
+	 * Metodo para limpiar campos de texto
+	 * @param textField
+	 */
 	protected static void limpiaCampos(JTextField textField) {
 		textField.setText("");
 	}

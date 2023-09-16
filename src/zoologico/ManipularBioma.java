@@ -5,6 +5,9 @@ import java.util.Arrays;
 
 import Clases.Bioma;
 
+/**
+ * Clase para manipular la informacion de un bioma
+ */
 public class ManipularBioma extends ManipularZoologico {
 
 	String path = "archivosCSV/Bioma.csv";

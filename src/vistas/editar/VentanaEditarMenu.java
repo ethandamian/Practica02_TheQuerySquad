@@ -22,6 +22,9 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
+/**
+ * Clase de la ventana de editar menu
+ */
 public class VentanaEditarMenu extends JFrame {
 
 	private JPanel contentPane;
@@ -36,7 +39,7 @@ public class VentanaEditarMenu extends JFrame {
 	protected List<JComboBox<String>> listaComboBoxs = new ArrayList<JComboBox<String>>();
 
 	/**
-	 * Create the frame.
+	 * Crea la ventana
 	 */
 	public VentanaEditarMenu() {
 		
@@ -74,6 +77,10 @@ public class VentanaEditarMenu extends JFrame {
 		panelPrincipalContenido.add(btnGuardar);
 	}
 
+	/**
+	 * Metodo para cambiar el panel principal
+	 * @param panel
+	 */
 	public static void changePrincipalPanel(JPanel panel) {
 		panel.setSize(886, 443);
 		panel.setLocation(0, 0);
@@ -84,12 +91,20 @@ public class VentanaEditarMenu extends JFrame {
 		panelPrincipal.repaint();
 	}
 	
+	/**
+	 * Metodo para limpiar campos de lista
+	 * @param listaCampos
+	 */
 	protected void limpiarCampos(List<JTextField> listaCampos) {
 		for (JTextField textField : listaCampos) {
 			textField.setText("");
 		}
 	}
 
+	/**
+	 * Metodo para limpiar ComboBoxes recibiendo una lista de ellos
+	 * @param comboBoxes
+	 */
 	protected void limpiarComboBoxes(List<JComboBox<String>> comboBoxes) {
 		for (JComboBox<String> comboBox : comboBoxes) {
 			comboBox.setSelectedIndex(0);

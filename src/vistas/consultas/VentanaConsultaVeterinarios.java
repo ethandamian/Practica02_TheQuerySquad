@@ -17,6 +17,9 @@ import vistas.FuenteProyecto;
 import vistas.editar.VentanaEditarVeterinario;
 import zoologico.ManipularVeterinario;
 
+/**
+ * Clase para la ventana de consulta de veterinarios
+ */
 public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 	
 
@@ -116,14 +119,25 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 		listaJLabels = Arrays.asList(lblEspecialidadValor,lblSalarioValor);
 	}
 
+	/**
+	 * Obtener la ventana para editar veterinarios
+	 * @return VentanaEditarVeterinario
+	 */
 	public VentanaEditarVeterinario getVentanaEditarVeterinario() {
 		return ventanaEditarVeterinario;
 	}
 
+	/**
+	 * Asignar la ventana de editar veterinario
+	 * @param ventanaEditarVeterinario
+	 */
 	public void setVentanaEditarVeterinario(VentanaEditarVeterinario ventanaEditarVeterinario) {
 		this.ventanaEditarVeterinario = ventanaEditarVeterinario;
 	}
 	
+	/**
+	 * Metodo para limpiar todos los campos de la ventana
+	 */
 	public void limpiarTodosLosCampos() {
 		limpiarCampos();
 		btnEditar.setVisible(false);
@@ -131,6 +145,10 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 		limpiarCampos(listaJLabels);
 	}
 	
+	/**
+	 * Metodo para limpiar campos de lista
+	 * @param listaCampos
+	 */
 	private void limpiarCampos(List<JLabel> listaCampos) {
 		for (JLabel jLabel : listaCampos) {
 			jLabel.setText("");

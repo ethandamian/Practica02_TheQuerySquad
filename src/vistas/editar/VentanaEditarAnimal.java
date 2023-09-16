@@ -26,6 +26,9 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Clase de la ventana para editar animales
+ */
 public class VentanaEditarAnimal extends VentanaEditarMenu {
 	private JTextField textFieldNombre;
 	private JTextField textFieldEspecie;
@@ -39,7 +42,7 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 	private VentanaConsultaAnimales ventanaConsultaAnimales;
 
 	/**
-	 * Create the panel.
+	 * Crea la ventana
 	 */
 	public VentanaEditarAnimal() {
 		setSize(576, 480);
@@ -252,15 +255,26 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 
 	}
 	
+	/**
+	 * MEtodo para limpiar campos de la ventana
+	 */
 	public void limpiaCampos() {
 		limpiarCampos(listaFields);
 		limpiarComboBoxes(listaComboBoxs);
 	}
 
+	/**
+	 * Obtener la ventana para consultar animales
+	 * @return
+	 */
 	public VentanaConsultaAnimales getVentanaConsultaAnimales() {
 		return ventanaConsultaAnimales;
 	}
 
+	/**
+	 * Asignar la ventana para consultar animales
+	 * @param ventanaConsultaAnimales
+	 */
 	public void setVentanaConsultaAnimales(VentanaConsultaAnimales ventanaConsultaAnimales) {
 		this.ventanaConsultaAnimales = ventanaConsultaAnimales;
 	}

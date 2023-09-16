@@ -23,6 +23,9 @@ import javax.swing.JProgressBar;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Clase de la ventana eliminar Menu
+ */
 public class VentanaEliminarMenu extends JPanel {
 	protected JTextField textFieldOpcionUsuario;
 	protected JTable table;
@@ -132,6 +135,10 @@ public class VentanaEliminarMenu extends JPanel {
 
 	}
 	
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 * @param textField
+	 */
 	protected void limpiaCampos(JTextField textField) {
 		textField.setText("");
 	}

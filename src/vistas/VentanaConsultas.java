@@ -6,6 +6,9 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Clase de la ventana para hacer consultas
+ */
 public class VentanaConsultas extends VentanaMenu {
 
 	private VentanaPrincipal ventanaPrincipal;
@@ -68,10 +71,18 @@ public class VentanaConsultas extends VentanaMenu {
 
 	}
 
+	/**
+	 * Metodo para obtener la ventana principal
+	 * @return VentanaPrincipal
+	 */
 	public VentanaPrincipal getVentanaPrincipal() {
 		return ventanaPrincipal;
 	}
 
+	/**
+	 * Metodo para asignar la ventana principal
+	 * @param ventanaPrincipal
+	 */
 	public void setVentanaPrincipal(VentanaPrincipal ventanaPrincipal) {
 		this.ventanaPrincipal = ventanaPrincipal;
 	}

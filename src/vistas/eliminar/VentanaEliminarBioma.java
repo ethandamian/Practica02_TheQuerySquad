@@ -10,6 +10,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
+/**
+ * Clase para la ventana de eliminar bioma
+ */
 public class VentanaEliminarBioma extends VentanaEliminarMenu {
 
 	/**
@@ -63,6 +66,9 @@ public class VentanaEliminarBioma extends VentanaEliminarMenu {
 
 	}
 
+	/**
+	 * Clase para la accion de swing
+	 */
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "SwingAction");
@@ -72,6 +78,9 @@ public class VentanaEliminarBioma extends VentanaEliminarMenu {
 		public void actionPerformed(ActionEvent e) {
 		}
 	}
+	/**
+	 * Metodo para limpiar campos de la ventana
+	 */
 	public void limpiarCampos() {
 		limpiaCampos(textFieldOpcionUsuario);
 	}

@@ -4,7 +4,14 @@ import java.util.List;
 
 import Clases.Animal;
 
+/**
+ * Clase para test
+ */
 public class MainTest {
+	/**
+	 * Metodo principal
+	 * @param args
+	 */
 	public static void main(String[] args) {
 //		ManipularAnimal m = new ManipularAnimal();
 //
