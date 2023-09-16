@@ -42,7 +42,7 @@ public class Veterinario extends Trabajador {
 	 * @param salario
 	 */
 	public Veterinario(String rfc, String nombre, String paterno, String materno, String genero,
-			String calle, int numExterior, int numInterior, String colonia, String estado, String inicioContrato,
+			String calle, String numExterior, String numInterior, String colonia, String estado, String inicioContrato,
 			String finContrato, String nacimiento, ArrayList<String> telefonos,
 			ArrayList<String> correos, String especialidad,
 			float salario) {
@@ -52,6 +52,22 @@ public class Veterinario extends Trabajador {
 		this.especialidad = especialidad;
 		this.salario = salario;
 
+	}
+
+	
+	/**
+	 * Constructor con tres atributos
+	 * 
+	 * @param rfc
+	 * @param nombre
+	 
+	 * @param especialidad
+	 */
+	public Veterinario(String rfc, String nombre, String especialidad) {
+		this.rfc = rfc;
+		this.nombre = nombre;
+		this.especialidad = especialidad;
+		
 	}
 
 	/**
@@ -97,6 +113,15 @@ public class Veterinario extends Trabajador {
 	 */
 	public String toStringCsv() {
 		return super.toStringCsv() + "," + especialidad + "," + Float.toString(salario);
+	}
+	
+	/**
+	 * Método para representar el trabajador como un string cpn tres atributos.
+	 * 
+	 * @return String
+	 */
+	public String toStringTresAtributos() {
+		return super.toStringTresAtributos() + "," + especialidad;
 	}
 
 }

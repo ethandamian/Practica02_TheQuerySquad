@@ -51,7 +51,7 @@ public class ManipularAnimal extends ManipularZoologico {
     	List<Animal> listaAnimalesParseados = new ArrayList<Animal>();
     	Animal animal;
     	for (String[] strings : listaAnimales) {
-			String nombre = strings[1];
+    		int id = Integer.valueOf(strings[0]);
 			String especie = strings[2];
 			int numJaula = 0;
 			try {
@@ -61,7 +61,7 @@ public class ManipularAnimal extends ManipularZoologico {
 			    // Puedes asignar un valor por defecto o tomar otra acción adecuada.
 			    numJaula = 0; // Por ejemplo, asignar un valor por defecto.
 			}
-			animal = new Animal(nombre,especie,numJaula);
+			animal = new Animal(id,especie,numJaula);
 			listaAnimalesParseados.add(animal);
 		}
     	return listaAnimalesParseados;

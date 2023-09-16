@@ -2,7 +2,9 @@ package zoologico;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import Clases.Bioma;
 import Clases.Veterinario;
 
 /**
@@ -30,8 +32,8 @@ public class ManipularVeterinario extends ManipularZoologico {
         String materno = values[3];
         String genero = values[4];
         String calle = values[5];
-        int numExterior = Integer.valueOf(values[6]);
-        int numInterior = Integer.valueOf(values[7]);
+        String numExterior = values[6];
+        String numInterior = values[7];
         String colonia = values[8];
         String estado = values[9];
         String inicioContrato = values[10];
@@ -54,6 +56,28 @@ public class ManipularVeterinario extends ManipularZoologico {
 
         return veterinario;
     }
+    
+    /**
+     * Metodo que devuelve todos los veterinarios en el arvhico .csv en una lista
+     * @return todos los veterinarios en el arvhico .csv en una lista
+     */
+    public List<Veterinario> devolverListaVeterinariosEnArchivo(){
+    	List<String []> listaVeterinarios= devolverListaEntidadesEnTabla(path);
+    	List<Veterinario> listaVeterinariosParseados = new ArrayList<Veterinario>();
+    	Veterinario veterinario;
+    	for (String[] strings : listaVeterinarios) {
+			String rfc = strings[0] ;
+			String nombre = strings[1];
+			String  especialidad = strings[15];
+			
+			veterinario = new Veterinario(rfc,nombre,especialidad);
+			listaVeterinariosParseados.add(veterinario);
+		}
+    	return listaVeterinariosParseados;
+    	
+    }
+
+    
 
     /**
      * Método que elimina eliminar.
@@ -62,7 +86,7 @@ public class ManipularVeterinario extends ManipularZoologico {
      * @return Verdadero si se eliminó, falso si no se eliminó.
      */
     public boolean eliminar(String id) {
-        return this.eliminar(id, path);
+        return this.eliminarTrabajador(id, path);
     }
 
     /**

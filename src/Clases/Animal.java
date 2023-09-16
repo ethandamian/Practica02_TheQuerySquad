@@ -73,8 +73,8 @@ public class Animal {
 	 * @param especie La especie del animal
 	 * @param numJaula EL numero de jaula del animal
 	 */
-	public Animal(String nombre,String especie, int numJaula) {
-		this.nombre = nombre;
+	public Animal(Integer id,String especie, int numJaula) {
+		this.id = id;
 		this.especie = especie;
 		this.numJaula = numJaula;
 	}
@@ -258,5 +258,10 @@ public class Animal {
 				+ "cm," + sexo + "," + numJaula + "," + alimentacion
 				+ "," + indicacionesMedicas;
 	}
+	
+	public String toStringConTresAtributos() {
+		return id + "," + especie + "," + numJaula ;
+	}
+
 
 }

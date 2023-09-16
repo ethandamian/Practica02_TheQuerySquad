@@ -54,7 +54,6 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 	 * Crea el panel de la Ventana de registrar trabajador.
 	 */
 	public VentanaRegistrarTrabajador() {
-		
 		UIManager.put("TextField.caretForeground", Color.WHITE);
 
 		panelDerecho.setBackground(new Color(67, 83, 52));
@@ -256,7 +255,6 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 				}
 
 				if (bandera) {
-					System.out.println("Limones1");
 					changePrincipalPanel(ventanaRegistrarTrabajadorContinuacion.getPanelPrincipal());
 				}
 

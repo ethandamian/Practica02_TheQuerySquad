@@ -73,20 +73,6 @@ public class VentanaEliminarMenu extends JPanel {
 		panelNorte.add(lblOpcionParaEliminar);
 
 		btnEliminar = new JButton("Eliminar");
-		btnEliminar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-
-				String t = textFieldOpcionUsuario.getText();
-				try {
-					int n = Integer.parseInt(t);
-
-				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(null, "Ingresa un ID valido");
-					textFieldOpcionUsuario.setText("");
-				}
-			}
-		});
 		btnEliminar.setForeground(new Color(41, 56, 47));
 		btnEliminar.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 13));
 		btnEliminar.setBounds(619, 54, 89, 25);

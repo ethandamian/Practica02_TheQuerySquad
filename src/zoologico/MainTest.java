@@ -3,6 +3,8 @@ package zoologico;
 import java.util.List;
 
 import Clases.Animal;
+import Clases.Bioma;
+import Clases.Veterinario;
 
 /**
  * Clase para test
@@ -22,12 +24,14 @@ public class MainTest {
 //		float numero = 19.5f;
 //		System.out.println(String.valueOf(numero));
 		
-		ManipularAnimal manipularAnimal = new ManipularAnimal();
+		ManipularBioma biomas = new ManipularBioma();
 		
-		List<Animal> list = manipularAnimal.devolverListaAnimalesEnArchivo();
+		ManipularVeterinario manipularAnimal = new ManipularVeterinario();
 		
-		for (Animal animal : list) {
-			System.out.println(animal);
+		List<Veterinario> list = manipularAnimal.devolverListaVeterinariosEnArchivo();
+		
+		for (Veterinario veterinario : list) {
+			System.out.println(veterinario.toStringTresAtributos());
 		}
 		
 		// System.out.println(a);
