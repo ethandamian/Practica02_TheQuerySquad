@@ -136,11 +136,11 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 
 				try {
 					int numeroJaulas = Integer.parseInt(numJaula);
-					int pesoA = Integer.parseInt(peso);
-					int alturaA = Integer.parseInt(altura);
+					float pesoA = Float.parseFloat(peso);
+					float alturaA = Float.parseFloat(altura);
 					
 				} catch (NumberFormatException ex) {
-					
+					ex.printStackTrace();
 					bandera = false;
 					JOptionPane.showMessageDialog(null,
 							"No puede ingresar palabras en todos los campos donde se requieren numeros",
@@ -148,9 +148,11 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 				}
 				
 				if(bandera) {
+					System.out.println("Limones2");
 					String nombre = textFieldNombre.getText();
 					String especie = textFieldEspecie.getText();
 					float pesofloat = Float.valueOf(textFieldPeso.getText());
+					System.out.println(peso);
 					float alturaFloat = Float.valueOf(textFieldAltura.getText());
 					String sexoString = comboBoxSexo.getSelectedItem().toString();
 					int numJaulas = Integer.valueOf(textFieldNumJaula.getText());
@@ -159,7 +161,8 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
  					
 					
 					Animal animal = new Animal(nombre,especie,pesofloat,alturaFloat,sexoString,
-							numJaulas,alimentacion,indicacionesMedica);
+							numJaulas,alimentacion,indicacionesMedica,Integer.valueOf(leerId));
+					System.out.println(animal.toString());
 					if(manipularAnimal.editar(animal,leerId)) {
 						limpiaCampos();
 						JOptionPane.showMessageDialog(null, "Se ha editado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -381,6 +384,7 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		textFieldNombre.setText(animal.getNombre());
 		textFieldEspecie.setText(animal.getEspecie());
 		textFieldPeso.setText(String.valueOf(animal.getPesoKg()));
+		System.out.println(textFieldPeso.getText());
 		textFieldAltura.setText(String.valueOf(animal.getAlturaCm()));
 		comboBoxSexo.setSelectedItem(animal.getSexo());
 		textFieldNumJaula.setText(String.valueOf(animal.getNumJaula()));
