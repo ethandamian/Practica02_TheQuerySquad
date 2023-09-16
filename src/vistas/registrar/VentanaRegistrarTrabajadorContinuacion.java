@@ -253,11 +253,11 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 					public void mouseClicked(MouseEvent e) {
 						Boolean bandera = true;
 						String telUnoString = textFieldTelefonoUno.getText();
-						String telDoString = textFieldTelefonoDos.getText();
+						String telDosString = textFieldTelefonoDos.getText();
 
 						try {
-							long numeroJaulas = Long.valueOf(telUnoString);
-							long pesoA = Long.valueOf(telDoString);
+							long telUNo = Long.valueOf(telUnoString);
+							long telDos = Long.valueOf(telDosString);
 
 						} catch (NumberFormatException ex) {
 							bandera = false;

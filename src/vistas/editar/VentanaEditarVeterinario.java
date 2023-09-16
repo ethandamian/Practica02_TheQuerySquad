@@ -5,15 +5,19 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import Clases.Bioma;
+import Clases.Veterinario;
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
 import vistas.consultas.VentanaConsultaVeterinarios;
+import zoologico.ManipularVeterinario;
 
 import javax.swing.JSeparator;
 import javax.swing.JComboBox;
@@ -49,9 +53,12 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 	private JTextField textFieldEspecialidad;
 	private JTextField textFieldSalario;
 	private JComboBox<String> comboBoxGenero;
+	
+	private ManipularVeterinario manipularVeterinario = new ManipularVeterinario();
 
 	private VentanaConsultaVeterinarios ventanaConsultaVeterinarios;
 
+	private String idString;
 	/**
 	 * Crea la ventana
 	 */
@@ -62,7 +69,7 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 				
 				boolean bandera = true;
 				try {
-					int salario = Integer.parseInt(getTextFieldSalario().getText());
+					float salario = Float.parseFloat(getTextFieldSalario().getText());
 					
 
 				} catch (NumberFormatException ex) {
@@ -79,12 +86,50 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 							"Los valores en los campos no pueden tener caracteres especiales o espacios",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				}
-				if (comboBoxGenero.getSelectedItem().equals(comboBoxGenero.getItemAt(0))) {
-					bandera = true;
+				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Genero'",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				}if(bandera) {
-					//TODO logica para editar
+					String rfc = textFieldRFC.getText();
+					String nombreString = textFieldNombre.getText();
+					String apellidoMaterno = textFieldApellidoMaterno.getText();
+					String apellidoPaterno = textFieldApellidoPaterno.getText();
+					String calle = textFieldCalle.getText();
+					String numInterior = textFieldNumInterior.getText();
+					String numExterior = textFieldNumExterior.getText();
+					String colonia = textFieldColonia.getText();
+					String telUno = textFieldTelefonoUno.getText();
+					String telDos = textFieldTelefonoDos.getText(); 
+					String fechaInicioContrato = textFieldFechaInicioContrato.getText();
+					String fechaFinContrato = textFieldFechaFinContrato.getText();
+					String fechaNacimiento = textFieldFechaNacimiento.getText();
+					String emailUno = textFieldEmailUno.getText();
+					String emailDos = textFieldEmailDos.getText();
+					String genero = comboBoxGenero.getSelectedItem().toString();
+					String especialidad = textFieldEspecialidad.getText();
+					float salario = Float.valueOf(textFieldSalario.getText());
+					
+					ArrayList<String> listaTelefonos = new ArrayList<String>();
+					listaTelefonos.add(telUno);
+					listaTelefonos.add(telDos);
+					
+					ArrayList<String> listaCorreos = new ArrayList<String>();
+					listaCorreos.add(emailUno);
+					listaCorreos.add(emailDos);
+					
+					Veterinario veterinario = new Veterinario(rfc, nombreString, apellidoPaterno, apellidoMaterno, genero,
+							calle, numExterior, numInterior, colonia, genero, 
+							fechaInicioContrato, fechaFinContrato, fechaNacimiento, 
+							listaTelefonos, listaCorreos, especialidad, salario);
+					
+					if(manipularVeterinario.editar(veterinario, idString)) {
+						limpiaCampos();
+						setVisible(false);
+						JOptionPane.showMessageDialog(null, "Se ha editado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+					}
+					
+					
 				}
 			}
 		});
@@ -504,15 +549,8 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 				textFieldApellidoPaterno,
 				textFieldApellidoMaterno,
 				textFieldCalle,
-				textFieldNumInterior,
-				textFieldNumExterior,
-				textFieldColonia, textFieldTelefonoUno,
-				textFieldTelefonoDos,
-				textFieldFechaInicioContrato,
-				textFieldFechaFinContrato,
-				textFieldFechaNacimiento,
-				textFieldEmailUno,
-				textFieldEmailDos, textFieldEspecialidad, textFieldSalario);
+				textFieldColonia,textFieldEspecialidad, textFieldSalario);
+		listaComboBoxs = Arrays.asList(comboBoxGenero);
 
 	}
 	
@@ -522,6 +560,37 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 	public void limpiaCampos() {
 		limpiarCampos(listaFields);
 		limpiarComboBoxes(listaComboBoxs);
+	}
+	
+	/**
+	 *  Metodo para llenar los campos en la ventana 
+	 * @param id id pasado por la ventana de consulta
+	 */
+	public void llenarCampos(String id) {
+		idString = id;
+		Veterinario veterinario = manipularVeterinario.leerVeterinario(id);
+		textFieldRFC.setText(veterinario.getRfc());
+		textFieldNombre.setText(veterinario.getNombre());
+		textFieldApellidoPaterno.setText(veterinario.getPaterno());
+		textFieldApellidoMaterno.setText(veterinario.getMaterno());
+		comboBoxGenero.setSelectedItem(veterinario.getGenero());
+		textFieldCalle.setText(veterinario.getCalle());
+		textFieldNumInterior.setText(veterinario.getNumInterior());
+		textFieldNumExterior.setText(veterinario.getNumExterior());
+		textFieldColonia.setText(veterinario.getColonia()); 
+		textFieldTelefonoUno.setText(veterinario.getTelefonos().get(0));
+		textFieldTelefonoDos.setText(veterinario.getTelefonos().get(1));
+		textFieldFechaInicioContrato.setText(veterinario.getInicioContrato());
+		textFieldFechaFinContrato.setText(veterinario.getFinContrato());
+		textFieldFechaNacimiento.setText(veterinario.getNacimiento());
+		textFieldEmailUno.setText(veterinario.getCorreos().get(0));
+		textFieldEmailDos.setText(veterinario.getCorreos().get(1));
+		textFieldEspecialidad.setText(veterinario.getEspecialidad()); 
+		textFieldSalario.setText(Float.valueOf(veterinario.getSalario()).toString());
+		
+		
+		
+		
 	}
 	
 	/**

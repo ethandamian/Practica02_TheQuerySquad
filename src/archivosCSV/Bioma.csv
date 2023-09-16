@@ -1,2 +1,4 @@
 id,tipo,servicio,numJaulas,numVeterinarios,numAnimales,numCuidadores
-2,Desierto,Baños,12,3,4,2
+2,Franja Costera,Baños,124,3,4,45
+3,Bosque Templado,Baños,45,5,5,3
+4,Pastizales,Tiendas,46,12,90,8

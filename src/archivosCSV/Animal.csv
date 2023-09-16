@@ -9,4 +9,4 @@ id,nombre,especie,peso,altura,sexo,numJaula,alimentacion,indicacionesMedicas
 9,Si,Mamifero,34.0kg,134.0cm,Macho,120,Carnivoro,Caga mucho
 10,Juan,Mamifero,12.0kg,113.0cm,Macho,16,Carnivoro,Se estriñe
 11,Panchito,Reptil,3.0kg,30.0cm,Macho,35,Carnivoro,Es bobo
-12,Pedrito,Mamifero,25.0kg,134.0cm,Macho,368,Herviboro,Ayuda
+12,Pedrito,Mamifero,25.0kg,134.0cm,Macho,39,Omnivoro,Ya pude
