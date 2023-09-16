@@ -15,7 +15,7 @@ public class MainTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		ManipularAnimal m = new ManipularAnimal();
+		ManipularAnimal m = new ManipularAnimal();
 //
 //		Animal a = new Animal("Alan", "Cocodrilo", 23, 380, "Masculino", 12, "Carnivora", "Ningun", 7);
 //
@@ -23,6 +23,11 @@ public class MainTest {
 		
 //		float numero = 19.5f;
 //		System.out.println(String.valueOf(numero));
+		
+		Animal animal = new Animal("Pedrito","Mamifero",23f,134f,"Hembra",368,"Herviboro","Ayuda",12);
+		
+		m.editar(animal, "12");
+		
 		
 		ManipularBioma biomas = new ManipularBioma();
 		
