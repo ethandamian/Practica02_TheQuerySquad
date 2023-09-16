@@ -25,6 +25,9 @@ import java.util.regex.Pattern;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
+/**
+ * Clase de la continuacion de la ventana para registrar trabajador
+ */
 public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 	private String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
 	private String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
@@ -357,86 +360,132 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 	
 	
 	
-
+	/**
+	 * Obtener el panel principal
+	 * @return JPanel
+	 */
 	public JPanel getPanelPrincipal() {
 		return panelPrincipal;
 	}
 
+	/**
+	 * Obtener la ventana para registrar al trabajador
+	 * @return VentanaRegistrarTrabajador
+	 */
 	public VentanaRegistrarTrabajador getVentanaRegistrarTrabajador() {
 		return ventanaRegistrarTrabajador;
 	}
 
+	/**
+	 * Asignar la ventana de registrar trabajador
+	 * @param ventanaRegistrarTrabajador
+	 */
 	public void setVentanaRegistrarTrabajador(VentanaRegistrarTrabajador ventanaRegistrarTrabajador) {
 		this.ventanaRegistrarTrabajador = ventanaRegistrarTrabajador;
 	}
 
+	/**
+	 * Obtener la lista de campos de texto
+	 * @return list JTextField
+	 */
 	public List<JTextField> getListaTextFields() {
 		return listaTextFields;
 	}
 
+	/**
+	 * Obtener la lista de Combobox
+	 * @return list JComboBox
+	 */
 	public List<JComboBox<String>> getListaComBoxs() {
 		return listaComBoxs;
 	}
 
 
 
-
+	/**
+	 * Obtener el campo de telefonoUno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldTelefonoUno() {
 		return textFieldTelefonoUno;
 	}
 
 
 
-
+	/**
+	 * Obtener el campo de TelefonoDos
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldTelefonoDos() {
 		return textFieldTelefonoDos;
 	}
 
 
 
-
+	/**
+	 * Obtener el campo de fecha de inicio de contrato
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldFechaInicioContrato() {
 		return textFieldFechaInicioContrato;
 	}
 
 
 
-
+	/**
+	 * Obtener el campo de fecha de fin de contrato
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldFinContrato() {
 		return textFieldFinContrato;
 	}
 
 
 
-
+	/**
+	 * Obtener el campo de fecha de nacimiento
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldFechaNacimiento() {
 		return textFieldFechaNacimiento;
 	}
 
 
 
-
+	/**
+	 * Obtener el campo de emailUno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldEmailUno() {
 		return textFieldEmailUno;
 	}
 
 
 
-
+	/**
+	 * Obtener el campo de emailDos
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldEmailDos() {
 		return textFieldEmailDos;
 	}
 
 
 
-
+	/**
+	 * Obtener el comboBox de genero
+	 * @return JComboBox String
+	 */
 	public JComboBox<String> getComboBoxGenero() {
 		return comboBoxGenero;
 	}
 
 
 
-
+	/**
+	 * Obtener el combobox de tipo de trabajador
+	 * @return JComboBox String
+	 */
 	public JComboBox<String> getComboBoxTipoTrabajador() {
 		return comboBoxTipoTrabajador;
 	}

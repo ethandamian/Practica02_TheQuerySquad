@@ -21,6 +21,9 @@ import vistas.registrar.VentanaRegistrarTrabajador;
 import vistas.registrar.VentanaRegistrarTrabajadorContinuacion;
 import vistas.registrar.VentanaRegistrarVeterinario;
 
+/**
+ * Clase de relaciones
+ */
 public class Relaciones {
 	
 	private VentanaPrincipal ventanaPrincipal;
@@ -48,6 +51,9 @@ public class Relaciones {
 	private VentanaEditarBioma ventanaEditarBioma;
 	private VentanaEditarVeterinario ventanaEditarVeterinario;
 	
+	/**
+	 * Metodo para instanciar las clases del proyecto, ventanas y establecer las relaciones entre ellas
+	 */
 	public void build() {
 		//instanciamos las clases del proyecto
 		ventanaPrincipal = new VentanaPrincipal();

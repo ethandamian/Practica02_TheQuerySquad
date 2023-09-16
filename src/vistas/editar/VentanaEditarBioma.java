@@ -21,6 +21,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
+/**
+ * Clase de la ventana para editar biomas
+ */
 public class VentanaEditarBioma extends VentanaEditarMenu {
 	private JTextField textFieldNumJaulas;
 	private JTextField textFieldNumCuidadores;
@@ -35,7 +38,7 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 	
 
 	/**
-	 * Create the panel.
+	 * Crea la ventana
 	 */
 	public VentanaEditarBioma() {
 		setSize(576, 480);
@@ -188,18 +191,28 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		
 
 	}
+	
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 */
 	public void limpiaCampos() {
 		limpiarCampos(listaFields);
 		limpiarComboBoxes(listaComboBoxs);
 	}
 
-
+	/**
+	 * Metodo para obtener la ventana para consultar biomas
+	 * @return ventanaConsultaBioma
+	 */
 	public VentanaConsultaBioma getVentanaConsultaBioma() {
 		return ventanaConsultaBioma;
 	}
 
 
-
+	/**
+	 * Metodo para asignar la ventana de consulta de biomas
+	 * @param ventanaConsultaBioma
+	 */
 	public void setVentanaConsultaBioma(VentanaConsultaBioma ventanaConsultaBioma) {
 		this.ventanaConsultaBioma = ventanaConsultaBioma;
 	}

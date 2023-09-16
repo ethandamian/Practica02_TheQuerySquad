@@ -27,6 +27,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
+/**
+ * Clase de la ventana para editar veterinarios
+ */
 public class VentanaEditarVeterinario extends VentanaEditarMenu {
 	private JTextField textFieldRFC;
 	private JTextField textFieldNombre;
@@ -50,7 +53,7 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 	private VentanaConsultaVeterinarios ventanaConsultaVeterinarios;
 
 	/**
-	 * Create the panel.
+	 * Crea la ventana
 	 */
 	public VentanaEditarVeterinario() {
 		btnGuardar.addMouseListener(new MouseAdapter() {
@@ -513,96 +516,186 @@ public class VentanaEditarVeterinario extends VentanaEditarMenu {
 
 	}
 	
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 */
 	public void limpiaCampos() {
 		limpiarCampos(listaFields);
 		limpiarComboBoxes(listaComboBoxs);
 	}
 	
-
+	/**
+	 * Metodo para obtener el campo de RFC
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldRFC() {
 		return textFieldRFC;
 	}
 
+	/**
+	 * Metodo para obtener el campo nombre
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldNombre() {
 		return textFieldNombre;
 	}
 
+	/**
+	 * Obtener el campo de apellido paterno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldApellidoPaterno() {
 		return textFieldApellidoPaterno;
 	}
 
+	/**
+	 * Obtener el campo de apellido materno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldApellidoMaterno() {
 		return textFieldApellidoMaterno;
 	}
 
+	/**
+	 * Obtener el campo Calle
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldCalle() {
 		return textFieldCalle;
 	}
 
+	/**
+	 * Obtener el campo NumInterior
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldNumInterior() {
 		return textFieldNumInterior;
 	}
 
+	/**
+	 * Obtener el campo de num Exterior
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldNumExterior() {
 		return textFieldNumExterior;
 	}
 
+	/**
+	 * Obtener el campo de Colonia
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldColonia() {
 		return textFieldColonia;
 	}
 
+	/**
+	 * Obtener el campo de telefonoUno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldTelefonoUno() {
 		return textFieldTelefonoUno;
 	}
 
+	/**
+	 * Obtener el campo de telefonoDos
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldTelefonoDos() {
 		return textFieldTelefonoDos;
 	}
 
+	/**
+	 * Obtener el campo de fecha de inicio de contrato
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldFechaInicioContrato() {
 		return textFieldFechaInicioContrato;
 	}
 
+	/**
+	 * Obtener el campo de fecha de fin de contrato
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldFechaFinalizacionContrato() {
 		return textFieldFechaFinContrato;
 	}
 
+	/**
+	 * Obtener el campo de fecha de nacimiento
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldFechaNacimiento() {
 		return textFieldFechaNacimiento;
 	}
 
+	/**
+	 * Obtener el campo de EmailUno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldEmailUno() {
 		return textFieldEmailUno;
 	}
 
+	/**
+	 * Obtener el campo de emailDos
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldEmailDos() {
 		return textFieldEmailDos;
 	}
 
+	/**
+	 * Obtener el campo de Especialidad
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldEspecialidad() {
 		return textFieldEspecialidad;
 	}
 
+	/**
+	 * Obtener el campo de salario
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldSalario() {
 		return textFieldSalario;
 	}
 
+	/**
+	 * Obtener el comboBox de genero
+	 * @return JComboBox
+	 */
 	public JComboBox<String> getComboBoxGenero() {
 		return comboBoxGenero;
 	}
 
+	/**
+	 * Obtener la lista de campos
+	 * @return List JTextField
+	 */
 	public List<JTextField> getListaFields() {
 		return listaFields;
 	}
 
+	/**
+	 * Obtener la lista de combobox
+	 * @return list JComboBox
+	 */
 	public List<JComboBox<String>> getLisaComboBoxs() {
 		return listaComboBoxs;
 	}
 
+	/**
+	 * Obtener la venta de consulta de veterinarios
+	 * @return VentanaConsultaVeterinarios
+	 */
 	public VentanaConsultaVeterinarios getVentanaConsultaVeterinarios() {
 		return ventanaConsultaVeterinarios;
 	}
 
+	/**
+	 * Asignar la ventana de consulta de veterinarios
+	 * @param ventanaConsultaVeterinarios
+	 */
 	public void setVentanaConsultaVeterinarios(VentanaConsultaVeterinarios ventanaConsultaVeterinarios) {
 		this.ventanaConsultaVeterinarios = ventanaConsultaVeterinarios;
 	}

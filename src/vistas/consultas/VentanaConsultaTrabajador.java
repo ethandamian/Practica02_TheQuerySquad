@@ -16,6 +16,9 @@ import java.util.List;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 
+/**
+ * Clase de la ventana de consulta de los trabajadores
+ */
 public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 	protected JLabel lblEmailValor;
 	protected JLabel lblRFC;
@@ -235,11 +238,18 @@ public class VentanaConsultaTrabajador extends VentanaConsultasMenu {
 						lblFinContratoValor,lblGeneroValor,lblInicioContratoValor,lblNombreValor,lblNumeroExteriorValor,lblNumInteriorValor,lblRFCValor,lblTelefonosValor);
 	}
 	
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 */
 	protected void limpiarCampos() {
 		limpiaCampos(textFieldInputUsuario);
 		limpiarCampos(listaJLabels);
 	}
 	
+	/**
+	 * Metodo para limpiar campos de lista
+	 * @param listaCampos
+	 */
 	private void limpiarCampos(List<JLabel> listaCampos) {
 		for (JLabel jLabel : listaCampos) {
 			jLabel.setText("");

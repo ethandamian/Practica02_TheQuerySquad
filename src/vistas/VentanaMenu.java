@@ -10,11 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+/**
+ * Clase de la ventana del menu
+ */
 public class VentanaMenu extends JPanel {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	protected JPanel panelMenu;
 	protected JComponent panelMenuOpciones;

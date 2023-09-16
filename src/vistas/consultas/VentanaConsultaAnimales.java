@@ -26,6 +26,9 @@ import javax.swing.JTextField;
 import Clases.Animal;
 import errores.ManejadorDeErrores;
 
+/**
+ * Clase de la ventana de consulta de animales
+ */
 public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 	private JLabel lblSexoValor;
 
@@ -208,12 +211,19 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 
 	}
 	
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 */
 	public void limpiarCampos() {
 		textAreaIndicacionesMedicas.setText("");
 		limpiaCampos(textFieldInputUsuario);
 		limpiarCampos(listaJLabels);
 	}
 	
+	/**
+	 * Metodo para limpiar campos de lista
+	 * @param listaCampos
+	 */
 	private void limpiarCampos(List<JLabel> listaCampos) {
 		for (JLabel jLabel : listaCampos) {
 			jLabel.setText("");
@@ -222,11 +232,18 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 
 	
 	
-
+	/**
+	 * Obtener la ventana de editar animal
+	 * @return VentanaEditarAnimal
+	 */
 	public VentanaEditarAnimal getVentanaEditarAnimal() {
 		return ventanaEditarAnimal;
 	}
 
+	/**
+	 * Asignar la ventana para editar animal
+	 * @param ventanaEditarAnimal
+	 */
 	public void setVentanaEditarAnimal(VentanaEditarAnimal ventanaEditarAnimal) {
 		this.ventanaEditarAnimal = ventanaEditarAnimal;
 	}

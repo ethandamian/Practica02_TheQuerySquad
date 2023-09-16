@@ -6,6 +6,9 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Clase de la ventana para eliminar animales
+ */
 public class VentanaEliminarAnimal extends VentanaEliminarMenu {
 
 	/**
@@ -60,6 +63,9 @@ public class VentanaEliminarAnimal extends VentanaEliminarMenu {
 
 	}
 	
+	/**
+	 * Metodo para limpiar campos de la ventana
+	 */
 	public void limpiarCampos() {
 		limpiaCampos(textFieldOpcionUsuario);
 	}

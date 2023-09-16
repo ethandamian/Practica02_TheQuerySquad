@@ -29,7 +29,7 @@ import vistas.registrar.VentanaRegistrarTrabajador;
 import vistas.registrar.VentanaRegistrarVeterinario;
 
 /**
- * 
+ * Clase de la ventana principal
  */
 public class VentanaPrincipal extends JFrame {
 
@@ -62,7 +62,7 @@ public class VentanaPrincipal extends JFrame {
 	private VentanaRegistrarTrabajador ventanaRegistrarTrabajador;
 
 	/**
-	 * Create the frame.
+	 * Crea la ventana
 	 */
 	public VentanaPrincipal() {
 		setTitle("VentanaPrincipal");
@@ -228,7 +228,9 @@ public class VentanaPrincipal extends JFrame {
 		panelCentral.repaint();
 	}
 	
-	
+	/**
+	 * Metodo para limpiar los campos de las ventanas
+	 */
 	public void limpiarVentanas() {
 	
 		
@@ -251,106 +253,210 @@ public class VentanaPrincipal extends JFrame {
 		ventanaEliminarsVeterinarios.limpiarCampos();
 	}
 
+	/**
+	 * Metodo para obtener la ventana de registro
+	 * @return VentanaMenu
+	 */
 	public VentanaMenu getVentanaRegistro() {
 		return ventanaRegistro;
 	}
 
+	/**
+	 * Metodo para asignar la ventana de registro
+	 * @param ventanaRegistro
+	 */
 	public void setVentanaRegistro(VentanaRegistro ventanaRegistro) {
 		this.ventanaRegistro = ventanaRegistro;
 	}
 
+	/**
+	 * Metodo para obtener la ventana de consultas
+	 * @return VentanaConsultas
+	 */
 	public VentanaConsultas getVentanaConsultas() {
 		return ventanaConsultas;
 	}
 
+	/**
+	 * Metodo para asignar la ventana de consultas
+	 * @param ventanaConsultas
+	 */
 	public void setVentanaConsultas(VentanaConsultas ventanaConsultas) {
 		this.ventanaConsultas = ventanaConsultas;
 	}
 
+	/**
+	 * Metodo para obtener la ventana de eliminar
+	 * @return VentanaEliminar
+	 */
 	public VentanaEliminar getVentanaEliminar() {
 		return ventanaEliminar;
 	}
 
+	/**
+	 * Metodo para asignar la ventana para eliminar
+	 * @param ventanaEliminar
+	 */
 	public void setVentanaEliminar(VentanaEliminar ventanaEliminar) {
 		this.ventanaEliminar = ventanaEliminar;
 	}
 
+	/**
+	 * Metodo para obtener la ventana de consulta de animales
+	 * @return VentanaConsultaAnimales
+	 */
 	public VentanaConsultaAnimales getVentanaConsultaAnimales() {
 		return ventanaConsultaAnimales;
 	}
 
+	/**
+	 * Metodo para asignar la ventana de consulta de animales
+	 * @param ventanaConsultaAnimales
+	 */
 	public void setVentanaConsultaAnimales(VentanaConsultaAnimales ventanaConsultaAnimales) {
 		this.ventanaConsultaAnimales = ventanaConsultaAnimales;
 	}
 
+	/**
+	 * Obtiene la ventana de consulta de bioma
+	 * @return VentanaConsultaBioma
+	 */
 	public VentanaConsultaBioma getVentanaConsultaBioma() {
 		return ventanaConsultaBioma;
 	}
 
+	/**
+	 * Asigna la ventana de consulta de bioma
+	 * @param ventanaConsultaBioma
+	 */
 	public void setVentanaConsultaBioma(VentanaConsultaBioma ventanaConsultaBioma) {
 		this.ventanaConsultaBioma = ventanaConsultaBioma;
 	}
 
+	/**
+	 * Obtiene la ventana de consulta de veterinarios
+	 * @return VentanaConsultaVeterinarios
+	 */
 	public VentanaConsultaVeterinarios getVentanaConsultaVeterinarios() {
 		return ventanaConsultaVeterinarios;
 	}
 
+	/**
+	 * Asignar la ventana de consulta de veterinarios
+	 * @param ventanaConsultaVeterinarios
+	 */
 	public void setVentanaConsultaVeterinarios(VentanaConsultaVeterinarios ventanaConsultaVeterinarios) {
 		this.ventanaConsultaVeterinarios = ventanaConsultaVeterinarios;
 	}
 
+	/**
+	 * Obtener la ventana para eliminar biomas
+	 * @return VentanaEliminarBioma
+	 */
 	public VentanaEliminarBioma getVentanaEliminarBioma() {
 		return ventanaEliminarBioma;
 	}
 
+	/**
+	 * Asignar la ventana para eliminar biomas
+	 * @param ventanaEliminarBioma
+	 */
 	public void setVentanaEliminarBioma(VentanaEliminarBioma ventanaEliminarBioma) {
 		this.ventanaEliminarBioma = ventanaEliminarBioma;
 	}
 
+	/**
+	 * Obtener la ventana para eliminar veterinarios
+	 * @return VentanaEliminarVeterinarios
+	 */
 	public VentanaEliminarVeterinarios getVentanaEliminarVeterinario() {
 		return ventanaEliminarsVeterinarios;
 	}
 
+	/**
+	 * Asignar la ventana para eliminar veterinarios
+	 * @param ventanaEliminarsVeterinarios
+	 */
 	public void setVentanaEliminarVeterinario(VentanaEliminarVeterinarios ventanaEliminarsVeterinarios) {
 		this.ventanaEliminarsVeterinarios = ventanaEliminarsVeterinarios;
 	}
 
+	/**
+	 * Obtener la ventana para eliminar animales
+	 * @return VentanaEliminarAnimal
+	 */
 	public VentanaEliminarAnimal getVentanaEliminarAnimal() {
 		return ventanaEliminarAnimal;
 	}
 
+	/**
+	 * Asignar la ventana para eliminar animales
+	 * @param ventanaEliminarAnimal
+	 */
 	public void setVentanaEliminarAnimal(VentanaEliminarAnimal ventanaEliminarAnimal) {
 		this.ventanaEliminarAnimal = ventanaEliminarAnimal;
 	}
 
+	/**
+	 * Obtener la ventana para registrar animales
+	 * @return VentanaRegistroAnimal
+	 */
 	public VentanaRegistrarAnimal getVentanaRegitrarAnimal() {
 		return ventanaRegitrarAnimal;
 	}
 
+	/**
+	 * Asignar la ventana para registrar animales
+	 * @param ventanaRegitrarAnimal
+	 */
 	public void setVentanaRegitrarAnimal(VentanaRegistrarAnimal ventanaRegitrarAnimal) {
 		this.ventanaRegitrarAnimal = ventanaRegitrarAnimal;
 	}
 
+	/**
+	 * Obtener la ventana para registrar biomas
+	 * @return VentanaRegistrarBiomas
+	 */
 	public VentanaRegistrarBiomas getRegistrarVentanaBioma() {
 		return registrarBiomas;
 	}
 
+	/**
+	 * Metodo para asignar la ventana para registrar biomas
+	 * @param registrarBiomas
+	 */
 	public void setVentanaRegistrarBioma(VentanaRegistrarBiomas registrarBiomas) {
 		this.registrarBiomas = registrarBiomas;
 	}
 
+	/**
+	 * Metodo para obtener la ventana para registrar trabajadores
+	 * @return ventanaRegistrarTrabajador
+	 */
 	public VentanaRegistrarTrabajador getVentanaRegistrarTrabajador() {
 		return ventanaRegistrarTrabajador;
 	}
 
+	/**
+	 * Metodo para asignar la ventana para registrar trabajadores
+	 * @param ventanaRegistrarTrabajador
+	 */
 	public void setVentanaRegistrarTrabajador(VentanaRegistrarTrabajador ventanaRegistrarTrabajador) {
 		this.ventanaRegistrarTrabajador = ventanaRegistrarTrabajador;
 	}
 
+	/**
+	 * Obtener la ventana para consultar trabajadores
+	 * @return ventanaConsultaTrabajador
+	 */
 	public VentanaConsultaTrabajador getVentanaConsultaTrabajador() {
 		return ventanaConsultaTrabajador;
 	}
 
+	/**
+	 * Asignar la ventana de consulta de trabajadores
+	 * @param ventanaConsultaTrabajador
+	 */
 	public void setVentanaConsultaTrabajador(VentanaConsultaTrabajador ventanaConsultaTrabajador) {
 		this.ventanaConsultaTrabajador = ventanaConsultaTrabajador;
 	}

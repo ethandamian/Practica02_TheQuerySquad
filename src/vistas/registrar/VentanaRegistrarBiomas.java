@@ -29,6 +29,9 @@ import java.util.regex.Pattern;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
+/**
+ * Clase de la ventana para registrar biomas
+ */
 public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 	private JTextField textFieldNumJaulas;
 	private JTextField textFieldNumCuidadores;
@@ -217,6 +220,9 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 
 	}
 	
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 */
 	public void limpiaCampos() {
 		limpiarCampos(listaTextFields);
 		

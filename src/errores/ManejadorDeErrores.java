@@ -9,8 +9,16 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+/**
+ * Clase de un manejador de errores
+ */
 public class ManejadorDeErrores {
 	
+	/**
+	 * Metodo para validar la cadena del campo de texto
+	 * @param string
+	 * @return boolean
+	 */
 	public static boolean validarJTextField(String string) {	 
 		Pattern pattern = Pattern.compile("[\\s+=_-]");
 	    Matcher matcher = pattern.matcher(string);
@@ -21,10 +29,20 @@ public class ManejadorDeErrores {
 	    return false;
 	}
 	
+	/**
+	 * Metodo para saber si la cadena contiene algun espacio en blanco
+	 * @param string
+	 * @return boolean
+	 */
 	public static boolean validarJTextFieldConEspacios(String string) {
 	    return string.contains(" "); // Devuelve true si la cadena contiene un espacio en blanco
 	}
 	
+	/**
+	 * Metodo para validar la lista de las cadenas obtenidas de los campos de texto
+	 * @param listaJTextFields
+	 * @return
+	 */
 	public static boolean validarListaJtextFields(List<JTextField> listaJTextFields) {
 		
 		for (JTextField jTextField : listaJTextFields) {
@@ -36,6 +54,11 @@ public class ManejadorDeErrores {
 		return false;
 	}
 	
+	/**
+	 * Metodo para validar la lista de comboBox
+	 * @param listaJComboBoxs
+	 * @return boolean
+	 */
 	public static boolean validarListaComboBox(List<JComboBox<String>> listaJComboBoxs) {
 			
 			for (JComboBox<String> jComboBox: listaJComboBoxs) {
@@ -47,7 +70,10 @@ public class ManejadorDeErrores {
 			return false;
 		}
 	
-	
+	/**
+	 * Metodo para validar la fecha
+	 * @return String
+	 */
 	public static String  validarFecha() {
 		String input ="";
 		List<Integer> listaMeses = Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12); 
@@ -68,6 +94,12 @@ public class ManejadorDeErrores {
 		  return "";
 	}
 	
+	/**
+	 * Metodo para registrar la fecha
+	 * @param input
+	 * @param mensajeEnVentana
+	 * @return String
+	 */
 	public static String registrarFecha(String input,String mensajeEnVentana) {
 		String resultado = "";
 		do {

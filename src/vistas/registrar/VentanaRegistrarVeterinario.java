@@ -23,6 +23,9 @@ import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Clase de la ventana para registrar veterinario
+ */
 public class VentanaRegistrarVeterinario extends JPanel {
 	private String urlFuenteStringBold = "fuentes/RobotoCondensed-Bold.ttf";
 	private String urlFuenteStringPlain = "fuentes/RobotoCondensed-Regular.ttf";
@@ -156,22 +159,42 @@ public class VentanaRegistrarVeterinario extends JPanel {
 
 	}
 
+	/**
+	 * Metodo para crear el panel principal
+	 * @return JPanel
+	 */
 	public JPanel getPanelPrincipal() {
 		return panelPrincipal;
 	}
 
+	/**
+	 * Metodo para obtener la ventana de registrar trabajador
+	 * @param ventanaRegistrarTrabajador
+	 */
 	public void setVentanaRegistrarTrabajador(VentanaRegistrarTrabajador ventanaRegistrarTrabajador) {
 		this.ventanaRegistrarTrabajador = ventanaRegistrarTrabajador;
 	}
 
+	/**
+	 * Obtener la lista de campos de texto
+	 * @return list JTextField
+	 */
 	public List<JTextField> getListaTextFields() {
 		return listaTextFields;
 	}
 
+	/**
+	 * Ontener el campo de Especialidad
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldEspecialidad() {
 		return textFieldEspecialidad;
 	}
 
+	/**
+	 * Obtener el campo de salario
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldSalario() {
 		return textFieldSalario;
 	}

@@ -29,6 +29,9 @@ import errores.ManejadorDeErrores;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * Clase para la ventana de registrar trabajador
+ */
 public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 	
 
@@ -282,31 +285,59 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 
 	}
 
+	/**
+	 * Obtener la ventana de registrar trabajador
+	 * @return VentanaRegistrarTrabajadorContinuacion
+	 */
 	public VentanaRegistrarTrabajadorContinuacion getVentanaRegistrarTrabajadorContinuacion() {
 		return ventanaRegistrarTrabajadorContinuacion;
 	}
 
+	/**
+	 * Asignar la ventana para registrar trabajadores
+	 * @param ventanaRegistrarTrabajadorContinuacion
+	 */
 	public void setVentanaRegistrarTrabajadorContinuacion(
 			VentanaRegistrarTrabajadorContinuacion ventanaRegistrarTrabajadorContinuacion) {
 		this.ventanaRegistrarTrabajadorContinuacion = ventanaRegistrarTrabajadorContinuacion;
 	}
 
+	/**
+	 * Obtener la ventana para registrar veterinarios
+	 * @return VentanaRegistrarVeterinario
+	 */
 	public VentanaRegistrarVeterinario getVentanaRegistrarVeterinario() {
 		return ventanaRegistrarVeterinario;
 	}
 
+	/**
+	 * Asignar la ventana de registrar veterinario
+	 * @param ventanaRegistrarVeterinario
+	 */
 	public void setVentanaRegistrarVeterinario(VentanaRegistrarVeterinario ventanaRegistrarVeterinario) {
 		this.ventanaRegistrarVeterinario = ventanaRegistrarVeterinario;
 	}
 
+	/**
+	 * Obtener la lista de los campos de texto
+	 * @return list JTextField
+	 */
 	public List<JTextField> getListaTextFields() {
 		return listaTextFields;
 	}
 
+	/**
+	 * Obtener el panel derecho
+	 * @return JPanel
+	 */
 	public JPanel getPanelDerechoContenido() {
 		return panelDerechoContenido;
 	}
 
+	/**
+	 * Cambiar el panel principal
+	 * @param panel
+	 */
 	public static void changePrincipalPanel(JPanel panel) {
 		panel.setSize(463, 407);
 		panel.setLocation(0, 0);
@@ -317,6 +348,9 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		panelDerechoContenido.repaint();
 	}
 
+	/**
+	 * Metodo para limpiar los campos de la ventana
+	 */
 	public void limpiaCampos() {
 		limpiarCampos(listaTextFields);
 		limpiarCampos(ventanaRegistrarTrabajadorContinuacion.getListaTextFields());
@@ -324,46 +358,90 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 		limpiarComboBoxes(ventanaRegistrarTrabajadorContinuacion.getListaComBoxs());
 	}
 	
+	/**
+	 * Obtener el panel derecho
+	 * @return JPanel
+	 */
 	public static JPanel getPanelDerecho() {
 		return panelDerecho;
 	}
 
+	/**
+	 * Obtener el PanelDerecho contenedor
+	 * @return JPanel
+	 */
 	public JPanel getPanelDerechoContenedor() {
 		return panelDerechoContenedor;
 	}
 
+	/**
+	 * Asignar el panel derecho
+	 * @param panelDerechoContenedor
+	 */
 	public static void setPanelDerechoContenedor(JPanel panelDerechoContenedor) {
 		VentanaRegistrarTrabajador.panelDerechoContenedor = panelDerechoContenedor;
 	}
 
+	/**
+	 * Obtener el campo de RFC
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldRFC() {
 		return textFieldRFC;
 	}
 
+	/**
+	 * Obtener el campo de nombre
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldNombre() {
 		return textFieldNombre;
 	}
 
+	/**
+	 * Obtener el campo de apellido paterno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldApellidoPaterno() {
 		return textFieldApellidoPaterno;
 	}
 
+	/**
+	 * Obtener el campo de apellido materno
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldApellidoMaterno() {
 		return textFieldApellidoMaterno;
 	}
 
+	/**
+	 * Obtener el campo de Calle
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldCalle() {
 		return textFieldCalle;
 	}
 
+	/**
+	 * Obtener el campo de num Interior
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldNumInterior() {
 		return textFieldNumInterior;
 	}
 
+	/**
+	 * Obtener el campo de num Exterior
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldNumExterior() {
 		return textFieldNumExterior;
 	}
 
+	/**
+	 * Obtener el campo de colonia
+	 * @return JTextField
+	 */
 	public JTextField getTextFieldColonia() {
 		return textFieldColonia;
 	}

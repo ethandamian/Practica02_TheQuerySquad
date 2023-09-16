@@ -18,6 +18,9 @@ import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Clase para consultar biomas
+ */
 public class VentanaConsultaBioma extends VentanaConsultasMenu {
 	
 	private VentanaEditarBioma ventanaEditarBioma;
@@ -159,26 +162,39 @@ public class VentanaConsultaBioma extends VentanaConsultasMenu {
 
 	}
 	
+	/**
+	 * Metodo para limpiar campos
+	 */
 	public void limpiarCampos() {
 		
 		limpiaCampos(textFieldInputUsuario);
 		limpiarCampos(listaJLabels);
 	}
 	
+	/**
+	 * Metodo para limpiar campos de lista
+	 * @param listaCampos
+	 */
 	private void limpiarCampos(List<JLabel> listaCampos) {
 		for (JLabel jLabel : listaCampos) {
 			jLabel.setText("");
 		}
 	}
 
-
+	/**
+	 * Metodo para obtener la ventana para editar biomas
+	 * @return VentanaEditarBioma
+	 */
 	public VentanaEditarBioma getVentanaEditarBioma() {
 		return ventanaEditarBioma;
 	}
 
 
 
-
+	/**
+	 * Metodo para asignar la ventana de editar bioma
+	 * @param ventanaEditarBioma
+	 */
 	public void setVentanaEditarBioma(VentanaEditarBioma ventanaEditarBioma) {
 		this.ventanaEditarBioma = ventanaEditarBioma;
 	}

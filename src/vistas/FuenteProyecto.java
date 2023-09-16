@@ -8,6 +8,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Clase para las fuentes (tipo de letra) del proyecto
+ */
 public class FuenteProyecto {
 	
 	/**

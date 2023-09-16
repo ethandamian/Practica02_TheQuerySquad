@@ -9,6 +9,9 @@ import javax.swing.JOptionPane;
 
 import Clases.Animal;
 
+/**
+ * Clase para manipular la informacion de un animal
+ */
 public class ManipularAnimal extends ManipularZoologico {
 
     String path = "archivosCSV/Animal.csv";
