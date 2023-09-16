@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.text.AbstractDocument.BranchElement;
+
 /**
  * Clase padre para la manipulación de las entidades en un zoologico.
  * Contiene operaciones CRUD hacía un archivo csv.
@@ -29,7 +31,6 @@ public class ManipularZoologico {
 		String line = "";
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(path));
-			System.out.println("n");
 
 			while ((line = br.readLine()) != null) {
 				String[] values = line.split(",");
@@ -46,6 +47,35 @@ public class ManipularZoologico {
 		}
 		return null;
 	}
+	
+	/**
+	 * Devuelve una lista de arreglos con todas las entidades en un archivo
+	 * @param path
+	 * @return lista de arreglos con todas las entidades en un archivo
+	 */
+	public List<String []> devolverListaEntidadesEnTabla(String path) {
+		List<String []> listaEntidadeStrings = new ArrayList<>();
+		String line = "";
+		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(path));
+			br.readLine();
+
+			while ((line = br.readLine()) != null) {
+				String[] values = line.split(",");
+				listaEntidadeStrings.add(values);
+			}
+			
+			br.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return listaEntidadeStrings;
+	}
+	
 
 	/**
 	 * Operación de eliminación.

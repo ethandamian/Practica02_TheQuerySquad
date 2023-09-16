@@ -6,3 +6,7 @@ id,nombre,especie,peso,altura,sexo,numJaula,alimentacion,indicacionesMedicas
 5,Malasia,zorra,1233kg,200cm,Hembra,112,carnivoro,oleee
 6,Valki,perro,4.0kg,200.0cm,Hembra,49,carnivoro,soporto
 7,Alan,Cocodrilo,23.0kg,380.0cm,Masculino,12,Carnivora,Ningun
+8,Jirafa,Mamifero,12.0kg,120.0cm,Macho,23,Herviboro,Come mucho
+9,Si,Mamifero,34.0kg,134.0cm,Macho,120,Carnivoro,Caga mucho
+10,Juan,Mamifero,12.0kg,113.0cm,Macho,16,Carnivoro,Se estriñe
+11,Panchito,Reptil,3.0kg,30.0cm,Macho,35,Carnivoro,Es bobo

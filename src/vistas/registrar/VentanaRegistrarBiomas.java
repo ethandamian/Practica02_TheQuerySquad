@@ -148,16 +148,19 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 		buttonRegistrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				boolean bandera = true;
+				
 				if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null,
 							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				}
 				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Sexo' y 'Alimentacion'",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				}
-				Boolean bandera = false;
 
 				String nVet = textFieldNumVeterinarios.getText();
 				String nJaulas = textFieldNumJaulas.getText();
@@ -171,9 +174,14 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 					int cuidadores = Integer.parseInt(nCuidadores);
 
 				} catch (NumberFormatException ex) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null,
 							"No puede ingresar palabras en todos los campos donde se requieren numeros",
 							"error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				if(bandera) {
+					
 				}
 
 			}

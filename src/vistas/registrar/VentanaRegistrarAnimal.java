@@ -11,8 +11,10 @@ import java.util.Arrays;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Clases.Animal;
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
+import zoologico.ManipularAnimal;
 
 import javax.swing.JSeparator;
 import javax.swing.JButton;
@@ -21,6 +23,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 	private JTextField textFieldNombre;
@@ -32,7 +36,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 	
 	private JComboBox<String> comboBoxSexo;
 	private JComboBox<String> comboBoxAlimentacion;
-	private JTextArea textAreaIndicacionesMedicas;
+	private JTextField textFieldIndicacionesMedicas;
 
 	/**
 	 * Crea el panel de la Ventana de registrar animal.
@@ -88,13 +92,22 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		separator_1_1.setBounds(72, 183, 136, 2);
 		panelDerecho.add(separator_1_1);
 
-		JLabel lblPeso = new JLabel("Peso:");
+		JLabel lblPeso = new JLabel("Peso(en kg):");
 		lblPeso.setForeground(new Color(227, 236, 233));
 		lblPeso.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblPeso.setBounds(72, 196, 122, 28);
 		panelDerecho.add(lblPeso);
 
 		textFieldPeso = new JTextField();
+		textFieldPeso.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		textFieldPeso.setForeground(new Color(227, 236, 233));
 		textFieldPeso.setFont(null);
 		textFieldPeso.setColumns(10);
@@ -107,13 +120,22 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		separator_1_2.setBounds(72, 259, 136, 2);
 		panelDerecho.add(separator_1_2);
 
-		JLabel lblAltura = new JLabel("Altura:");
+		JLabel lblAltura = new JLabel("Altura(en cm):");
 		lblAltura.setForeground(new Color(227, 236, 233));
 		lblAltura.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblAltura.setBounds(72, 277, 122, 28);
 		panelDerecho.add(lblAltura);
 
 		textFieldAltura = new JTextField();
+		textFieldAltura.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		textFieldAltura.setForeground(new Color(227, 236, 233));
 		textFieldAltura.setFont(null);
 		textFieldAltura.setColumns(10);
@@ -170,21 +192,38 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		lblIndicacionesMedicas.setFont(FuenteProyecto.createFont(urlFuenteStringBold, 15));
 		lblIndicacionesMedicas.setBounds(255, 277, 174, 28);
 		panelDerecho.add(lblIndicacionesMedicas);
+		
+		textFieldIndicacionesMedicas = new JTextField();
+		textFieldIndicacionesMedicas.setForeground(new Color(227, 236, 233));
+		textFieldIndicacionesMedicas.setFont(null);
+		textFieldIndicacionesMedicas.setColumns(10);
+		textFieldIndicacionesMedicas.setBackground(new Color(67, 83, 52));
+		textFieldIndicacionesMedicas.setBounds(255, 316, 136, 20);
+		panelDerecho.add(textFieldIndicacionesMedicas);
+		textFieldIndicacionesMedicas.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		
+		JSeparator separator_1_2_1_1 = new JSeparator();
+		separator_1_2_1_1.setBounds(255, 340, 136, 2);
+		panelDerecho.add(separator_1_2_1_1);
+
 
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Boolean bandera = true;
 				String numJaula = textFieldNumeroJaula.getText();
 				String peso = textFieldPeso.getText();
 				String altura = textFieldAltura.getText();
 
 				if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null,
 							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				}
 				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Sexo' y 'Alimentacion'",
 							"Error", JOptionPane.ERROR_MESSAGE);
 				}
@@ -195,9 +234,30 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 					int alturaA = Integer.parseInt(altura);
 
 				} catch (NumberFormatException ex) {
+					bandera = false;
 					JOptionPane.showMessageDialog(null,
 							"No puede ingresar palabras en todos los campos donde se requieren numeros",
 							"error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				if(bandera) {
+					ManipularAnimal manipularAnimal = new ManipularAnimal();
+					String nombre = textFieldNombre.getText();
+					String especie = textFieldEspecie.getText();
+					float pesofloat = Float.valueOf(textFieldPeso.getText());
+					float alturaFloat = Float.valueOf(textFieldAltura.getText());
+					String sexoString = comboBoxSexo.getSelectedItem().toString();
+					int numJaulas = Integer.valueOf(textFieldNumeroJaula.getText());
+					String alimentacion = comboBoxAlimentacion.getSelectedItem().toString();
+					String indicacionesMedica = textFieldIndicacionesMedicas.getText();
+ 					
+					
+					Animal animal = new Animal(nombre,especie,pesofloat,alturaFloat,sexoString,
+							numJaulas,alimentacion,indicacionesMedica);
+					if(manipularAnimal.inserta(animal)) {
+						limpiaCampos();
+						JOptionPane.showMessageDialog(null, "Se ha registrado con exito", "Error", JOptionPane.INFORMATION_MESSAGE);
+					}
 				}
 
 			}
@@ -220,24 +280,17 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 		panelDerecho.add(comboBoxAlimentacion);
 		comboBoxAlimentacion.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
 
-		textAreaIndicacionesMedicas = new JTextArea();
-		textAreaIndicacionesMedicas.setLineWrap(true);
-		textAreaIndicacionesMedicas.setBackground(new Color(67, 83, 52));
-		textAreaIndicacionesMedicas.setForeground(new Color(227, 236, 233));
-		textAreaIndicacionesMedicas.setBounds(255, 314, 136, 82);
-		panelDerecho.add(textAreaIndicacionesMedicas);
-		textAreaIndicacionesMedicas.setFont(FuenteProyecto.createFont(urlFuenteStringPlain, 13));
-
 		listaTextFields = Arrays.asList(textFieldAltura, textFieldEspecie, textFieldNombre, textFieldNumeroJaula,
 				textFieldPeso);
 		listaComboBoxs = Arrays.asList(comboBoxAlimentacion, comboBoxSexo);
-
+		
+		
 	}
 	
 	public void limpiaCampos() {
+		textFieldIndicacionesMedicas.setText("");
 		limpiarCampos(listaTextFields);
 		
 		limpiarComboBoxes(listaComboBoxs);
 	}
-	
 }

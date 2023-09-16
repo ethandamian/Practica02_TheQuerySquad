@@ -7,7 +7,7 @@ import Clases.Veterinario;
 
 public class ManipularVeterinario extends ManipularZoologico {
 
-    String path = "src/archivosCSV/Veterinario.csv";
+    String path = "archivosCSV/Veterinario.csv";
 
     /**
      * Método para hacer consulta de un veterinario de archivo csv.
@@ -31,19 +31,19 @@ public class ManipularVeterinario extends ManipularZoologico {
         int numInterior = Integer.valueOf(values[7]);
         String colonia = values[8];
         String estado = values[9];
-        String inicioContrato = values[9];
-        String finContrato = values[10];
-        String nacimiento = values[11];
+        String inicioContrato = values[10];
+        String finContrato = values[11];
+        String nacimiento = values[12];
         ArrayList<String> telefonosString = new ArrayList<String>(
-                Arrays.asList(values[12].substring(1, values[12].length() - 2).split(":")));
-        ArrayList<Long> telefonos = new ArrayList<Long>();
+                Arrays.asList(values[13].substring(1, values[13].length() - 2).split(":")));
+        ArrayList<String> telefonos = new ArrayList<String>();
         for (String telefono : telefonosString) {
-            telefonos.add(Long.valueOf(telefono));
+            telefonos.add(telefono);
         }
         ArrayList<String> correos = new ArrayList<String>(
-                Arrays.asList(values[13].substring(1, values[13].length() - 2).split(":")));
-        String especialidad = values[14];
-        Float salario = Float.valueOf(values[15]);
+                Arrays.asList(values[14].substring(1, values[14].length() - 2).split(":")));
+        String especialidad = values[15];
+        Float salario = Float.valueOf(values[16]);
 
         Veterinario veterinario = new Veterinario(rfc, nombre, paterno, materno, genero, calle, numExterior,
                 numInterior, colonia, estado, inicioContrato, finContrato, nacimiento, telefonos, correos, especialidad,
