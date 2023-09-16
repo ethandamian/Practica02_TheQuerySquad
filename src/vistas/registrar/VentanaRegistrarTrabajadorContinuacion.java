@@ -18,6 +18,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -255,8 +256,8 @@ public class VentanaRegistrarTrabajadorContinuacion extends JPanel {
 						String telDoString = textFieldTelefonoDos.getText();
 
 						try {
-							int numeroJaulas = Integer.parseInt(telUnoString);
-							int pesoA = Integer.parseInt(telDoString);
+							long numeroJaulas = Long.valueOf(telUnoString);
+							long pesoA = Long.valueOf(telDoString);
 
 						} catch (NumberFormatException ex) {
 							bandera = false;

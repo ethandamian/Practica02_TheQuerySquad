@@ -17,13 +17,11 @@ public class Bioma {
 	protected int numVeterinarios;
 	protected int numAnimales;
 	protected int numCuidadores;
-	protected ArrayList<String> serviciosAVisitantes;
 
 	/**
 	 * Método constructor sin argumentos
 	 */
 	public Bioma() {
-		serviciosAVisitantes = new ArrayList<String>();
 	}
 
 	/**
@@ -38,7 +36,7 @@ public class Bioma {
 	 * @param serviciosAVisitantes
 	 */
 	public Bioma(int id, String tipo, String servicio, int numJaulaas, int numVeterinarios,
-			int numAnimales, int numCuidadores, ArrayList<String> servicios) {
+			int numAnimales, int numCuidadores) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
@@ -47,7 +45,43 @@ public class Bioma {
 		this.numVeterinarios = numVeterinarios;
 		this.numAnimales = numAnimales;
 		this.numCuidadores = numCuidadores;
-		this.serviciosAVisitantes = servicios;
+	}
+	
+	
+	/**
+	 * Método constructor con todos los atributos
+	 * 
+	 * @param tipo
+	 * @param servicio
+	 * @param numJaulaas
+	 * @param numVeterinarios
+	 * @param numAnimales
+	 * @param numCuidadores
+	 * @param serviciosAVisitantes
+	 */
+	public Bioma(String tipo, String servicio, int numJaulaas, int numVeterinarios,
+			int numAnimales, int numCuidadores) {
+		this.tipo = tipo;
+		this.servicio = servicio;
+		this.numJaulaas = numJaulaas;
+		this.numVeterinarios = numVeterinarios;
+		this.numAnimales = numAnimales;
+		this.numCuidadores = numCuidadores;
+	}
+	
+	/**
+	 * Método constructor con tres atributos
+	 * 
+	 * @param id El id 
+	 * @param tipo le tipo de bioma 
+	 * @param numJaulaas El numero de jaulas
+	 */
+	public Bioma(int id,String tipo,  int numJaulaas) {
+		
+		this.id = id;
+		this.tipo = tipo;
+		this.numJaulaas = numJaulaas;
+		
 	}
 
 	/**
@@ -176,55 +210,14 @@ public class Bioma {
 		this.numAnimales = numAnimales;
 	}
 
-	/**
-	 * Método para obtener la lista de servicios que ofrece el bioma a los
-	 * visitantes
-	 * 
-	 * @return ArrayList<String>
-	 */
-	public ArrayList<String> getServiciosAVisitantes() {
-		return serviciosAVisitantes;
-	}
 
-	/**
-	 * Método para cambiar la lista de Servicios a Visitantes
-	 * 
-	 * @param serviciosAVisitantes
-	 */
-	public void setServiciosAVisitantes(ArrayList<String> serviciosAVisitantes) {
-		this.serviciosAVisitantes = serviciosAVisitantes;
-	}
-
-	/**
-	 * Metodo para añadir un servicio a visitantes (baños, tiendas, comida)
-	 * 
-	 * @param servicio
-	 */
-	public void addServicioAVisitantes(String servicio) {
-		serviciosAVisitantes.add(servicio);
-	}
-
-	/**
-	 * Metodo para eliminar un servicio de la lista de servicios a visitantes
-	 * 
-	 * @param servicio
-	 * @return boolean: true si se pudo eliminar, false si el servicio no estaba en
-	 *         la lista
-	 */
-	public boolean eliminarServicioAVisitantes(String servicio) {
-		if (serviciosAVisitantes.contains(servicio)) {
-			serviciosAVisitantes.remove(servicio);
-			return true;
-		} else {
-			return false;
-		}
-	}
+	
 
 	@Override
 	public String toString() {
 		return "Bioma [id=" + id + ", tipo=" + tipo + ", servicio=" + servicio + ", numJaulaas=" + numJaulaas
 				+ ", numVeterinarios=" + numVeterinarios + ", numAnimales=" + numAnimales + ", numCuidadores="
-				+ numCuidadores + ", serviciosAVisitantes=" + serviciosAVisitantes + "]";
+				+ numCuidadores + ", serviciosAVisitantes=" + "]";
 	}
 
 	/**
@@ -235,7 +228,16 @@ public class Bioma {
 	public String toStringNoId() {
 		return tipo + "," + servicio + "," + numJaulaas
 				+ "," + numVeterinarios + "," + numAnimales + ","
-				+ numCuidadores + "," + arrayToString(serviciosAVisitantes);
+				+ numCuidadores;
+	}
+	
+	/**
+	 * Método para representar el bioma como un string sin id.
+	 * 
+	 * @return String
+	 */
+	public String toStringConTresAtributos() {
+		return id + "," + tipo + "," + numJaulaas;
 	}
 
 	/**

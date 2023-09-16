@@ -2,7 +2,9 @@ package zoologico;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import Clases.Animal;
 import Clases.Bioma;
 
 /**
@@ -29,14 +31,41 @@ public class ManipularBioma extends ManipularZoologico {
 		int numJaulaas = Integer.valueOf(values[3]);
 		int numVeterinarios = Integer.valueOf(values[4]);
 		int numAnimales = Integer.valueOf(values[5]);
-		int numCuidadores = Integer.valueOf(values[6]);
-		ArrayList<String> serviciosAVisitantes = new ArrayList<String>(
-				Arrays.asList(values[7].substring(1, values[7].length() - 2).split(":")));
+		int numCuidadores = Integer.valueOf(values[6]);	
 
-		Bioma bioma = new Bioma(numCuidadores, tipo, servicio, numJaulaas, numVeterinarios, numAnimales, numCuidadores,
-				serviciosAVisitantes);
+		Bioma bioma = new Bioma(numCuidadores, tipo, servicio, numJaulaas, numVeterinarios, numAnimales, numCuidadores);
 		return bioma;
 	}
+	
+	
+	/**
+     * Metodo que devuelve todos los biomas en el arvhico .csv en una lista
+     * @return todos los biomas en el arvhico .csv en una lista
+     */
+    public List<Bioma> devolverListaBiomasEnArchivo(){
+    	List<String []> listaBiomas= devolverListaEntidadesEnTabla(path);
+    	List<Bioma> listaBiomasParseados = new ArrayList<Bioma>();
+    	Bioma bioma;
+    	for (String[] strings : listaBiomas) {
+			int id =Integer.valueOf(strings[0]) ;
+			String tipo = strings[1];
+			int numJaula = 0;
+			try {
+			    numJaula = Integer.valueOf(strings[3]);
+			} catch (NumberFormatException e) {
+			    // Maneja el caso en el que no puedas convertir la cadena en un número.
+			    // Puedes asignar un valor por defecto o tomar otra acción adecuada.
+			    numJaula = 0; // Por ejemplo, asignar un valor por defecto.
+			}
+			bioma = new Bioma(id, tipo, numJaula);
+			listaBiomasParseados.add(bioma);
+		}
+    	return listaBiomasParseados;
+    	
+    	
+    	
+    }
+
 
 	/**
 	 * Método que elimina bioma.

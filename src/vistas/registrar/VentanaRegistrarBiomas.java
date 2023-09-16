@@ -10,8 +10,10 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import Clases.Bioma;
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
+import zoologico.ManipularBioma;
 
 import javax.swing.JSeparator;
 import javax.swing.JButton;
@@ -184,7 +186,24 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 				}
 				
 				if(bandera) {
+					ManipularBioma manipularBioma = new ManipularBioma();
 					
+					String tipo = comboBoxTipoBioma.getSelectedItem().toString();
+					int numJaulas = Integer.valueOf(textFieldNumJaulas.getText());
+					int numVets = Integer.valueOf(textFieldNumVeterinarios.getText());
+					int numCuidadores = Integer.valueOf(textFieldNumCuidadores.getText());
+					int numAnimales = Integer.valueOf(textFieldNumAnimales.getText());
+					String servicio = comboBoxServicios.getSelectedItem().toString();
+					
+					Bioma bioma = new Bioma(tipo, servicio, numJaulas, numVets, numAnimales, numCuidadores);
+					
+					Boolean insertaBoolean = manipularBioma.inserta(bioma.toStringNoId());
+					if(insertaBoolean) {
+						limpiaCampos();
+						JOptionPane.showMessageDialog(null, "registrado con exito", "Exito",JOptionPane.INFORMATION_MESSAGE);
+					}else {
+						JOptionPane.showMessageDialog(null, "Error al registrar, intente de nuevo", "Error",JOptionPane.ERROR_MESSAGE);
+					}
 				}
 
 			}
@@ -198,7 +217,7 @@ public class VentanaRegistrarBiomas extends VentanaRegistrarMenu {
 
 		comboBoxServicios = new JComboBox<>();
 		comboBoxServicios.setModel(new DefaultComboBoxModel<String>(new String[] { "", "Baños", "Tiendas", "Comida" }));
-		comboBoxServicios.setBackground(new Color(67, 83, 52));
+		comboBoxServicios.setBackground(new Color(255, 255, 255));
 		comboBoxServicios.setForeground(new Color(18, 31, 37));
 		comboBoxServicios.setBounds(225, 292, 136, 22);
 		panelDerecho.add(comboBoxServicios);

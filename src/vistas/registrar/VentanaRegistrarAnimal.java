@@ -107,6 +107,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 			public void keyPressed(KeyEvent e) {
 				char keyChar = e.getKeyChar();
 				if (Character.isLetter(keyChar)) {
+					textFieldPeso.setText("");
 					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -135,6 +136,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 			public void keyPressed(KeyEvent e) {
 				char keyChar = e.getKeyChar();
 				if (Character.isLetter(keyChar)) {
+					textFieldAltura.setText("");
 					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -259,7 +261,7 @@ public class VentanaRegistrarAnimal extends VentanaRegistrarMenu {
 							numJaulas,alimentacion,indicacionesMedica);
 					if(manipularAnimal.inserta(animal)) {
 						limpiaCampos();
-						JOptionPane.showMessageDialog(null, "Se ha registrado con exito", "Error", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Se ha registrado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 

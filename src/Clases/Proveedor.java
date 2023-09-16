@@ -41,7 +41,7 @@ public class Proveedor extends Trabajador {
 	 * @param telefono
 	 */
 	public Proveedor(String finContrato, String inicioContrato, String genero, String rfc, String nombre,
-			String paterno, String materno, String calle, int numInterior, int numExterior, String colonia,
+			String paterno, String materno, String calle, String numInterior, String numExterior, String colonia,
 			String estado, String nacimiento, ArrayList<String> correos, ArrayList<String> telefonos, String producto,
 			String frecuenciaServicio, float costoServicio) {
 		super(rfc, nombre, paterno, materno, genero,

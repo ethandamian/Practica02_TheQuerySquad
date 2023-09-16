@@ -13,13 +13,17 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
+import Clases.Trabajador;
+import Clases.Veterinario;
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
+import zoologico.ManipularVeterinario;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -97,7 +101,7 @@ public class VentanaRegistrarVeterinario extends JPanel {
 				
 				boolean bandera = true;
 				try {
-					int salario = Integer.parseInt(getTextFieldSalario().getText());
+					float salario = Float.parseFloat(textFieldSalario.getText());
 					
 
 				} catch (NumberFormatException ex) {
@@ -114,11 +118,12 @@ public class VentanaRegistrarVeterinario extends JPanel {
 							"Los valores en los campos no pueden tener caracteres especiales o espacios", "Error",
 							JOptionPane.ERROR_MESSAGE);
 				} if(bandera){
-					ventanaRegistrarTrabajador.limpiaCampos();
+					ManipularVeterinario manipularVeterinario = new ManipularVeterinario();
+					
 					
 					String rfc = ventanaRegistrarTrabajador.getTextFieldRFC().getText();
 					String nombreString = ventanaRegistrarTrabajador.getTextFieldNombre().getText();
-					String apeelidoMaterno = ventanaRegistrarTrabajador.getTextFieldApellidoMaterno().getText();
+					String apellidoMaterno = ventanaRegistrarTrabajador.getTextFieldApellidoMaterno().getText();
 					String apellidoPaterno = ventanaRegistrarTrabajador.getTextFieldApellidoPaterno().getText();
 					String calle = ventanaRegistrarTrabajador.getTextFieldCalle().getText();
 					String numInterior = ventanaRegistrarTrabajador.getTextFieldNumInterior().getText();
@@ -132,14 +137,36 @@ public class VentanaRegistrarVeterinario extends JPanel {
 					String emailUno = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldEmailUno().getText();
 					String emailDos = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getTextFieldEmailDos().getText();
 					String genero = ventanaRegistrarTrabajador.getVentanaRegistrarTrabajadorContinuacion().getComboBoxGenero().getSelectedItem().toString();
-					String especialidad = getTextFieldEspecialidad().getText();
-					String salario = getTextFieldSalario().getText();
+					String especialidad = textFieldEspecialidad.getText();
+					float salario = Float.valueOf(textFieldSalario.getText());
 					
-					System.out.println(emailUno);
-					System.out.println(emailDos);
-
-					VentanaRegistrarTrabajador
-							.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenedor());
+					ArrayList<String> listaTelefonos = new ArrayList<String>();
+					listaTelefonos.add(telUno);
+					listaTelefonos.add(telDos);
+					
+					ArrayList<String> listaCorreos = new ArrayList<String>();
+					listaCorreos.add(emailUno);
+					listaCorreos.add(emailDos);
+					
+					Veterinario veterinario = new Veterinario(rfc, nombreString, apellidoPaterno, apellidoMaterno, genero,
+							calle, numExterior, numInterior, colonia, genero, 
+							fechaInicioContrato, fechaFinContrato, fechaNacimiento, 
+							listaTelefonos, listaCorreos, especialidad, salario);
+					
+					Boolean insertaBoolean = manipularVeterinario.inserta(veterinario);
+					
+					if(insertaBoolean) {
+						ventanaRegistrarTrabajador.limpiaCampos();
+						JOptionPane.showMessageDialog(null, "registrado con exito", "Exito",JOptionPane.INFORMATION_MESSAGE);
+						VentanaRegistrarTrabajador
+						.changePrincipalPanel(ventanaRegistrarTrabajador.getPanelDerechoContenedor());
+					}else {
+						JOptionPane.showMessageDialog(null, "Error al registrar, intente de nuevo", "Error",JOptionPane.ERROR_MESSAGE);
+					}
+					
+					
+					
+					
 				}
 
 			}

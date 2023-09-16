@@ -72,17 +72,14 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 				
 				Boolean bandera = true;
 				String input = textFieldInputUsuario.getText();
-				System.out.println(input);
 				if (ManejadorDeErrores.validarJTextField(input)) {
-					System.out.println("Limones4");
 					bandera = false;
 					JOptionPane.showMessageDialog(null,
-							"No puede ingresar carcteres especiales, espacios o  dejar vacio el campo", "Error",
+							"No puede ingresar caracteres especiales, espacios o  dejar vacio el campo", "Error",
 							JOptionPane.ERROR_MESSAGE);
 				}
 				
 				if (bandera) {
-					System.out.println("Limones1");
 					Animal animal	= manipularAnimal.leerAnimal(input);
 					if(animal != null) {
 						lblNombreValor.setText(animal.getNombre());
@@ -97,7 +94,10 @@ public class VentanaConsultaAnimales extends VentanaConsultasMenu {
 						btnEditar.addMouseListener(new MouseAdapter() {
 							@Override
 							public void mouseClicked(MouseEvent e) {
+								
 								ventanaEditarAnimal.setVisible(true);
+								
+								ventanaEditarAnimal.llenarCampos(textFieldInputUsuario.getText());
 							}
 						});
 						

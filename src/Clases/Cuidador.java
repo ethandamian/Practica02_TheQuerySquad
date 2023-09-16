@@ -41,7 +41,7 @@ public class Cuidador extends Trabajador {
 	 * @param telefono
 	 */
 	public Cuidador(String finContrato, String inicioContrato, String genero, String rfc, String nombre, String paterno,
-			String materno, String calle, int numInterior, int numExterior, String colonia, String estado,
+			String materno, String calle, String numInterior, String numExterior, String colonia, String estado,
 			String nacimiento, ArrayList<String> correos, ArrayList<String> telefonos, String animalACargo, float salario,
 			String diasTrabajo, String horarioLaboral) {
 		super(rfc, nombre, paterno, materno, genero,

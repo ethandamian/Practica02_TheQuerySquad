@@ -12,8 +12,8 @@ public class Trabajador {
 	protected String materno;
 	protected String genero;
 	protected String calle;
-	protected int numExterior;
-	protected int numInterior;
+	protected String numExterior;
+	protected String numInterior;
 	protected String colonia;
 	protected String estado;
 	protected String inicioContrato;
@@ -50,7 +50,7 @@ public class Trabajador {
 	 * @param correos
 	 */
 	public Trabajador(String rfc, String nombre, String paterno, String materno, String genero,
-			String calle, int numExterior, int numInterior, String colonia, String estado, String inicioContrato,
+			String calle, String numExterior, String numInterior, String colonia, String estado, String inicioContrato,
 			String finContrato, String nacimiento, ArrayList<String> telefonos,
 			ArrayList<String> correos) {
 		super();
@@ -220,7 +220,7 @@ public class Trabajador {
 	 * 
 	 * @return int
 	 */
-	public int getNumInterior() {
+	public String getNumInterior() {
 		return numInterior;
 	}
 
@@ -229,16 +229,16 @@ public class Trabajador {
 	 * 
 	 * @param numInterior
 	 */
-	public void setNumInterior(int numInterior) {
+	public void setNumInterior(String numInterior) {
 		this.numInterior = numInterior;
 	}
 
 	/**
 	 * Metodo para obtener el numero exterior del domicilio del trabajador
 	 * 
-	 * @return int
+	 * @return String
 	 */
-	public int getNumExterior() {
+	public String getNumExterior() {
 		return numExterior;
 	}
 
@@ -247,7 +247,7 @@ public class Trabajador {
 	 * 
 	 * @param numExterior
 	 */
-	public void setNumExterior(int numExterior) {
+	public void setNumExterior(String numExterior) {
 		this.numExterior = numExterior;
 	}
 
@@ -414,6 +414,16 @@ public class Trabajador {
 				+ numInterior + "," + colonia + "," + estado + "," + inicioContrato
 				+ "," + finContrato + "," + nacimiento + "," + arrayToString(telefonosString)
 				+ "," + arrayToString(correos);
+	}
+	
+	
+	/**
+	 * Método para representar el trabajador como un string cpn tres atributos.
+	 * 
+	 * @return String
+	 */
+	public String toStringTresAtributos() {
+		return rfc + "," + nombre;
 	}
 
 	/**

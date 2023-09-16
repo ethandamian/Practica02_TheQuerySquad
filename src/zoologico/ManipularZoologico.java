@@ -125,6 +125,56 @@ public class ManipularZoologico {
 		}
 		return false;
 	}
+	
+	/**
+	 * Operación de eliminación.
+	 * 
+	 * @param id   id de la entidad a eliminar
+	 * @param path Ruta del archivo csv.
+	 * @return Regresa verdadero si se eliminó la entidad. Falso si no se eliminó.
+	 */
+	public boolean eliminarTrabajador(String id, String path) {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(path));
+			List<String> filas = new ArrayList<>();
+			String idEliminar = id;
+			String linea;
+			int cont = 0;
+			boolean bandera = false;
+			while ((linea = br.readLine()) != null) {
+				if (cont == 0) {
+					cont++;
+					filas.add(linea);
+					continue;
+				}
+				String[] columnas = linea.split(",");
+				if (columnas.length > 0 && !( columnas[0].equals(idEliminar))) {
+					filas.add(linea);
+				} else if (columnas[0].equals(idEliminar) ) {
+					bandera = true;
+				}
+			}
+
+			br.close();
+			if (bandera) {
+				BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+				for (String fila : filas) {
+					writer.write(fila);
+					writer.newLine();
+				}
+				writer.close();
+				return bandera;
+			}
+			return bandera;
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 
 	/**
 	 * Operación de inserción de entidad en archivo csv.
