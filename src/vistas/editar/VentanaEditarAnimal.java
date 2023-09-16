@@ -118,7 +118,6 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 				
 				
 				if(bandera) {
-					System.out.println("Limones2");
 					String nombre = textFieldNombre.getText();
 					String especie = textFieldEspecie.getText();
 					float pesofloat = Float.valueOf(textFieldPeso.getText());
@@ -132,9 +131,9 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 					
 					Animal animal = new Animal(nombre,especie,pesofloat,alturaFloat,sexoString,
 							numJaulas,alimentacion,indicacionesMedica,Integer.valueOf(leerId));
-					System.out.println(animal.toString());
 					if(manipularAnimal.editar(animal,leerId)) {
-						//limpiaCampos();
+						limpiaCampos();
+						setVisible(false);
 						JOptionPane.showMessageDialog(null, "Se ha editado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
@@ -212,6 +211,7 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		lblAltura.setFont(FuenteProyecto.createFont(urlFuenteBold, 15));
 		lblAltura.setBounds(40, 301, 122, 28);
 		panelPrincipalContenido.add(lblAltura);
+		
 
 		textFieldAltura = new JTextField();
 		textFieldAltura.setForeground(new Color(227, 236, 233));
@@ -259,6 +259,15 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		textFieldNumJaula.setBounds(223, 183, 136, 20);
 		panelPrincipalContenido.add(textFieldNumJaula);
 		textFieldNumJaula.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		textFieldNumJaula.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 
 		JLabel lblAlimentacion = new JLabel("Alimentacion:");
 		lblAlimentacion.setForeground(new Color(227, 236, 233));
@@ -317,6 +326,7 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 	 * MEtodo para limpiar campos de la ventana
 	 */
 	public void limpiaCampos() {
+		textAreaIndicacionesMedicas.setText("");
 		limpiarCampos(listaFields);
 		limpiarComboBoxes(listaComboBoxs);
 	}
@@ -349,7 +359,6 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		textFieldNombre.setText(animal.getNombre());
 		textFieldEspecie.setText(animal.getEspecie());
 		textFieldPeso.setText(String.valueOf(animal.getPesoKg()));
-		System.out.println(textFieldPeso.getText());
 		textFieldAltura.setText(String.valueOf(animal.getAlturaCm()));
 		comboBoxSexo.setSelectedItem(animal.getSexo());
 		textFieldNumJaula.setText(String.valueOf(animal.getNumJaula()));

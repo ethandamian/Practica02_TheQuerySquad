@@ -70,6 +70,7 @@ public class VentanaConsultaBioma extends VentanaConsultasMenu {
 							@Override
 							public void mouseClicked(MouseEvent e) {
 								ventanaEditarBioma.setVisible(true);
+								ventanaEditarBioma.llenarCampos(textFieldInputUsuario.getText());
 							}
 						});
 					}else {

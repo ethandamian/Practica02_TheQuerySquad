@@ -11,15 +11,22 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
+import Clases.Animal;
+import Clases.Bioma;
 import errores.ManejadorDeErrores;
 import vistas.FuenteProyecto;
 import vistas.consultas.VentanaConsultaBioma;
+import zoologico.ManipularBioma;
 
 import javax.swing.JSeparator;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 /**
  * Clase de la ventana para editar biomas
@@ -32,8 +39,11 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 	private JComboBox<String> comboBoxServicios;
 	private JComboBox<String> comboBoxTipoBioma;
 	
+	private String idString;
+	
 	
 	private VentanaConsultaBioma ventanaConsultaBioma;
+	private ManipularBioma manipularBioma = new ManipularBioma();
 
 	
 
@@ -43,26 +53,36 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 	public VentanaEditarBioma() {
 		setSize(576, 480);
 		setResizable(false);
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+
+				if (JOptionPane.showConfirmDialog(panelPrincipal,
+						"¿Estás seguro que quieres salir del sistema?", "¿Cerrar ventana?",
+						JOptionPane.YES_NO_OPTION,
+						JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
+					setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+					dispose();
+					ventanaConsultaBioma.getBtnEditar().setVisible(false);
+
+				} else {
+					setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+				}
+
+			}
+		});
+		
 		
 		btnGuardar.setLocation(397, 397);
 		btnGuardar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Boolean bandera = true;
 
 				String numJaula = textFieldNumJaulas.getText();
 				String cuidadores = textFieldNumCuidadores.getText();
 				String animales = textFieldNumAnimales.getText();
 				String veterinario = textFieldNumVeterinarios.getText(); 
-
-				if (ManejadorDeErrores.validarListaJtextFields(listaFields)) {
-					JOptionPane.showMessageDialog(null,
-							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
-							"Error", JOptionPane.ERROR_MESSAGE);
-				}
-				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
-					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Tipo de Bioma' y 'Servicios'",
-							"Error", JOptionPane.ERROR_MESSAGE);
-				}
 
 				try {
 					int numeroJaulas = Integer.parseInt(numJaula);
@@ -74,6 +94,37 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 					JOptionPane.showMessageDialog(null,
 							"No puede ingresar palabras en todos los campos donde se requieren numeros",
 							"error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				if (ManejadorDeErrores.validarListaJtextFields(listaFields)) {
+					bandera = false;
+					JOptionPane.showMessageDialog(null,
+							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
+							"Error", JOptionPane.ERROR_MESSAGE);
+				}
+				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
+					bandera = false;
+					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Tipo de Bioma' y 'Servicios'",
+							"Error", JOptionPane.ERROR_MESSAGE);
+				}
+
+				
+				
+				if(bandera) {
+					String tipo = comboBoxTipoBioma.getSelectedItem().toString();
+					int numJaulas = Integer.valueOf(textFieldNumJaulas.getText());
+					int numCuidadores = Integer.valueOf(textFieldNumCuidadores.getText());
+					int numVeterinarios = Integer.valueOf(textFieldNumVeterinarios.getText());
+					int numAnimales = Integer.valueOf(textFieldNumAnimales.getText());
+					String servicio = comboBoxServicios.getSelectedItem().toString();
+					
+					Bioma bioma = new Bioma(Integer.valueOf(idString),tipo,servicio,numJaulas,numVeterinarios,numAnimales,numCuidadores);
+					
+					if(manipularBioma.editar(bioma, idString)) {
+						limpiaCampos();
+						setVisible(false);
+						JOptionPane.showMessageDialog(null, "Se ha editado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+					}
 				}
 
 			}
@@ -97,6 +148,15 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		panelPrincipalContenido.add(lblNumJaulas);
 		
 		textFieldNumJaulas = new JTextField();
+		textFieldNumJaulas.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		textFieldNumJaulas.setForeground(new Color(227, 236, 233));
 		textFieldNumJaulas.setFont(null);
 		textFieldNumJaulas.setColumns(10);
@@ -116,6 +176,15 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		panelPrincipalContenido.add(lblNumCuidadores);
 		
 		textFieldNumCuidadores = new JTextField();
+		textFieldNumCuidadores.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		textFieldNumCuidadores.setForeground(new Color(227, 236, 233));
 		textFieldNumCuidadores.setFont(null);
 		textFieldNumCuidadores.setColumns(10);
@@ -135,6 +204,15 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		panelPrincipalContenido.add(lblNumVeterinarios);
 		
 		textFieldNumVeterinarios = new JTextField();
+		textFieldNumVeterinarios.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		textFieldNumVeterinarios.setForeground(new Color(227, 236, 233));
 		textFieldNumVeterinarios.setFont(null);
 		textFieldNumVeterinarios.setColumns(10);
@@ -154,6 +232,15 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		panelPrincipalContenido.add(lblNumeroDeAnimales);
 		
 		textFieldNumAnimales = new JTextField();
+		textFieldNumAnimales.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				char keyChar = e.getKeyChar();
+				if (Character.isLetter(keyChar)) {
+					JOptionPane.showMessageDialog(null, "Ingresa un numero", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		textFieldNumAnimales.setForeground(new Color(227, 236, 233));
 		textFieldNumAnimales.setFont(null);
 		textFieldNumAnimales.setColumns(10);
@@ -175,12 +262,14 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 		comboBoxServicios = new JComboBox<String>();
 		comboBoxServicios.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Baños", "Tiendas", "Comida"}));
 		comboBoxServicios.setForeground(new Color(18, 31, 37));
-		comboBoxServicios.setBackground(new Color(67, 83, 52));
+		comboBoxServicios.setBackground(new Color(255, 255, 255));
 		comboBoxServicios.setBounds(232, 290, 136, 22);
 		panelPrincipalContenido.add(comboBoxServicios);
 		comboBoxServicios.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
 		
 		comboBoxTipoBioma = new JComboBox<String>();
+		comboBoxTipoBioma.setEditable(true);
+		comboBoxTipoBioma.setBackground(new Color(255, 255, 255));
 		comboBoxTipoBioma.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Desierto", "Pastizales", "Franja Costera", "Tundra", "Aviario", "Bosque Templado", "Bosque Tropical"}));
 		comboBoxTipoBioma.setBounds(38, 123, 137, 22);
 		panelPrincipalContenido.add(comboBoxTipoBioma);
@@ -215,6 +304,25 @@ public class VentanaEditarBioma extends VentanaEditarMenu {
 	 */
 	public void setVentanaConsultaBioma(VentanaConsultaBioma ventanaConsultaBioma) {
 		this.ventanaConsultaBioma = ventanaConsultaBioma;
+	}
+	
+	/**
+	 *  Metodo para llenar los campos en la ventana 
+	 * @param id id pasado por la ventana de consulta
+	 */
+	public void llenarCampos(String id) {
+		idString = id;
+		Bioma bioma  = manipularBioma.leerBioma(id);
+		
+		comboBoxTipoBioma.setSelectedItem(bioma.getTipo());
+		textFieldNumJaulas.setText(String.valueOf(bioma.getNumJaulaas()));
+		textFieldNumCuidadores.setText(String.valueOf(bioma.getNumCuidadores()));
+		textFieldNumVeterinarios.setText(String.valueOf(bioma.getNumVeterinarios()));
+		textFieldNumAnimales.setText(String.valueOf(bioma.getNumAnimales()));
+		comboBoxServicios.setSelectedItem(bioma.getServicio());
+		
+		
+		
 	}
 	
 	

@@ -34,6 +34,7 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 	 */
 	public VentanaConsultaVeterinarios() {
 		super();
+		lblTelefonosValor.setBounds(289, 264, 219, 26);
 
 		btnBuscar.addMouseListener(new MouseAdapter() {
 			@Override
@@ -76,6 +77,7 @@ public class VentanaConsultaVeterinarios extends VentanaConsultaTrabajador {
 						btnEditar.addMouseListener(new MouseAdapter() {
 							@Override
 							public void mouseClicked(MouseEvent e) {
+								ventanaEditarVeterinario.llenarCampos(input);
 								ventanaEditarVeterinario.setVisible(true);
 							}
 						});

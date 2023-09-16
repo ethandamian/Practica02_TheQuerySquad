@@ -37,8 +37,8 @@ public class VentanaEditarMenu extends JFrame {
 	protected String urlFuenteBold = "fuentes/RobotoCondensed-Bold.ttf";
 	protected String urlFuentePlain = "fuentes/RobotoCondensed-Regular.ttf";
 
-	protected List<JTextField> listaFields = new ArrayList<JTextField>();
-	protected List<JComboBox<String>> listaComboBoxs = new ArrayList<JComboBox<String>>();
+	protected List<JTextField> listaFields;
+	protected List<JComboBox<String>> listaComboBoxs;
 
 	/**
 	 * Crea la ventana

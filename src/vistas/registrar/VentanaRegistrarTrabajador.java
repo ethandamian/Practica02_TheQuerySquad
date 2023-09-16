@@ -240,7 +240,6 @@ public class VentanaRegistrarTrabajador extends VentanaRegistrarMenu {
 
 				boolean bandera = true;
 				if (textFieldRFC.getText().length() == 12 || textFieldRFC.getText().length() == 13) {
-					// TODO logica para registrar
 				} else {
 					bandera = false;
 					JOptionPane.showMessageDialog(null, "Un RFC debe contener 12 o 13 caracteres", "Error",
