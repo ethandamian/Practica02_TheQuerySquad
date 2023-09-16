@@ -49,7 +49,6 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 	private VentanaConsultaAnimales ventanaConsultaAnimales;
 	
 	private ManipularAnimal manipularAnimal = new ManipularAnimal();
-	private List<JTextField> listaTextFields;
 
 	/**
 	 * Crea la ventana
@@ -81,37 +80,6 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		});
 
 		lblTituloMenu.setBounds(46, 26, 436, 58);
-		btnGuardar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-
-				String numJaula = textFieldNumJaula.getText();
-				String peso = textFieldPeso.getText();
-				String altura = textFieldAltura.getText();
-
-				if (ManejadorDeErrores.validarListaJtextFields(listaFields)) {
-					JOptionPane.showMessageDialog(null,
-							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
-							"Error", JOptionPane.ERROR_MESSAGE);
-				}
-				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
-					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Sexo' y 'Alimentacion'",
-							"Error", JOptionPane.ERROR_MESSAGE);
-				}
-
-				try {
-					int numeroJaulas = Integer.parseInt(numJaula);
-					int pesoA = Integer.parseInt(peso);
-					int alturaA = Integer.parseInt(altura);
-
-				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(null,
-							"No puede ingresar palabras en todos los campos donde se requieren numeros",
-							"error", JOptionPane.ERROR_MESSAGE);
-				}
-
-			}
-		});
 		lblTituloMenu.setText("MENU EDITAR ANIMAL");
 		btnGuardar.setLocation(413, 397);
 		btnGuardar.addMouseListener(new MouseAdapter() {
@@ -121,18 +89,6 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 				String numJaula = textFieldNumJaula.getText();
 				String peso = textFieldPeso.getText();
 				String altura = textFieldAltura.getText();
-
-				if (ManejadorDeErrores.validarListaJtextFields(listaTextFields)) {
-					bandera = false;
-					JOptionPane.showMessageDialog(null,
-							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
-							"Error", JOptionPane.ERROR_MESSAGE);
-				}
-				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
-					bandera = false;
-					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Sexo' y 'Alimentacion'",
-							"Error", JOptionPane.ERROR_MESSAGE);
-				}
 
 				try {
 					int numeroJaulas = Integer.parseInt(numJaula);
@@ -146,6 +102,20 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 							"No puede ingresar palabras en todos los campos donde se requieren numeros",
 							"error", JOptionPane.ERROR_MESSAGE);
 				}
+				
+				if (ManejadorDeErrores.validarListaJtextFields(listaFields)) {
+					bandera = false;
+					JOptionPane.showMessageDialog(null,
+							"Los valores en los campos no pueden tener caracteres especiales, tener espacios o estas sin valor",
+							"Error", JOptionPane.ERROR_MESSAGE);
+				}
+				if (ManejadorDeErrores.validarListaComboBox(listaComboBoxs)) {
+					bandera = false;
+					JOptionPane.showMessageDialog(null, "Selecciona una opcion en 'Sexo' y 'Alimentacion'",
+							"Error", JOptionPane.ERROR_MESSAGE);
+				}
+
+				
 				
 				if(bandera) {
 					System.out.println("Limones2");
@@ -164,7 +134,7 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 							numJaulas,alimentacion,indicacionesMedica,Integer.valueOf(leerId));
 					System.out.println(animal.toString());
 					if(manipularAnimal.editar(animal,leerId)) {
-						limpiaCampos();
+						//limpiaCampos();
 						JOptionPane.showMessageDialog(null, "Se ha editado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
@@ -219,12 +189,10 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		textFieldPeso = new JTextField();
 		textFieldPeso.setForeground(new Color(227, 236, 233));
 		textFieldPeso.setFont(FuenteProyecto.createFont(urlFuentePlain, 13));
-		textFieldPeso.setColumns(10);
 		textFieldPeso.setBackground(new Color(24, 61, 61));
 		textFieldPeso.setBounds(40, 259, 136, 20);
 		panelPrincipalContenido.add(textFieldPeso);
 		textFieldPeso.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textFieldPeso = new JTextField();
 		textFieldPeso.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -334,15 +302,12 @@ public class VentanaEditarAnimal extends VentanaEditarMenu {
 		textAreaIndicacionesMedicas.setBorder(BorderFactory.createCompoundBorder(border,
 				BorderFactory.createEmptyBorder(10, 10, 10, 10)));
 
-		listaFields = Arrays.asList(textFieldAltura, textFieldEspecie, textFieldNombre, textFieldNumJaula,
-				textFieldPeso);
-		listaComboBoxs = Arrays.asList(comboBoxAlimentacion, comboBoxSexo);
 
 		JSeparator separator_1_1_1 = new JSeparator();
 		separator_1_1_1.setBounds(223, 207, 136, 2);
 		panelPrincipalContenido.add(separator_1_1_1);
 		
-		listaTextFields = Arrays.asList(textFieldAltura, textFieldEspecie, textFieldNombre, textFieldNumJaula,
+		listaFields = Arrays.asList(textFieldAltura, textFieldEspecie, textFieldNombre, textFieldNumJaula,
 				textFieldPeso);
 		listaComboBoxs = Arrays.asList(comboBoxAlimentacion, comboBoxSexo);
 

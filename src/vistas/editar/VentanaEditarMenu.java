@@ -21,6 +21,8 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * Clase de la ventana de editar menu
@@ -48,7 +50,7 @@ public class VentanaEditarMenu extends JFrame {
 		setBounds(100, 100, 935, 480);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		UIManager.put("TextField.caretForeground", Color.WHITE);
+		//UIManager.put("TextField.caretForeground", Color.WHITE);
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -71,6 +73,7 @@ public class VentanaEditarMenu extends JFrame {
 		panelPrincipalContenido.add(lblTituloMenu);
 
 		btnGuardar = new JButton("GUARDAR");
+		
 		btnGuardar.setForeground(new Color(41, 56, 47));
 		btnGuardar.setFont(FuenteProyecto.createFont(urlFuenteBold, 13));
 		btnGuardar.setBounds(716, 387, 110, 23);
